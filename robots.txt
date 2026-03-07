@@ -1,0 +1,50 @@
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /images/
+Allow: /blog/images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /images/*.png
+Allow: /images/*.jpg
+Allow: /images/*.svg
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cdn-cgi/
+
+# Правила для Google Image Search
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Disallow: /api/
+Disallow: /private/
+Disallow: /cdn-cgi/
+
+# Правила для Yandex Image Search
+User-agent: YandexImages
+Allow: /images/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Disallow: /api/
+Disallow: /private/
+Disallow: /cdn-cgi/
+
+# Карта сайта
+Sitemap: https://personality-compass.app/sitemap.xml
+
+# Хост (для Яндекс)
+Host: https://personality-compass.app

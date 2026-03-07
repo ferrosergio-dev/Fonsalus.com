@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toeta arendajat - Isiksuse Kompass</title>
+    <meta name="description" content="Toeta Isiksuse Kompassi arendamist. Sinu annetus aitab rakendust paremaks teha ja uusi funktsioone lisada.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://personality-compass.app/et/support.html">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html" />
+    <link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html" />
+    <link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Toeta arendajat - Isiksuse Kompass">
+    <meta property="og:description" content="Toeta Isiksuse Kompassi arendamist. Sinu annetus aitab rakendust paremaks teha.">
+    <meta property="og:url" content="https://personality-compass.app/et/support.html">
+    <meta property="og:image" content="https://personality-compass.app/images/01.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org markup for DonateAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DonateAction",
+        "name": "Toeta Isiksuse Kompassi arendamist",
+        "description": "Aita rakendust paremaks teha ja toeta tulevasi uuendusi",
+        "url": "https://personality-compass.app/et/support.html",
+        "potentialAction": {
+            "@type": "DonateAction",
+            "name": "Tee annetus",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://personality-compass.app/et/support.html",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            }
+        },
+        "provider": {
+            "@type": "Person",
+            "name": "Ilja Serõšev"
+        }
+    }
+    </script>
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cards.css">
+    <link rel="stylesheet" href="/css/support.css">
+    
+    <!-- Метрики (один общий файл) -->
+    <script src="/js/metrics.js" defer></script>
+    
+    <!-- Основной скрипт страницы поддержки -->
+    <script src="/js/support.js" defer></script>
+    
+    <!-- Инициализация эстонского языка -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Устанавливаем эстонский язык по умолчанию для этой страницы
+            if (typeof currentLanguage !== 'undefined') {
+                currentLanguage = 'et';
+                if (typeof updateContent === 'function') {
+                    updateContent();
+                }
+            }
+            
+            // Отмечаем активную кнопку языка по data-lang
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === 'et') {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn active" data-lang="et">ET</button>
+            </div>
+            
+            <!-- Навигационное меню -->
+            <div class="nav-menu">
+                <a href="/et/index.html" class="nav-link">Avaleht</a>
+                <a href="/blog/et/index.html" class="nav-link">Blogi</a>
+                <a href="/et/policy.html" class="nav-link">Privaatsus</a>
+                <a href="/et/index.html#download" class="nav-link">Lae alla</a>
+                <a href="/et/support.html" class="nav-link active">Toeta</a>
+            </div>
+            
+            <h1 class="app-title" data-translate="title">Toeta arendajat</h1>
+            <div class="app-subtitle" data-translate="subtitle">Sinu annetus aitab rakendust paremaks teha</div>
+        </div>
+
+        <div class="content-section">
+            <!-- Thank You Section -->
+            <div class="thank-you-card">
+                <div class="thank-you-icon">❤️</div>
+                <h2 data-translate="thankYouTitle">Aitäh!</h2>
+                <p data-translate="thankYouText">Täname, et kasutad 'Isiksuse Kompassi'! Sinu toetus aitab rakendust täiustada ja uusi funktsioone lisada.</p>
+            </div>
+
+            <!-- Cryptocurrency Section -->
+            <div class="section-title">
+                <span data-translate="cryptoSection">Krüptoraha</span>
+            </div>
+            <p class="crypto-subtitle" data-translate="cryptoSubtitle">Kiire ja kättesaadav üle kogu maailma</p>
+
+            <!-- Crypto Cards -->
+            <div class="crypto-grid">
+                <!-- USDT TRC20 (Recommended) -->
+                <div class="crypto-card recommended">
+                    <div class="recommended-badge" data-translate="recommended">Soovitatav</div>
+                    <div class="crypto-header">
+                        <div class="crypto-icon">💎</div>
+                        <div>
+                            <div class="crypto-name">USDT</div>
+                            <div class="crypto-network">TRON (TRC20)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="address-box">
+                        <strong data-translate="address">Aadress:</strong><br>
+                        <span class="crypto-address">THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc</span>
+                        <button class="copy-btn" data-copy="THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc" data-copy-type="addressCopied" data-track="copy_usdt">
+                            📋 <span data-translate="copy">Kopeeri</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bitcoin -->
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div class="crypto-icon">₿</div>
+                        <div>
+                            <div class="crypto-name">Bitcoin (BTC)</div>
+                            <div class="crypto-network">Bitcoin Network</div>
+                        </div>
+                    </div>
+                    
+                    <div class="address-box">
+                        <strong data-translate="address">Aadress:</strong><br>
+                        <span class="crypto-address">158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt</span>
+                        <button class="copy-btn" data-copy="158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt" data-copy-type="addressCopied" data-track="copy_btc">
+                            📋 <span data-translate="copy">Kopeeri</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Crypto Benefits -->
+            <div class="crypto-benefits-section">
+            <h3 class="crypto-benefits-title" data-translate="whyCrypto">Miks krüptoraha?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <strong data-translate="fastTransactions">Kiired ülekanded</strong>
+                        <p data-translate="fastTransactionsDesc">Minutid päevade asemel</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <strong data-translate="lowFees">Madalad tasud</strong>
+                        <p data-translate="lowFeesDesc">Eriti USDT TRC20 võrgustikus</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌍</div>
+                        <strong data-translate="globalAccess">Piirideta ja piiramatult</strong>
+                        <p data-translate="globalAccessDesc">Kättesaadav igast maailma otsast</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Details Section -->
+            <div class="section-title">
+                <span data-translate="bankDetails">Pangaandmed</span>
+            </div>
+
+            <div class="bank-details-card">
+                <!-- Recipient Name -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="nameLabel">Saaja nimi:</div>
+                    <div class="detail-value">Ilja Serõšev</div>
+                    <button class="copy-btn" data-copy="Ilja Serõšev" data-copy-type="nameCopied" data-track="copy_name">
+                        📋
+                    </button>
+                </div>
+
+                <!-- IBAN -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
+                    <div class="detail-value">EE457700771003417343</div>
+                    <button class="copy-btn" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban">
+                        📋
+                    </button>
+                </div>
+
+                <!-- Payment Reference -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="referenceLabel">Makseviide:</div>
+                    <div class="detail-value" data-translate="referenceText">Personality Compass app donation</div>
+                    <button class="copy-btn" data-copy="Personality Compass app donation" data-copy-type="referenceCopied" data-track="copy_reference">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code for Bank Transfer -->
+            <div class="qr-section">
+                <p data-translate="qrInstructions">Skänneeri QR-kood oma pangarakendusega</p>
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=bank://payment?iban=EE457700771003417343&recipient=Ilja%20Ser%C3%B5%C5%A1ev&amount=&message=Personality%20Compass%20app%20donation&size=200x200&margin=0" alt="Pangaülekande QR-kood">
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-title">
+                <span data-translate="quickActions">Kiirtegevused</span>
+            </div>
+
+            <div class="actions-grid">
+                <button class="action-btn primary" data-action="crypto-instructions">
+                    🪙 <span data-translate="howToSendCrypto">Kuidas saata krüptoraha</span>
+                </button>
+                
+                <button class="action-btn" data-action="copy-iban" data-copy="EE457700771003417343" data-copy-type="ibanCopied" data-track="copy_iban">
+                    📋 <span data-translate="copyIban">Kopeeri IBAN</span>
+                </button>
+                
+                <button class="action-btn" data-action="open-bank-app">
+                    📱 <span data-translate="openBankApp">Ava pangarakendus</span>
+                </button>
+            </div>
+
+            <!-- Privacy Note -->
+            <div class="privacy-note" data-translate="privacyNote">
+                Kogu teave on esitatud vabatahtlike annetuste jaoks. Me ei säilita ühtegi makseandmeid.
+            </div>
+
+            <!-- Back to Main Page -->
+            <div class="back-link-container">
+            <a href="/en/index.html" class="back-link">← Back to main page</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© Isiksuse Kompass. Kõik õigused kaitstud.</p>
+            <p>Kontakt: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Modal for Instructions -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <button class="close-btn" data-action="close-modal">×</button>
+            </div>
+            <div id="modal-content"></div>
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="action-btn" data-action="close-modal" data-translate="close">Sulge</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

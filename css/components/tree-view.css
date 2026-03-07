@@ -1,0 +1,52 @@
+/* ===== TREE-VIEW.CSS - Отображение файловой структуры ===== */
+
+.tree-view {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    background: #f8f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    line-height: 1.8;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+.tree-view .folder {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.tree-view .file {
+    color: #333;
+}
+
+.tree-view .folder,
+.tree-view .file {
+    transition: color 0.2s ease;
+}
+
+.tree-view .folder:hover {
+    color: #5a6fd8;
+}
+
+.tree-view .file:hover {
+    color: #667eea;
+}
+
+/* Отступы для вложенности */
+.tree-view br + span,
+.tree-view br + .folder,
+.tree-view br + .file {
+    margin-left: 20px;
+}
+
+/* Альтернативный вариант с псевдоэлементами */
+.tree-view .folder::before {
+    content: "📁 ";
+    font-size: 14px;
+}
+
+.tree-view .file::before {
+    content: "📄 ";
+    font-size: 14px;
+}

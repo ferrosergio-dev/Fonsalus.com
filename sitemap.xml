@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- ==================== ГЛАВНЫЕ СТРАНИЦЫ ==================== -->
+    <!-- С наивысшим приоритетом и правильными hreflang -->
+    <url>
+        <loc>https://personality-compass.app/en/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://personality-compass.app/en/index.html"/>
+        
+        <!-- Изображения для английской версии -->
+        <image:image>
+            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:caption>Personality Compass - Home screen with three tests and diary: MindPath 16, MindPath 5D, Enneagram and My Diary</image:caption>
+            <image:title>Personality Compass app home screen</image:title>
+            <image:geo_location>Estonia</image:geo_location>
+            <image:license>https://personality-compass.app/en/policy.html</image:license>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:caption>Personality Compass - Test selection screen where you can choose between MindPath 16, 5D or Enneagram test</image:caption>
+            <image:title>Personality Compass test selection</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:caption>Personality Compass - MindPath 16 test questions example, 16 personality types analysis</image:caption>
+            <image:title>Personality Compass MindPath 16 test</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:caption>Personality Compass - Enneagram results screen showing 9 types with development levels</image:caption>
+            <image:title>Personality Compass Enneagram results</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:caption>Personality Compass - Professional PDF reports example with colorful charts and personality analysis</image:caption>
+            <image:title>Personality Compass PDF reports</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:caption>Personality Compass - Personal diary for self-development and self-reflection tracking</image:caption>
+            <image:title>Personality Compass personal diary</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://personality-compass.app/en/index.html"/>
+        
+        <!-- Изображения для русской версии -->
+        <image:image>
+            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:caption>Personality Compass - Главный экран с тремя тестами и дневником: MindPath 16, MindPath 5D, Эннеаграмма и Мой Дневник</image:caption>
+            <image:title>Personality Compass главный экран</image:title>
+            <image:geo_location>Estonia</image:geo_location>
+            <image:license>https://personality-compass.app/ru/policy.html</image:license>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:caption>Personality Compass - Экран выбора тестов, где можно выбрать между MindPath 16, 5D или Эннеаграммой</image:caption>
+            <image:title>Personality Compass выбор теста</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:caption>Personality Compass - Пример вопросов теста MindPath 16, анализ 16 типов личности</image:caption>
+            <image:title>Personality Compass тест MindPath 16</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:caption>Personality Compass - Экран результатов Эннеаграммы с 9 типами и уровнями развития</image:caption>
+            <image:title>Personality Compass результаты Эннеаграммы</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:caption>Personality Compass - Пример профессиональных PDF-отчетов с цветными диаграммами и анализом личности</image:caption>
+            <image:title>Personality Compass PDF отчеты</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:caption>Personality Compass - Личный дневник для отслеживания саморазвития и саморефлексии</image:caption>
+            <image:title>Personality Compass личный дневник</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://personality-compass.app/en/index.html"/>
+        
+        <!-- Изображения для эстонской версии -->
+        <image:image>
+            <image:loc>https://personality-compass.app/images/01.png</image:loc>
+            <image:caption>Isiksuse Kompass - Avaleht kolme testi ja päevikuga: MindPath 16, MindPath 5D, Enneagramm ja Minu Päevik</image:caption>
+            <image:title>Isiksuse Kompass avakuva</image:title>
+            <image:geo_location>Estonia</image:geo_location>
+            <image:license>https://personality-compass.app/et/policy.html</image:license>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/02.png</image:loc>
+            <image:caption>Isiksuse Kompass - Testide valiku ekraan, kus saab valida MindPath 16, 5D või Enneagrammi testi vahel</image:caption>
+            <image:title>Isiksuse Kompass testide valik</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/03.png</image:loc>
+            <image:caption>Isiksuse Kompass - MindPath 16 testi küsimuste näide, 16 isiksusetüübi analüüs</image:caption>
+            <image:title>Isiksuse Kompass MindPath 16 test</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/04.png</image:loc>
+            <image:caption>Isiksuse Kompass - Enneagrammi tulemuste ekraan, mis näitab 9 tüüpi koos arengutasemetega</image:caption>
+            <image:title>Isiksuse Kompass Enneagrammi tulemused</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/05.png</image:loc>
+            <image:caption>Isiksuse Kompass - Professionaalsete PDF aruannete näide värviliste diagrammide ja isiksuseanalüüsiga</image:caption>
+            <image:title>Isiksuse Kompass PDF aruanded</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://personality-compass.app/images/06.png</image:loc>
+            <image:caption>Isiksuse Kompass - Isiklik päevik enesearengu ja eneserefleksiooni jälgimiseks</image:caption>
+            <image:title>Isiksuse Kompass isiklik päevik</image:title>
+        </image:image>
+    </url>
+    
+    <!-- ==================== СТРАНИЦЫ ПОДДЕРЖКИ (ДОБАВЛЕНЫ) ==================== -->
+    <url>
+        <loc>https://personality-compass.app/en/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/support.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html"/>
+    </url>
+    
+    <!-- ==================== СТРАНИЦЫ ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ ==================== -->
+    <url>
+        <loc>https://personality-compass.app/en/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/policy.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/ru/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/policy.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/et/policy.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/en/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/policy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/et/policy.html"/>
+    </url>
+    
+    <!-- ==================== ГЛАВНЫЕ СТРАНИЦЫ БЛОГА ==================== -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/index.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/ru/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/index.html"/>
+    </url>
+    
+    <url>
+        <loc>https://personality-compass.app/blog/et/index.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/index.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/index.html"/>
+    </url>
+    
+    <!-- ==================== СТАТЬИ БЛОГА НА АНГЛИЙСКОМ ==================== -->
+    <!-- MindPath 16 Guide -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/mindpath16-guide.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/mindpath16-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/mindpath16-juhend.html"/>
+    </url>
+    
+    <!-- Enneagram Types (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/enneagram-types.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/enneagram-types.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/tipy-enneagramy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/enneagramm-tuubid.html"/>
+    </url>
+    
+    <!-- Personality Test Tips -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/personality-test-tips.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/personality-test-tips.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/sovety-po-prohozhdeniyu-testov.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/isiksusetesti-nouanded.html"/>
+    </url>
+    
+    <!-- Behind the Build -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/behind-the-build-personality-compass.html</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/behind-the-build-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html"/>
+    </url>
+    
+    <!-- Founder's Story (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/en/founders-personality-story.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/founders-personality-story.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/istorija-lichnosti-sozdatelja.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/asutaja-isiklik-lugu.html"/>
+    </url>
+    
+    <!-- ==================== СТАТЬИ БЛОГА НА РУССКОМ ==================== -->
+    <!-- MindPath 16 руководство -->
+    <url>
+        <loc>https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/mindpath16-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/mindpath16-juhend.html"/>
+    </url>
+    
+    <!-- Типы Эннеаграммы (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/ru/tipy-enneagramy.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/enneagram-types.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/tipy-enneagramy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/enneagramm-tuubid.html"/>
+    </url>
+    
+    <!-- Советы по прохождению тестов -->
+    <url>
+        <loc>https://personality-compass.app/blog/ru/sovety-po-prohozhdeniyu-testov.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/personality-test-tips.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/sovety-po-prohozhdeniyu-testov.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/isiksusetesti-nouanded.html"/>
+    </url>
+    
+    <!-- Как создавался Personality Compass -->
+    <url>
+        <loc>https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/behind-the-build-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html"/>
+    </url>
+    
+    <!-- История личности создателя (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/ru/istorija-lichnosti-sozdatelja.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/founders-personality-story.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/istorija-lichnosti-sozdatelja.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/asutaja-isiklik-lugu.html"/>
+    </url>
+    
+    <!-- ==================== СТАТЬИ БЛОГА НА ЭСТОНСКОМ ==================== -->
+    <!-- MindPath 16 juhend -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/mindpath16-juhend.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/mindpath16-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/mindpath16-polnoe-rukovodstvo.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/mindpath16-juhend.html"/>
+    </url>
+    
+    <!-- Enneagramm tüübid (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/enneagramm-tuubid.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/enneagram-types.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/tipy-enneagramy.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/enneagramm-tuubid.html"/>
+    </url>
+    
+    <!-- Isiksusetesti nõuanded -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/isiksusetesti-nouanded.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/personality-test-tips.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/sovety-po-prohozhdeniyu-testov.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/isiksusetesti-nouanded.html"/>
+    </url>
+    
+    <!-- Kuidas loodi Personality Compass -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html</loc>
+        <lastmod>2026-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/behind-the-build-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/kak-sozdavalsya-personality-compass.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/kuidas-loodi-personality-compass.html"/>
+    </url>
+    
+    <!-- Asutaja isiklik lugu (обновленная дата) -->
+    <url>
+        <loc>https://personality-compass.app/blog/et/asutaja-isiklik-lugu.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://personality-compass.app/blog/en/founders-personality-story.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://personality-compass.app/blog/ru/istorija-lichnosti-sozdatelja.html"/>
+        <xhtml:link rel="alternate" hreflang="et" href="https://personality-compass.app/blog/et/asutaja-isiklik-lugu.html"/>
+    </url>
+    
+</urlset>

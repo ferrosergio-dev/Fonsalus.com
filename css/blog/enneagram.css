@@ -1,0 +1,94 @@
+/* ===== ENNEAGRAM ARTICLE SPECIFIC STYLES ===== */
+/* Только для статей про типы Enneagram */
+/* ЗАВИСИМОСТИ: cards.css (базовые стили карточек) */
+
+/* ===== УНИКАЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ENNEAGRAM ===== */
+
+/* Специфичные для Эннеаграммы секции внутри type-card */
+.type-section {
+    margin-bottom: 20px;
+}
+
+.type-section-title {
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Специфичные списки черт для Эннеаграммы */
+.type-traits {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.type-traits li {
+    background: #f0f2f5;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Интеграционные карточки (стрессы/рост) */
+/* Базовые стили integration-grid и integration-card в cards.css */
+.integration-card.stress {
+    background: #fff5f5;
+    border-left: 4px solid #f56565;
+}
+
+.integration-card.growth {
+    background: #f0fff4;
+    border-left: 4px solid #48bb78;
+}
+
+.integration-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.arrow {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+/* Карточки центров (специфичная сетка 3 колонки) */
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* Стили для type-card внутри центров */
+.type-grid .type-card {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Карточки подтипов (уникальны для Эннеаграммы) */
+.subtype-card {
+    background: #f8f9ff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+}
+
+.subtype-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 12px;
+}
+
+/* Медиа-запросы для Эннеаграммы */
+@media (max-width: 768px) {
+    .type-grid {
+        grid-template-columns: 1fr;
+    }
+}

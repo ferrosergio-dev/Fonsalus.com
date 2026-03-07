@@ -1,0 +1,132 @@
+/* ===== POLICY.CSS - Стили для страниц политики ===== */
+
+/* Переключатель языков */
+.lang-switcher {
+    text-align: center;
+    margin: 20px 0 30px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.lang-switcher a {
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    background: var(--white);
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition-base);
+}
+
+.lang-switcher a:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.lang-switcher a.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Заголовки */
+h1 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-top: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* Мета информация */
+.meta-info {
+    background: var(--background-light);
+    padding: 20px;
+    border-radius: var(--border-radius-sm);
+    margin: 20px 0;
+}
+
+.meta-info p {
+    margin: 5px 0;
+}
+
+/* Блок предупреждения */
+.disclaimer-box {
+    background: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Списки */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* Разделитель */
+hr {
+    border: none;
+    border-top: 2px solid #f0f0f0;
+    margin: 30px 0;
+}
+
+/* Ссылка назад */
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    transition: var(--transition-base);
+}
+
+.back-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Контейнер для кнопки "Назад" */
+.back-link-container {
+    text-align: center;
+    margin-top: 30px;
+}

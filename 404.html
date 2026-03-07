@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Personality Type Not Found | Personality Compass</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/404.css">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Весь блок <style> УДАЛЕН - стили в 404.css -->
+    
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <div class="emoji">🧭❓</div>
+        
+        <h2 id="mainTitle" style="color: #333; margin-bottom: 10px;">Personality Type Not Found</h2>
+        <p id="subTitle" style="color: #666; margin-bottom: 20px;">Even your personality type isn't this hard to find!</p>
+        
+        <div class="type-selector">
+            <button class="type-btn" data-type="random" id="btnRandom">🎲 Random</button>
+            <button class="type-btn" data-type="1">Type 1</button>
+            <button class="type-btn" data-type="2">Type 2</button>
+            <button class="type-btn" data-type="3">Type 3</button>
+            <button class="type-btn" data-type="4">Type 4</button>
+            <button class="type-btn" data-type="5">Type 5</button>
+            <button class="type-btn" data-type="6">Type 6</button>
+            <button class="type-btn" data-type="7">Type 7</button>
+            <button class="type-btn" data-type="8">Type 8</button>
+            <button class="type-btn" data-type="9">Type 9</button>
+        </div>
+        
+        <div class="message-box" id="messageBox">
+            <div class="message-label">
+                <span>📝</span>
+                <span id="messageLabel">Message for you:</span>
+            </div>
+            <div class="message-text" id="messageText">
+                "This page isn't perfect, but Type 1 would appreciate you trying to find it anyway."
+            </div>
+            <div class="message-author" id="messageAuthor">— Type 1 Energy</div>
+        </div>
+        
+        <a href="#" class="button" id="homeButton">← Go to Home Page</a>
+        
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+            <button class="lang-btn" data-lang="et">🇪🇪 ET</button>
+        </div>
+        
+        <div class="footer-note" id="footerNote">
+            Click the buttons above for a personalized 404 message based on Enneagram types!
+        </div>
+    </div>
+
+    <script src="/js/404.js" defer></script>
+</body>
+</html>

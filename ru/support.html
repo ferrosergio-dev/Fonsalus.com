@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержать разработчика - Personality Compass</title>
+    <meta name="description" content="Поддержите разработку Personality Compass. Ваш вклад помогает улучшать приложение и добавлять новые функции.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://personality-compass.app/ru/support.html">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://personality-compass.app/en/support.html" />
+    <link rel="alternate" hreflang="ru" href="https://personality-compass.app/ru/support.html" />
+    <link rel="alternate" hreflang="et" href="https://personality-compass.app/et/support.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Поддержать разработчика - Personality Compass">
+    <meta property="og:description" content="Поддержите разработку Personality Compass. Ваш вклад помогает улучшать приложение.">
+    <meta property="og:url" content="https://personality-compass.app/ru/support.html">
+    <meta property="og:image" content="https://personality-compass.app/images/01.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org markup for DonateAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DonateAction",
+        "name": "Поддержать разработку Personality Compass",
+        "description": "Помогите улучшить приложение и поддержать будущие обновления",
+        "url": "https://personality-compass.app/ru/support.html",
+        "potentialAction": {
+            "@type": "DonateAction",
+            "name": "Сделать пожертвование",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://personality-compass.app/ru/support.html",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            }
+        },
+        "provider": {
+            "@type": "Person",
+            "name": "Ilja Serõšev"
+        }
+    }
+    </script>
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cards.css">
+    <link rel="stylesheet" href="/css/support.css">
+    
+    <!-- Метрики (один общий файл) -->
+    <script src="/js/metrics.js" defer></script>
+    
+    <!-- Основной скрипт страницы поддержки -->
+    <script src="/js/support.js" defer></script>
+    
+    <!-- Инициализация русского языка -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Устанавливаем русский язык по умолчанию для этой страницы
+            if (typeof currentLanguage !== 'undefined') {
+                currentLanguage = 'ru';
+                if (typeof updateContent === 'function') {
+                    updateContent();
+                }
+            }
+            
+            // Отмечаем активную кнопку языка по data-lang
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === 'ru') {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="et">ET</button>
+            </div>
+            
+            <!-- Навигационное меню -->
+            <div class="nav-menu">
+                <a href="/ru/index.html" class="nav-link">Главная</a>
+                <a href="/blog/ru/index.html" class="nav-link">Блог</a>
+                <a href="/ru/policy.html" class="nav-link">Конфиденциальность</a>
+                <a href="/ru/index.html#download" class="nav-link">Скачать</a>
+                <a href="/ru/support.html" class="nav-link active">Поддержка</a>
+            </div>
+            
+            <h1 class="app-title" data-translate="title">Поддержать разработчика</h1>
+            <div class="app-subtitle" data-translate="subtitle">Ваш вклад помогает улучшать приложение</div>
+        </div>
+
+        <div class="content-section">
+            <!-- Thank You Section -->
+            <div class="thank-you-card">
+                <div class="thank-you-icon">❤️</div>
+                <h2 data-translate="thankYouTitle">Спасибо!</h2>
+                <p data-translate="thankYouText">Спасибо, что используете 'Личностный Компас'! Ваша поддержка помогает улучшать приложение и добавлять новые функции.</p>
+            </div>
+
+            <!-- Cryptocurrency Section -->
+            <div class="section-title">
+                <span data-translate="cryptoSection">Криптовалюта</span>
+            </div>
+            <p class="crypto-subtitle" data-translate="cryptoSubtitle">Быстро и доступно по всему миру</p>
+
+            <!-- Crypto Cards -->
+            <div class="crypto-grid">
+                <!-- USDT TRC20 (Recommended) -->
+                <div class="crypto-card recommended">
+                    <div class="recommended-badge" data-translate="recommended">Рекомендуется</div>
+                    <div class="crypto-header">
+                        <div class="crypto-icon">💎</div>
+                        <div>
+                            <div class="crypto-name">USDT</div>
+                            <div class="crypto-network">TRON (TRC20)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="address-box">
+                        <strong data-translate="address">Адрес:</strong><br>
+                        THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc
+                        <button class="copy-btn" data-copy-text="THVCwpeeMhxoFq2MyazteavGcBqi6Qufoc" data-copy-type="addressCopied">
+                            📋 <span data-translate="copy">Копировать</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bitcoin -->
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div class="crypto-icon">₿</div>
+                        <div>
+                            <div class="crypto-name">Bitcoin (BTC)</div>
+                            <div class="crypto-network">Bitcoin Network</div>
+                        </div>
+                    </div>
+                    
+                    <div class="address-box">
+                        <strong data-translate="address">Адрес:</strong><br>
+                        158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt
+                        <button class="copy-btn" data-copy-text="158NGiz2LaRnV7weKZFTuLMVkuPiEr6GEt" data-copy-type="addressCopied">
+                            📋 <span data-translate="copy">Копировать</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Crypto Benefits -->
+            <div class="crypto-benefits-section">
+            <h3 class="crypto-benefits-title" data-translate="whyCrypto">Почему криптовалюта?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <strong data-translate="fastTransactions">Быстрые переводы</strong>
+                        <p data-translate="fastTransactionsDesc">Минуты вместо дней</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <strong data-translate="lowFees">Низкие комиссии</strong>
+                        <p data-translate="lowFeesDesc">Особенно USDT на TRC20</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌍</div>
+                        <strong data-translate="globalAccess">Без границ и ограничений</strong>
+                        <p data-translate="globalAccessDesc">Доступно из любой точки мира</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Details Section -->
+            <div class="section-title">
+                <span data-translate="bankDetails">Банковские реквизиты</span>
+            </div>
+
+            <div class="bank-details-card">
+                <!-- Recipient Name -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="nameLabel">Имя получателя:</div>
+                    <div class="detail-value">Ilja Serõšev</div>
+                    <button class="copy-btn" data-copy-text="Ilja Serõšev" data-copy-type="nameCopied">
+                        📋
+                    </button>
+                </div>
+
+                <!-- IBAN -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="ibanLabel">IBAN:</div>
+                    <div class="detail-value">EE457700771003417343</div>
+                    <button class="copy-btn" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
+                        📋
+                    </button>
+                </div>
+
+                <!-- Payment Reference -->
+                <div class="detail-item">
+                    <div class="detail-label" data-translate="referenceLabel">Назначение платежа:</div>
+                    <div class="detail-value" data-translate="referenceText">Пожертвование на приложение Personality Compass</div>
+                    <button class="copy-btn" data-copy-text="Пожертвование на приложение Personality Compass" data-copy-type="referenceCopied">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code for Bank Transfer -->
+            <div class="qr-section">
+                <p data-translate="qrInstructions">Отсканируйте QR-код банковским приложением</p>
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=bank://payment?iban=EE457700771003417343&recipient=Ilja%20Ser%C3%B5%C5%A1ev&amount=&message=Personality%20Compass%20app%20donation&size=200x200&margin=0" alt="QR-код для банковского перевода">
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-title">
+                <span data-translate="quickActions">Быстрые действия</span>
+            </div>
+
+            <div class="actions-grid">
+                <button class="action-btn primary" data-action="crypto-instructions">
+                    🪙 <span data-translate="howToSendCrypto">Как отправить криптовалюту</span>
+                </button>
+                
+                <button class="action-btn" data-action="copy-iban" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
+                    📋 <span data-translate="copyIban">Скопировать IBAN</span>
+                </button>
+                
+                <button class="action-btn" data-action="bank-instructions" data-copy-text="EE457700771003417343" data-copy-type="ibanCopied">
+                    📱 <span data-translate="openBankApp">Открыть банковское приложение</span>
+                </button>
+            </div>
+
+            <!-- Privacy Note -->
+            <div class="privacy-note" data-translate="privacyNote">
+                Вся информация предоставлена для добровольных пожертвований. Мы не храним никаких платежных данных.
+            </div>
+
+            <!-- Back to Main Page -->
+            <div class="back-link-container">
+            <a href="/en/index.html" class="back-link">← Back to main page</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© Personality Compass. Все права защищены.</p>
+            <p>Контакты: <a href="mailto:info@personality-compass.app">info@personality-compass.app</a></p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Modal for Instructions -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <button class="close-btn" data-action="close-modal">×</button>
+            </div>
+            <div id="modal-content"></div>
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="action-btn" data-action="close-modal" data-translate="close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
