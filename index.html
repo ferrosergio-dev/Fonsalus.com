@@ -4,64 +4,97 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Accounting Services in Estonia | Fonsalus OÜ</title>
+<title>Fonsalus OÜ – Modern Accounting in Estonia</title>
 
 <meta name="description"
-content="Professional accounting, payroll and tax consulting services in Estonia for startups and international companies.">
+content="Accounting services in Estonia for startups and international companies. Payroll, tax consulting, AML compliance.">
 
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/glass.css">
+<link rel="stylesheet" href="css/hero.css">
 
 </head>
 
-
 <body>
 
-<header class="header">
+<header class="nav">
 
-<div class="container header-inner">
+<div class="container nav-inner">
 
 <div class="logo">
-Fonsalus OÜ
+● Fonsalus
 </div>
 
 <nav>
 
-<a href="#services">Services</a>
-<a href="#tools">Tools</a>
-<a href="#blog">Blog</a>
-<a href="#contact">Contact</a>
+<a href="/services">Services</a>
+<a href="/calculators">Tools</a>
+<a href="/blog">Insights</a>
+<a href="/contact">Contact</a>
 
 </nav>
+
+<a class="btn-consult">
+Free consultation
+</a>
 
 </div>
 
 </header>
 
-
 <section class="hero">
 
-<div class="container hero-inner">
+<div class="container hero-grid">
+
+<div>
 
 <h1>
-Modern Accounting Services in Estonia
+Accounting
+for Estonian companies
 </h1>
 
 <p>
-Reliable bookkeeping, payroll and tax consulting for startups,
-e-residents and international companies.
+
+Fonsalus OÜ helps businesses manage accounting,
+taxes and compliance with modern digital tools.
+
 </p>
 
 <div class="hero-buttons">
 
-<a class="btn-primary" href="#contact">
-Book Consultation
+<a class="btn-primary">
+Start consultation
 </a>
 
-<a class="btn-secondary" href="#tools">
-Financial Tools
+<a class="btn-secondary">
+Explore services
 </a>
+
+</div>
+
+</div>
+
+<div class="hero-cards">
+
+<div class="glass-card">
+
+<p>Dividend tax</p>
+
+<h2>20%</h2>
+
+<span>Distributed profits only</span>
+
+</div>
+
+<div class="glass-card">
+
+<p>VAT</p>
+
+<h2>22%</h2>
+
+</div>
 
 </div>
 
@@ -70,58 +103,71 @@ Financial Tools
 </section>
 
 
-
-<section id="tools" class="tools">
+<section class="calculators">
 
 <div class="container">
 
 <h2>Financial Tools</h2>
 
-<div class="tools-grid">
+<div class="calculator-grid">
 
-<div class="tool-card">
+<div class="glass-card">
 
-<h3>Salary Calculator</h3>
+<h3>Salary calculator</h3>
 
-<input type="number" id="salaryInput" placeholder="Gross salary €">
+<input id="salary" placeholder="Gross salary €">
 
-<button onclick="calcSalary()">Calculate</button>
+<button onclick="salaryCalc()">Calculate</button>
 
-<p class="result">
-Net salary: <span id="salaryResult">0</span> €
-</p>
+<p id="salaryResult"></p>
 
 </div>
 
+<div class="glass-card">
 
+<h3>Dividend tax</h3>
 
-<div class="tool-card">
+<input id="dividend">
 
-<h3>Dividend Tax</h3>
+<button onclick="dividendCalc()">Calculate</button>
 
-<input type="number" id="dividendInput" placeholder="Dividend amount €">
-
-<button onclick="calcDividend()">Calculate</button>
-
-<p class="result">
-Tax: <span id="dividendResult">0</span> €
-</p>
+<p id="dividendResult"></p>
 
 </div>
 
+<div class="glass-card">
 
+<h3>VAT calculator</h3>
 
-<div class="tool-card">
+<input id="vat">
 
-<h3>VAT Calculator</h3>
+<button onclick="vatCalc()">Calculate</button>
 
-<input type="number" id="vatInput" placeholder="Amount €">
+<p id="vatResult"></p>
 
-<button onclick="calcVAT()">Calculate</button>
+</div>
 
-<p class="result">
-VAT (22%): <span id="vatResult">0</span> €
-</p>
+<div class="glass-card">
+
+<h3>Income tax</h3>
+
+<input id="income">
+
+<button onclick="incomeCalc()">Calculate</button>
+
+<p id="incomeResult"></p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>Freelancer income</h3>
+
+<input id="freelance">
+
+<button onclick="freelanceCalc()">Calculate</button>
+
+<p id="freelanceResult"></p>
 
 </div>
 
@@ -132,112 +178,17 @@ VAT (22%): <span id="vatResult">0</span> €
 </section>
 
 
-
-<section id="services" class="services">
+<section class="blog-preview">
 
 <div class="container">
 
-<h2>Our Services</h2>
+<h2>Insights</h2>
 
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>Accounting</h3>
-
-<p>
-Full bookkeeping and financial reporting for Estonian companies.
-</p>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>Payroll</h3>
-
-<p>
-Salary calculation, employment taxes and payroll reporting.
-</p>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>Tax Consulting</h3>
-
-<p>
-Corporate tax, VAT advisory and dividend planning.
-</p>
-
-</div>
-
-
-<div class="service-card">
-
-<h3>AML Compliance</h3>
-
-<p>
-KYC procedures and AML compliance services.
-</p>
-
-</div>
-
-</div>
+<div id="blogPosts"></div>
 
 </div>
 
 </section>
-
-
-
-<section class="about">
-
-<div class="container">
-
-<h2>About Fonsalus OÜ</h2>
-
-<p>
-
-Fonsalus OÜ provides accounting and financial consulting
-services in Estonia.
-
-Registry code: 12119841
-
-</p>
-
-<p>
-
-Contact: info@fonsalus.com
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<p>
-
-Email:
-<a href="mailto:info@fonsalus.com">
-info@fonsalus.com
-</a>
-
-</p>
-
-</div>
-
-</section>
-
 
 
 <footer>
@@ -246,7 +197,10 @@ info@fonsalus.com
 
 <p>
 
-© 2026 Fonsalus OÜ
+Fonsalus OÜ  
+Registry code: 12119841  
+
+Email: info@fonsalus.com
 
 </p>
 
@@ -256,7 +210,8 @@ info@fonsalus.com
 
 
 <script src="js/calculators.js"></script>
-<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/seo-generator.js"></script>
 
 </body>
 

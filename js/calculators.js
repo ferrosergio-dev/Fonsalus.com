@@ -1,42 +1,52 @@
-function calcSalary(){
+function salaryCalc(){
 
-let gross = document.getElementById("salaryInput").value;
+let g = document.getElementById("salary").value
 
-let tax = gross * 0.2;
+let tax = g*0.2
+let pension = g*0.02
+let unemployment = g*0.016
 
-let unemployment = gross * 0.016;
-
-let pension = gross * 0.02;
-
-let net = gross - tax - unemployment - pension;
+let net = g-tax-pension-unemployment
 
 document.getElementById("salaryResult").innerText =
-Math.round(net);
+"Net: "+Math.round(net)+" €"
 
 }
 
+function dividendCalc(){
 
+let d = document.getElementById("dividend").value
 
-function calcDividend(){
-
-let amount = document.getElementById("dividendInput").value;
-
-let tax = amount * 0.2;
+let tax = d*0.2
 
 document.getElementById("dividendResult").innerText =
-Math.round(tax);
+"Tax: "+Math.round(tax)+" €"
 
 }
 
+function vatCalc(){
 
-
-function calcVAT(){
-
-let amount = document.getElementById("vatInput").value;
-
-let vat = amount * 0.22;
+let v = document.getElementById("vat").value
 
 document.getElementById("vatResult").innerText =
-Math.round(vat);
+"VAT: "+Math.round(v*0.22)+" €"
+
+}
+
+function incomeCalc(){
+
+let i = document.getElementById("income").value
+
+document.getElementById("incomeResult").innerText =
+"Tax: "+Math.round(i*0.2)+" €"
+
+}
+
+function freelanceCalc(){
+
+let f = document.getElementById("freelance").value
+
+document.getElementById("freelanceResult").innerText =
+"After tax: "+Math.round(f*0.78)+" €"
 
 }
