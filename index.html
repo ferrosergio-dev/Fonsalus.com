@@ -181,19 +181,5 @@
   <script src="js/seo-blog.js"></script>
   <script src="js/mobile-menu.js"></script>
   
-  <!-- Отдельная функция для hero калькулятора -->
-  <script>
-    function salaryCalcHero() {
-      let g = document.getElementById("salaryHero").value;
-      if (!g || g < 0) g = 0;
-      
-      let tax = g * 0.2;
-      let pension = g * 0.02;
-      let unemployment = g * 0.016;
-      let net = g - tax - pension - unemployment;
-      
-      document.getElementById("salaryHeroResult").innerText = "Net: " + Math.round(net) + " €";
-    }
-  </script>
 </body>
 </html>
