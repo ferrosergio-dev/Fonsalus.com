@@ -1,226 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Fonsalus OÜ – Raamatupidamine Eestis</title>
+  
+  <meta name="description" content="Raamatupidamisteenused Eestis idufirmadele ja rahvusvahelistele ettevõtetele. Palgaarvestus, konsultatsioon, rahapesu tõkestamise nõuete täitmine.">
+  
+  <!-- CSS õiges järjekorras: põhi → komponendid → spetsiifilised -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Fonsalus OÜ – Modern Accounting in Estonia</title>
-
-<meta name="description"
-content="Accounting services in Estonia for startups and international companies. Payroll, tax consulting, AML compliance.">
-
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/hero.css">
-
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+  
+  <!-- KEELE ÜMBERSUUNAMISE SKRIPT - laaditakse esimesena ja käivitatakse kohe -->
+  <script src="/js/language-redirect.js"></script>
 </head>
 
 <body>
-
-<header class="nav">
-
-<div class="container nav-inner">
-
-<div class="lang-switch">
-
-<a href="/en/">EN</a>
-<a href="/et/">ET</a>
-<a href="/ru/">RU</a>
-
-</div>
-
-<div class="logo">
-● Fonsalus
-</div>
-
-<nav>
-
-<a href="/services">Services</a>
-<a href="/calculators">Tools</a>
-<a href="/blog">Insights</a>
-<a href="/contact">Contact</a>
-
-</nav>
-
-<a class="btn-consult">
-Free consultation
-</a>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<h1>
-Accounting
-for Estonian companies
-</h1>
-
-<p>
-
-Fonsalus OÜ helps businesses manage accounting,
-taxes and compliance with modern digital tools.
-
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn-primary">
-Start consultation
-</a>
-
-<a class="btn-secondary">
-Explore services
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-cards">
-
-<div class="glass-card">
-
-<p>Dividend tax</p>
-
-<h2>20%</h2>
-
-<span>Distributed profits only</span>
-
-</div>
-
-<div class="glass-card">
-
-<p>VAT</p>
-
-<h2>22%</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="calculators">
-
-<div class="container">
-
-<h2>Financial Tools</h2>
-
-<div class="calculator-grid">
-
-<div class="glass-card">
-
-<h3>Salary calculator</h3>
-
-<input id="salary" placeholder="Gross salary €">
-
-<button onclick="salaryCalc()">Calculate</button>
-
-<p id="salaryResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Dividend tax</h3>
-
-<input id="dividend">
-
-<button onclick="dividendCalc()">Calculate</button>
-
-<p id="dividendResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>VAT calculator</h3>
-
-<input id="vat">
-
-<button onclick="vatCalc()">Calculate</button>
-
-<p id="vatResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Income tax</h3>
-
-<input id="income">
-
-<button onclick="incomeCalc()">Calculate</button>
-
-<p id="incomeResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Freelancer income</h3>
-
-<input id="freelance">
-
-<button onclick="freelanceCalc()">Calculate</button>
-
-<p id="freelanceResult"></p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="blog-preview">
-
-<div class="container">
-
-<h2>Insights</h2>
-
-<div id="blogPosts"></div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-<p>
-
-Fonsalus OÜ  
-Registry code: 12119841  
-
-Email: info@fonsalus.com
-
-</p>
-
-</div>
-
-</footer>
-
-
-<script src="js/calculators.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/seo-generator.js"></script>
-
+  <!-- PÄIS MOBIILIMENTÜÜGA -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <!-- Keelevalija -->
+      <div class="lang-switch">
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/et/" hreflang="et">ET</a>
+        <a href="/ru/" hreflang="ru">RU</a>
+      </div>
+
+      <!-- Logo vilkuva täpiga ja värvi muutva tekstiga -->
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
+
+      <!-- Töölaua navigatsioon (nähtav ainult suurel ekraanil) -->
+      <nav class="desktop-nav">
+        <a href="/et/services/">Teenused</a>
+        <a href="/et/calculators/">Kalkulaatorid</a>
+        <a href="/et/blog/">Artiklid</a>
+        <a href="/et/faq/">Kontakt</a>
+      </nav>
+
+      <!-- Töölaua nupp -->
+      <a class="btn btn-consult desktop-only" href="/et/contact/">
+        Tasuta konsultatsioon
+      </a>
+
+      <!-- Burger-menüü nupp mobiilile -->
+      <button class="mobile-menu-toggle" aria-label="Menüü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobiilimenüü (avaneb burgerile vajutades) -->
+    <div class="mobile-nav">
+      <a href="/et/services/">Teenused</a>
+      <a href="/et/calculators/">Kalkulaatorid</a>
+      <a href="/et/blog/">Artiklid</a>
+      <a href="/et/faq/">Kontakt</a>
+      <a href="/et/contact/" class="btn btn-consult">Tasuta konsultatsioon</a>
+    </div>
+  </header>
+
+  <!-- HERO SEKTSIOON -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    
+    <div class="container hero-layout">
+      <!-- Vasak pool tekstiga -->
+      <div class="hero-left">
+        <h1>Meie teeme numbrid. Sina juhid ettevõtet.</h1>
+        
+        <p>Fonsalus OÜ hoolitseb Sinu Eesti ettevõtte raamatupidamise ja palgaarvestuse eest — et Sa saaksid keskenduda sellele, mida kõige paremini oskad.</p>
+        
+        <div class="hero-buttons">
+          <a href="/et/contact/" class="btn btn-primary">Alusta konsultatsiooni</a>
+          <a href="/et/services/" class="btn btn-secondary">Kõik teenused</a>
+        </div>
+      </div>
+
+      <!-- Parem pool kaartidega -->
+      <div class="hero-right">
+        <!-- Dividendide kaart -->
+        <div class="glass-card floating">
+          <p>Dividendide tulumaks</p>
+          <h2>22%</h2>
+        </div>
+
+        <!-- Käibemaksu kaart -->
+        <div class="glass-card floating delay1">
+          <p>Käibemaks</p>
+          <h2>24%</h2>
+        </div>
+
+        <!-- Palgakalkulaatori kaart -->
+        <div class="glass-card floating delay2">
+          <h3>Palgakalkulaator</h3>
+          <input type="number" id="salaryHero" placeholder="Brutosumma €" min="0" step="100">
+          <button onclick="salaryCalcHero()">Arvuta</button>
+          <p id="salaryHeroResult" class="calc-result"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KALKULAATORITE SEKTSIOON -->
+  <section class="calculators">
+    <div class="container">
+      <h2 class="section-title">Finantskalkulaatorid</h2>
+      
+      <div class="calculator-grid">
+        <!-- Palgakalkulaator -->
+        <div class="glass-card">
+          <h3>Palgakalkulaator</h3>
+          <input type="number" id="salary" placeholder="Brutosumma €" min="0" step="100">
+          <button onclick="salaryCalc()">Arvuta</button>
+          <p id="salaryResult" class="calc-result"></p>
+        </div>
+
+        <!-- Dividendide kalkulaator -->
+        <div class="glass-card">
+          <h3>Dividendide tulumaks</h3>
+          <input type="number" id="dividend" placeholder="Dividendide summa €" min="0" step="100">
+          <button onclick="dividendCalc()">Arvuta</button>
+          <p id="dividendResult" class="calc-result"></p>
+        </div>
+
+        <!-- Käibemaksu kalkulaator -->
+        <div class="glass-card">
+          <h3>Käibemaksu kalkulaator</h3>
+          <input type="number" id="vat" placeholder="Summa €" min="0" step="100">
+          <button onclick="vatCalc()">Arvuta</button>
+          <p id="vatResult" class="calc-result"></p>
+        </div>
+
+        <!-- Tulumaksu kalkulaator -->
+        <div class="glass-card">
+          <h3>Tulumaks</h3>
+          <input type="number" id="income" placeholder="Sissetulek €" min="0" step="100">
+          <button onclick="incomeCalc()">Arvuta</button>
+          <p id="incomeResult" class="calc-result"></p>
+        </div>
+
+        <!-- Vabakutselise kalkulaator -->
+        <div class="glass-card">
+          <h3>Vabakutselise sissetulek</h3>
+          <input type="number" id="freelance" placeholder="Brutosissetulek €" min="0" step="100">
+          <button onclick="freelanceCalc()">Arvuta</button>
+          <p id="freelanceResult" class="calc-result"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOGI EELVAADE -->
+  <section class="blog-preview">
+    <div class="container">
+      <h2 class="section-title">Kasulikud artiklid</h2>
+      <div id="blogPosts" class="blog-grid"></div>
+    </div>
+  </section>
+
+  <!-- JALUS -->
+  <footer>
+    <div class="container">
+      <p>Fonsalus OÜ | Registrikood: 12119841 | E-post: info@fonsalus.com</p>
+      <p class="copyright">© 2024 Fonsalus OÜ. Kõik õigused kaitstud.</p>
+    </div>
+  </footer>
+
+  <!-- SKRIPTID -->
+  <script src="/js/calculators.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/seo-blog.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  
 </body>
-
 </html>

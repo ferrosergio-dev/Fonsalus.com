@@ -1,23 +1,33 @@
-// Automatic language redirect
+// Автоматический редирект по языку браузера
 (function() {
-    // Check if already redirected in this session
-    if (sessionStorage.getItem('redirected')) {
+    // НЕ выполняем редирект, если мы уже на языковой версии
+    if (window.location.pathname.match(/^\/(en|et|ru)\//)) {
         return;
     }
-
-    // Get browser language
-    const userLang = navigator.language.substring(0, 2);
-    let targetUrl = '/en/index.html';  // ← ИЗМЕНЕНО: теперь на файл
     
-    if (userLang === 'ru') {
-        targetUrl = '/ru/index.html';  // ← ИЗМЕНЕНО
-    } else if (userLang === 'et') {
-        targetUrl = '/et/index.html';  // ← ИЗМЕНЕНО
+    // НЕ выполняем редирект, если уже редиректили в этой сессии
+    if (sessionStorage.getItem('languageRedirected')) {
+        return;
     }
     
-    // Mark as redirected
-    sessionStorage.setItem('redirected', 'true');
+    // Получаем язык браузера (первые 2 символа)
+    const userLang = navigator.language.substring(0, 2).toLowerCase();
     
-    // Execute redirect
-    window.location.replace(targetUrl);
+    // Определяем целевой URL
+    let targetPath = '/en/';  // По умолчанию английский
+    
+    if (userLang === 'ru') {
+        targetPath = '/ru/';
+    } else if (userLang === 'et') {
+        targetPath = '/et/';
+    }
+    
+    // Сохраняем флаг редиректа
+    sessionStorage.setItem('languageRedirected', 'true');
+    
+    // Выполняем редирект (только если это не тот же путь)
+    if (window.location.pathname !== targetPath) {
+        console.log('Redirecting to language: ' + targetPath);
+        window.location.replace(targetPath);
+    }
 })();

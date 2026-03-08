@@ -1,226 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Fonsalus OÜ – Accounting in Estonia</title>
+  
+  <meta name="description" content="Accounting services in Estonia for startups and international companies. Payroll, consulting, AML compliance.">
+  
+  <!-- CSS в правильном порядке: базовый → компоненты → специфические -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Fonsalus OÜ – Modern Accounting in Estonia</title>
-
-<meta name="description"
-content="Accounting services in Estonia for startups and international companies. Payroll, tax consulting, AML compliance.">
-
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/hero.css">
-
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+  
+ <!-- СКРИПТ ЯЗЫКОВОГО РЕДИРЕКТА - загружается первым и сразу выполняется -->
+  <script src="/js/language-redirect.js"></script>
 </head>
 
 <body>
+  <!-- ШАПКА С МОБИЛЬНЫМ МЕНЮ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <!-- Переключатель языков -->
+      <div class="lang-switch">
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/et/" hreflang="et">ET</a>
+        <a href="/ru/" hreflang="ru">RU</a>
+      </div>
 
-<header class="nav">
-
-<div class="container nav-inner">
-
-<div class="lang-switch">
-
-<a href="/en/">EN</a>
-<a href="/et/">ET</a>
-<a href="/ru/">RU</a>
-
-</div>
-
+<!-- Логотип с мерцающим кружочком и переливающимся текстом -->
 <div class="logo">
-● Fonsalus
+  <span class="dot">●</span>
+  <span class="text">FONSALUS OÜ</span>
 </div>
 
-<nav>
-
-<a href="/services">Services</a>
-<a href="/calculators">Tools</a>
-<a href="/blog">Insights</a>
-<a href="/contact">Contact</a>
-
-</nav>
-
-<a class="btn-consult">
-Free consultation
-</a>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<h1>
-Accounting
-for Estonian companies
-</h1>
-
-<p>
-
-Fonsalus OÜ helps businesses manage accounting,
-taxes and compliance with modern digital tools.
-
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn-primary">
-Start consultation
-</a>
-
-<a class="btn-secondary">
-Explore services
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-cards">
-
-<div class="glass-card">
-
-<p>Dividend tax</p>
-
-<h2>20%</h2>
-
-<span>Distributed profits only</span>
-
-</div>
-
-<div class="glass-card">
-
-<p>VAT</p>
-
-<h2>22%</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="calculators">
-
-<div class="container">
-
-<h2>Financial Tools</h2>
-
-<div class="calculator-grid">
-
-<div class="glass-card">
-
-<h3>Salary calculator</h3>
-
-<input id="salary" placeholder="Gross salary €">
-
-<button onclick="salaryCalc()">Calculate</button>
-
-<p id="salaryResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Dividend tax</h3>
-
-<input id="dividend">
-
-<button onclick="dividendCalc()">Calculate</button>
-
-<p id="dividendResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>VAT calculator</h3>
-
-<input id="vat">
-
-<button onclick="vatCalc()">Calculate</button>
-
-<p id="vatResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Income tax</h3>
-
-<input id="income">
-
-<button onclick="incomeCalc()">Calculate</button>
-
-<p id="incomeResult"></p>
-
-</div>
-
-<div class="glass-card">
-
-<h3>Freelancer income</h3>
-
-<input id="freelance">
-
-<button onclick="freelanceCalc()">Calculate</button>
-
-<p id="freelanceResult"></p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="blog-preview">
-
-<div class="container">
-
-<h2>Insights</h2>
-
-<div id="blogPosts"></div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-<p>
-
-Fonsalus OÜ  
-Registry code: 12119841  
-
-Email: info@fonsalus.com
-
-</p>
-
-</div>
-
-</footer>
-
-
-<script src="js/calculators.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/seo-generator.js"></script>
-
+      <!-- Десктопная навигация (видна только на больших экранах) -->
+      <nav class="desktop-nav">
+        <a href="/en/services/">Services</a>
+        <a href="/en/calculators/">Tools</a>
+        <a href="/en/blog/">Insights</a>
+        <a href="/en/faq/">Contact</a>
+      </nav>
+
+      <!-- Кнопка для десктопа -->
+      <a class="btn btn-consult desktop-only" href="/en/contact/">
+        Free consultation
+      </a>
+
+      <!-- Бургер-кнопка для мобильных -->
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Мобильное меню (появляется при клике на бургер) -->
+    <div class="mobile-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/calculators/">Tools</a>
+      <a href="/en/blog/">Insights</a>
+      <a href="/en/faq/">Contact</a>
+      <a href="/en/contact/" class="btn btn-consult">Free consultation</a>
+    </div>
+  </header>
+
+  <!-- HERO СЕКЦИЯ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    
+    <div class="container hero-layout">
+      <!-- Левая часть с текстом -->
+      <div class="hero-left">
+        <h1>We do the numbers. You run the business.</h1>
+        
+        <p>Fonsalus OÜ takes care of your Estonian company's accounting and payroll — so you can focus on what you do best.</p>
+        
+        <div class="hero-buttons">
+          <a href="/en/contact/" class="btn btn-primary">Start consultation</a>
+          <a href="/en/services/" class="btn btn-secondary">Explore services</a>
+        </div>
+      </div>
+
+      <!-- Правая часть с карточками -->
+      <div class="hero-right">
+        <!-- Карточка дивидендов -->
+        <div class="glass-card floating">
+          <p>Dividend tax</p>
+          <h2>22%</h2>
+        </div>
+
+        <!-- Карточка НДС -->
+        <div class="glass-card floating delay1">
+          <p>VAT</p>
+          <h2>24%</h2>
+        </div>
+
+        <!-- Карточка калькулятора зарплаты -->
+        <div class="glass-card floating delay2">
+          <h3>Salary calculator</h3>
+          <input type="number" id="salaryHero" placeholder="Gross salary €" min="0" step="100">
+          <button onclick="salaryCalcHero()">Calculate</button>
+          <p id="salaryHeroResult" class="calc-result"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ КАЛЬКУЛЯТОРОВ -->
+  <section class="calculators">
+    <div class="container">
+      <h2 class="section-title">Financial Tools</h2>
+      
+      <div class="calculator-grid">
+        <!-- Калькулятор зарплаты -->
+        <div class="glass-card">
+          <h3>Salary calculator</h3>
+          <input type="number" id="salary" placeholder="Gross salary €" min="0" step="100">
+          <button onclick="salaryCalc()">Calculate</button>
+          <p id="salaryResult" class="calc-result"></p>
+        </div>
+
+        <!-- Калькулятор дивидендов -->
+        <div class="glass-card">
+          <h3>Dividend tax</h3>
+          <input type="number" id="dividend" placeholder="Dividend amount €" min="0" step="100">
+          <button onclick="dividendCalc()">Calculate</button>
+          <p id="dividendResult" class="calc-result"></p>
+        </div>
+
+        <!-- Калькулятор НДС -->
+        <div class="glass-card">
+          <h3>VAT calculator</h3>
+          <input type="number" id="vat" placeholder="Amount €" min="0" step="100">
+          <button onclick="vatCalc()">Calculate</button>
+          <p id="vatResult" class="calc-result"></p>
+        </div>
+
+        <!-- Калькулятор подоходного налога -->
+        <div class="glass-card">
+          <h3>Income tax</h3>
+          <input type="number" id="income" placeholder="Income €" min="0" step="100">
+          <button onclick="incomeCalc()">Calculate</button>
+          <p id="incomeResult" class="calc-result"></p>
+        </div>
+
+        <!-- Калькулятор фрилансера -->
+        <div class="glass-card">
+          <h3>Freelancer income</h3>
+          <input type="number" id="freelance" placeholder="Gross income €" min="0" step="100">
+          <button onclick="freelanceCalc()">Calculate</button>
+          <p id="freelanceResult" class="calc-result"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕДПРОСМОТР БЛОГА -->
+  <section class="blog-preview">
+    <div class="container">
+      <h2 class="section-title">Insights</h2>
+      <div id="blogPosts" class="blog-grid"></div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <div class="container">
+      <p>Fonsalus OÜ | Registry code: 12119841 | Email: info@fonsalus.com</p>
+      <p class="copyright">© 2024 Fonsalus OÜ. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- СКРИПТЫ -->
+  <script src="/js/calculators.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/seo-blog.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  
 </body>
-
 </html>

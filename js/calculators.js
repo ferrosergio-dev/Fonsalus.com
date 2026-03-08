@@ -1,4 +1,49 @@
 // calculators.js - Единый файл со всеми калькуляторами
+// Словарь переводов
+const translations = {
+  tax: {
+    en: 'Tax',
+    et: 'Maks',
+    ru: 'Налог'
+  },
+  fromGross: {
+    en: 'from gross',
+    et: 'brutost',
+    ru: 'с брутто'
+  },
+  net: {
+    en: 'Net',
+    et: 'Neto',
+    ru: 'На руки'
+  },
+  afterTax: {
+    en: 'After tax',
+    et: 'Pärast maksustamist',
+    ru: 'После налогов'
+  },
+  vat: {
+    en: 'VAT',
+    et: 'Käibemaks',
+    ru: 'НДС'
+  }
+};
+
+function getCurrentLanguage() {
+  const path = window.location.pathname;
+  if (path.includes('/en/')) return 'en';
+  if (path.includes('/et/')) return 'et';
+  if (path.includes('/ru/')) return 'ru';
+  
+  const htmlLang = document.documentElement.lang;
+  if (htmlLang && ['en', 'et', 'ru'].includes(htmlLang)) return htmlLang;
+  
+  return 'ru';
+}
+
+function t(key) {
+  const lang = getCurrentLanguage();
+  return translations[key]?.[lang] || translations[key]?.['ru'] || key;
+}
 
 // Ждем загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
@@ -116,28 +161,30 @@ function salaryCalc() {
 
 // Калькулятор дивидендов
 function dividendCalc() {
-  console.log('dividendCalc called'); // Для отладки
-  const dividend = getNumberFromInput('dividend');
+  console.log('dividendCalc called');
+  const netAmount = getNumberFromInput('dividend');
   
-  const tax = dividend * 0.2;
+  const grossAmount = netAmount / 78 * 100;
+  const taxAmount = grossAmount * 0.22;
   
   const resultEl = document.getElementById('dividendResult');
   if (resultEl) {
-    resultEl.innerText = 'Tax: ' + Math.round(tax) + ' €';
+    resultEl.innerText = `${t('tax')}: ${Math.round(taxAmount)} € (${t('fromGross')} ${Math.round(grossAmount)} €)`;
     resultEl.style.display = 'block';
   }
 }
 
+
 // Калькулятор VAT
 function vatCalc() {
-  console.log('vatCalc called'); // Для отладки
+  console.log('vatCalc called');
   const amount = getNumberFromInput('vat');
   
-  const vat = amount * 0.22;
+  const vat = amount * 0.24;
   
   const resultEl = document.getElementById('vatResult');
   if (resultEl) {
-    resultEl.innerText = 'VAT: ' + Math.round(vat) + ' €';
+    resultEl.innerText = `${t('vat')}: ${Math.round(vat)} €`;
     resultEl.style.display = 'block';
   }
 }
@@ -147,7 +194,7 @@ function incomeCalc() {
   console.log('incomeCalc called'); // Для отладки
   const income = getNumberFromInput('income');
   
-  const tax = income * 0.2;
+  const tax = income * 0.22;
   
   const resultEl = document.getElementById('incomeResult');
   if (resultEl) {
@@ -158,14 +205,14 @@ function incomeCalc() {
 
 // Калькулятор фрилансера
 function freelanceCalc() {
-  console.log('freelanceCalc called'); // Для отладки
+  console.log('freelanceCalc called');
   const freelance = getNumberFromInput('freelance');
   
   const afterTax = freelance * 0.78;
   
   const resultEl = document.getElementById('freelanceResult');
   if (resultEl) {
-    resultEl.innerText = 'After tax: ' + Math.round(afterTax) + ' €';
+    resultEl.innerText = `${t('afterTax')}: ${Math.round(afterTax)} €`;
     resultEl.style.display = 'block';
   }
 }
