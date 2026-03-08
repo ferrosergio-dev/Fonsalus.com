@@ -1,6 +1,14 @@
+document.addEventListener("DOMContentLoaded",()=>{
+
+const hero=document.querySelector(".hero")
+
+hero.style.opacity=1
+
+})
+
 window.addEventListener("scroll",()=>{
 
-let hero=document.querySelector(".hero")
+const hero=document.querySelector(".hero")
 
 hero.style.opacity=1-window.scrollY/800
 

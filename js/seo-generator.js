@@ -1,29 +1,23 @@
-fetch("/data/blog-posts.json")
+const fs = require("fs")
 
-.then(r=>r.json())
+const data = JSON.parse(
+fs.readFileSync("data/seo-pages.json")
+)
 
-.then(data=>{
+const template = fs.readFileSync(
+"templates/seo-template.html",
+"utf8"
+)
 
-let container=document.getElementById("blogPosts")
+data.pages.forEach(page => {
 
-data.posts.slice(0,3).forEach(post=>{
+let html = template
+.replace(/{{title}}/g,page.title)
+.replace(/{{description}}/g,page.description)
 
-let div=document.createElement("div")
-
-div.innerHTML=`
-
-<h3>${post.title}</h3>
-
-<p>${post.description}</p>
-
-<a href="/blog/posts/${post.slug}.html">
-Read
-</a>
-
-`
-
-container.appendChild(div)
-
-})
+fs.writeFileSync(
+`en/guides/${page.slug}.html`,
+html
+)
 
 })

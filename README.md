@@ -1,2 +1,2 @@
 # personality-compass-app
-Personality Compass mobile app and download links
+Fonsalus OÜ accounting company website

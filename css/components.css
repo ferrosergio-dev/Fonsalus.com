@@ -1,0 +1,126 @@
+/* ===== КОМПОНЕНТЫ ===== */
+
+/* Стеклянные карточки (общий стиль, переопределяется в hero.css для конкретных случаев) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Fallback для старых браузеров */
+@supports not (backdrop-filter: blur(12px)) {
+  .glass-card {
+    background: rgba(30, 30, 50, 0.95);
+  }
+}
+
+/* Карточки блога */
+.blog-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s, background 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(124, 108, 255, 0.3);
+}
+
+.blog-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.blog-card p {
+  margin: 0 0 15px 0;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.blog-card a {
+  color: #7c6cff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+}
+
+/* Сетка блога */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    gap: 20px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-card {
+    padding: 20px;
+  }
+  
+  .blog-card h3 {
+    font-size: 18px;
+  }
+}
+
+/* Секции с заголовками */
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+/* Разделители */
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #7c6cff, transparent);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+/* Теги */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(124, 108, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #7c6cff;
+  border: 1px solid rgba(124, 108, 255, 0.3);
+}

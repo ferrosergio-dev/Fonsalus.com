@@ -1,252 +1,497 @@
-.hero{
-
-position:relative;
-
-padding:140px 0 120px 0;
-
-background:
-radial-gradient(
-circle at 20% 40%,
-rgba(124,108,255,0.55),
-transparent 40%
-),
-linear-gradient(
-90deg,
-#4c3aed 0%,
-#2a1f6b 40%,
-#020617 70%,
-#020617 100%
-);
-
-overflow:hidden;
-
+/* ===== HERO СЕКЦИЯ ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(120deg, #4c3aed 0%, #1e1b4b 40%, #020617 80%);
+  padding-top: 80px;
+  padding-bottom: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-.hero-grid{
-
-display:grid;
-
-grid-template-columns: 1fr 1fr;
-
-gap:80px;
-
-align-items:center;
-
+/* Фоновое свечение */
+.hero-bg {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(124, 108, 255, 0.6), transparent 70%);
+  top: -200px;
+  left: -200px;
+  filter: blur(120px);
+  -webkit-filter: blur(120px);
+  -webkit-animation: blobMove 20s infinite alternate;
+  animation: blobMove 20s infinite alternate;
+  pointer-events: none;
 }
 
-
-
-.hero h1{
-
-font-size:64px;
-
-font-weight:700;
-
-line-height:1.05;
-
-letter-spacing:-1px;
-
-margin-bottom:20px;
-
+@-webkit-keyframes blobMove {
+  0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+  100% { -webkit-transform: translate(120px, 80px); transform: translate(120px, 80px); }
 }
 
-
-
-.hero p{
-
-font-size:18px;
-
-max-width:520px;
-
-opacity:0.85;
-
+@keyframes blobMove {
+  0% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
+  100% { -webkit-transform: translate(120px, 80px); transform: translate(120px, 80px); }
 }
 
-
-
-.hero-buttons{
-
-margin-top:30px;
-
-display:flex;
-
-gap:16px;
-
+/* ===== ЛЕЙАУТ HERO ===== */
+.hero-layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 60px 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
-
-
-.btn-primary{
-
-background:linear-gradient(
-135deg,
-#7c6cff,
-#5b4fff
-);
-
-padding:14px 26px;
-
-border-radius:10px;
-
-color:white;
-
-font-weight:600;
-
-text-decoration:none;
-
-transition:all .25s;
-
+/* ===== ЛЕВАЯ ЧАСТЬ ===== */
+.hero-left h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  max-width: 600px;
 }
 
-
-.btn-primary:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 10px 25px rgba(124,108,255,0.4);
-
+.hero-left p {
+  font-size: 18px;
+  opacity: 0.85;
+  max-width: 500px;
+  margin-bottom: 30px;
 }
 
-
-
-.btn-secondary{
-
-border:1px solid rgba(255,255,255,0.2);
-
-padding:14px 26px;
-
-border-radius:10px;
-
-color:white;
-
-text-decoration:none;
-
-opacity:0.9;
-
-transition:all .25s;
-
+.hero-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-
-.btn-secondary:hover{
-
-background:rgba(255,255,255,0.05);
-
+/* ===== ПРАВАЯ ЧАСТЬ С КАРТОЧКАМИ ===== */
+.hero-right {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 30px;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
-
-
-.hero-cards{
-
-display:flex;
-
-flex-direction:column;
-
-gap:24px;
-
-align-items:flex-start;
-
+/* Стеклянные карточки */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  width: 260px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-
-
-.hero-cards .glass-card{
-
-width:260px;
-
-transition:transform .3s;
-
+/* Fallback для старых браузеров */
+@supports not ((backdrop-filter: blur(14px)) or (-webkit-backdrop-filter: blur(14px))) {
+  .glass-card {
+    background: rgba(20, 20, 40, 0.9);
+  }
 }
 
-
-
-.hero-cards .glass-card:hover{
-
-transform:translateY(-6px);
-
+.glass-card p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  opacity: 0.9;
 }
 
-
-
-.hero-cards h2{
-
-font-size:36px;
-
-margin-top:6px;
-
+.glass-card h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #7c6cff;
 }
 
-
-
-.hero-cards span{
-
-font-size:14px;
-
-opacity:0.7;
-
+.glass-card h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
 }
 
-
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-top:-200px;
-
-left:-200px;
-
-width:500px;
-
-height:500px;
-
-background:radial-gradient(
-circle,
-rgba(124,108,255,0.6),
-transparent 70%
-);
-
-filter:blur(100px);
-
-z-index:0;
-
+.glass-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
-
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-bottom:-200px;
-
-right:-200px;
-
-width:500px;
-
-height:500px;
-
-background:radial-gradient(
-circle,
-rgba(91,79,255,0.5),
-transparent 70%
-);
-
-filter:blur(120px);
-
+.glass-card input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
+.glass-card input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 
+.glass-card input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 
-.hero-grid{
+.glass-card input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 
-position:relative;
+.glass-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #7c6cff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s, -webkit-transform 0.2s;
+  transition: background 0.2s, -webkit-transform 0.2s;
+  -o-transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, -webkit-transform 0.2s;
+}
 
-z-index:2;
+.glass-card button:hover {
+  background: #6a5ae0;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
 
+.glass-card button:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Анимация плавания */
+@-webkit-keyframes float {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  50% { -webkit-transform: translateY(-12px); transform: translateY(-12px); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  50% { -webkit-transform: translateY(-12px); transform: translateY(-12px); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+.floating {
+  -webkit-animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.delay2 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+/* Результаты калькуляторов */
+#salaryHeroResult,
+#salaryResult,
+#dividendResult,
+#vatResult,
+#incomeResult,
+#freelanceResult {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #7c6cff;
+  text-align: center;
+  padding: 8px;
+  background: rgba(124, 108, 255, 0.1);
+  border-radius: 6px;
+}
+
+/* ===== АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ ===== */
+@media (max-width: 1100px) {
+  .hero-left h1 {
+    font-size: 54px;
+  }
+  
+  .hero-layout {
+    gap: 40px;
+  }
+  
+  .glass-card {
+    width: 240px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 70px;
+    min-height: auto;
+  }
+  
+  .hero-layout {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-left h1 {
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-left p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .glass-card {
+    width: calc(50% - 10px);
+    min-width: 220px;
+  }
+  
+  .hero-bg {
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    left: -100px;
+  }
+}
+
+/* ===== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  
+  .hero-left h1 {
+    font-size: 40px;
+    letter-spacing: -0.5px;
+  }
+  
+  .hero-left p {
+    font-size: 16px;
+  }
+  
+  .glass-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .glass-card h2 {
+    font-size: 36px;
+  }
+  
+  .hero-bg {
+    width: 400px;
+    height: 400px;
+    top: -50px;
+    left: -50px;
+    filter: blur(80px);
+    -webkit-filter: blur(80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 32px;
+  }
+  
+  .hero-left p {
+    font-size: 15px;
+  }
+  
+  .hero-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .glass-card {
+    padding: 20px;
+  }
+  
+  .glass-card h3 {
+    font-size: 18px;
+  }
+  
+  .glass-card input,
+  .glass-card button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* ===== ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ ===== */
+@media (max-width: 320px) {
+  .hero-left h1 {
+    font-size: 28px;
+  }
+  
+  .glass-card {
+    padding: 15px;
+  }
+  
+  .glass-card h3 {
+    font-size: 16px;
+  }
+  
+  .glass-card input,
+  .glass-card button {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+
+/* ===== ПОДДЕРЖКА СТАРЫХ БРАУЗЕРОВ ===== */
+@supports not (display: grid) {
+  .hero-layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+}
+
+/* Для IE10-11 - отдельный блок без @supports */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .hero {
+    display: -ms-flexbox;
+    display: flex;
+    background: #020617; /* fallback для градиента */
+  }
+  
+  .hero-layout {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -30px;
+  }
+  
+  .hero-left {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .hero-right {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  .glass-card {
+    margin-bottom: 20px;
+  }
+  
+  .hero-bg {
+    display: none; /* IE не поддерживает фильтры */
+  }
+  
+  @media (max-width: 900px) {
+    .hero-left,
+    .hero-right {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    .hero-right {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    
+    .glass-card {
+      width: 45%;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .glass-card {
+      width: 100%;
+    }
+  }
+}
+
+/* Для очень старых браузеров (без flexbox) */
+@media (max-width: 480px) {
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
 }
