@@ -124,3 +124,212 @@
   color: #7c6cff;
   border: 1px solid rgba(124, 108, 255, 0.3);
 }
+
+/* Добавить в конец файла components.css */
+
+/* ===== СТИЛИ ДЛЯ БЛОГА ===== */
+.blog-index {
+  padding: 60px 0;
+}
+
+.blog-subtitle {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Категории блога */
+.blog-categories {
+  margin: 50px 0;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin: 30px 0 50px;
+}
+
+.category-card {
+  padding: 25px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.category-card p {
+  opacity: 0.8;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.category-link {
+  font-size: 14px;
+  color: #7c6cff;
+  display: inline-block;
+}
+
+/* Список постов */
+.posts-list {
+  display: grid;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.post-preview {
+  padding: 25px;
+  position: relative;
+}
+
+.post-category {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(124, 108, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.post-preview h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.post-preview h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+.post-preview h3 a:hover {
+  color: #7c6cff;
+}
+
+.post-preview p {
+  opacity: 0.8;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.read-more {
+  color: #7c6cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Подписка на рассылку */
+.newsletter-signup {
+  margin-top: 60px;
+  padding: 40px;
+  text-align: center;
+}
+
+.newsletter-signup h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.newsletter-signup p {
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #7c6cff;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.7;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .blog-index {
+    padding: 40px 0;
+  }
+  
+  .blog-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .category-grid {
+    gap: 15px;
+    margin: 20px 0 30px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .post-preview {
+    padding: 20px;
+  }
+  
+  .post-preview h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-signup {
+    padding: 25px;
+  }
+  
+  .newsletter-signup h3 {
+    font-size: 20px;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

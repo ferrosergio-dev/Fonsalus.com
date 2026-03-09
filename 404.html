@@ -1,64 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Personality Type Not Found | Personality Compass</title>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/404.css">
-    
-    <link rel="manifest" href="/manifest.json">
-    
-    <!-- Весь блок <style> УДАЛЕН - стили в 404.css -->
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>404 - Lost in Accounting | Fonsalus OÜ</title>
+  
+  <meta name="description" content="Page not found. Even accountants make mistakes sometimes. Let's get you back on track.">
+  
+  <!-- Подключаем основные стили -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/404.css">
 </head>
 <body>
-    <div class="container">
-        <div class="error-code">404</div>
-        <div class="emoji">🧭❓</div>
-        
-        <h2 id="mainTitle" style="color: #333; margin-bottom: 10px;">Personality Type Not Found</h2>
-        <p id="subTitle" style="color: #666; margin-bottom: 20px;">Even your personality type isn't this hard to find!</p>
-        
-        <div class="type-selector">
-            <button class="type-btn" data-type="random" id="btnRandom">🎲 Random</button>
-            <button class="type-btn" data-type="1">Type 1</button>
-            <button class="type-btn" data-type="2">Type 2</button>
-            <button class="type-btn" data-type="3">Type 3</button>
-            <button class="type-btn" data-type="4">Type 4</button>
-            <button class="type-btn" data-type="5">Type 5</button>
-            <button class="type-btn" data-type="6">Type 6</button>
-            <button class="type-btn" data-type="7">Type 7</button>
-            <button class="type-btn" data-type="8">Type 8</button>
-            <button class="type-btn" data-type="9">Type 9</button>
-        </div>
-        
-        <div class="message-box" id="messageBox">
-            <div class="message-label">
-                <span>📝</span>
-                <span id="messageLabel">Message for you:</span>
-            </div>
-            <div class="message-text" id="messageText">
-                "This page isn't perfect, but Type 1 would appreciate you trying to find it anyway."
-            </div>
-            <div class="message-author" id="messageAuthor">— Type 1 Energy</div>
-        </div>
-        
-        <a href="#" class="button" id="homeButton">← Go to Home Page</a>
-        
-        <div class="language-switcher">
-            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
-            <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
-            <button class="lang-btn" data-lang="et">🇪🇪 ET</button>
-        </div>
-        
-        <div class="footer-note" id="footerNote">
-            Click the buttons above for a personalized 404 message based on Enneagram types!
-        </div>
-    </div>
+  <!-- ШАПКА (такая же как на основном сайте) -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="lang-switch">
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/et/" hreflang="et">ET</a>
+        <a href="/ru/" hreflang="ru">RU</a>
+      </div>
 
-    <script src="/js/404.js" defer></script>
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="/en/services/">Services</a>
+        <a href="/en/calculators/">Tools</a>
+        <a href="/en/blog/">Insights</a>
+        <a href="/en/faq/">Contact</a>
+      </nav>
+
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ 404 -->
+  <main class="error-page">
+    <!-- Анимированный фон как в hero секции -->
+    <div class="error-bg"></div>
+    
+    <div class="container">
+      <div class="error-content">
+        <!-- Забавная иконка/графика -->
+        <div class="error-illustration">
+          <div class="calculator-meltdown">
+            <span class="number">4</span>
+            <div class="zero-group">
+              <span class="zero spinning">0</span>
+              <span class="zero spinning delay">0</span>
+            </div>
+            <span class="number">4</span>
+          </div>
+          <div class="error-message-bubble">
+            <p>🧮 Calculator overload!</p>
+            <p>📊 Spreadsheet not found!</p>
+          </div>
+        </div>
+
+        <!-- Текстовый блок -->
+        <h1>Oops! This page is not balance sheet compliant</h1>
+        
+        <p class="error-description">
+          Looks like this URL doesn't exist in our general ledger. 
+          Even the best accountants make transposition errors sometimes.
+        </p>
+
+        <!-- Полезные ссылки вместо одной кнопки -->
+        <div class="error-suggestions">
+          <h3>Try these balanced options instead:</h3>
+          
+          <div class="suggestion-grid">
+            <a href="/en/calculators/salary-calculator-estonia.html" class="suggestion-card">
+              <span class="emoji">💰</span>
+              <span>Salary Calculator</span>
+              <small>Calculate your net income</small>
+            </a>
+            
+            <a href="/en/guides/tax-system-estonia.html" class="suggestion-card">
+              <span class="emoji">📘</span>
+              <span>Tax Guide</span>
+              <small>Understand Estonian taxes</small>
+            </a>
+            
+            <a href="/en/services/accounting.html" class="suggestion-card">
+              <span class="emoji">📋</span>
+              <span>Our Services</span>
+              <small>See what we offer</small>
+            </a>
+            
+            <a href="/en/blog/" class="suggestion-card">
+              <span class="emoji">📰</span>
+              <span>Latest Insights</span>
+              <small>Read our blog</small>
+            </a>
+          </div>
+        </div>
+
+        <!-- Поиск (опционально, добавим если есть поиск по сайту) -->
+        <div class="error-search">
+          <p>Or try searching (we promise better accuracy than ChatGPT):</p>
+          <form action="/en/search/" method="get" class="search-form">
+            <input type="text" name="q" placeholder="Search for... salary, VAT, dividend..." aria-label="Search">
+            <button type="submit">Find</button>
+          </form>
+        </div>
+
+        <!-- Забавная метафора про бухгалтерию -->
+        <div class="error-fun-fact">
+          <p>💡 Did you know? In Estonia, this error would be VAT-free at 0%.</p>
+        </div>
+
+        <!-- Ссылка на главную -->
+        <a href="/en/" class="btn-primary home-link">
+          ← Return to balance sheet (Home)
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="error-footer">
+    <div class="container">
+      <p>Fonsalus OÜ | Registry code: 12119841 | Email: info@fonsalus.com</p>
+      <p class="copyright">© 2024 Fonsalus OÜ. Even errors are accounted for.</p>
+    </div>
+  </footer>
+
+  <!-- СКРИПТЫ -->
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/404.js"></script>
 </body>
 </html>

@@ -44,7 +44,7 @@ Disallow: /private/
 Disallow: /cdn-cgi/
 
 # Карта сайта
-Sitemap: https://personality-compass.app/sitemap.xml
+Sitemap: https://fonsalus.com/sitemap.xml
 
 # Хост (для Яндекс)
-Host: https://personality-compass.app
+Host: https://fonsalus.com

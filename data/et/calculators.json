@@ -1,0 +1,10 @@
+{
+  "calculators": [
+    {
+      "slug": "salary-calculator-estonia",
+      "title": "Palgakalkulaator Eesti 2026",
+      "description": "Arvuta netopalk brutopalgast, kõik maksud ja mahaarvamised.",
+      "formula": "net = gross - (gross*0.22) - (gross*0.016) - (gross*0.02)"
+    }
+  ]
+}

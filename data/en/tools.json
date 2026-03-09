@@ -1,0 +1,29 @@
+{
+  "tools": [
+    {
+      "slug": "invoice-generator",
+      "title": "Invoice Generator",
+      "description": "Create professional invoices for your Estonian business",
+      "content": "<div class='invoice-generator'>Invoice generator interface here</div>",
+      "script": "<script src='/js/invoice-generator.js'></script>"
+    },
+    {
+      "slug": "vat-invoice-template",
+      "title": "VAT Invoice Template",
+      "description": "EU-compliant invoice template with VAT",
+      "content": "<div class='template-download'>Download template</div>"
+    },
+    {
+      "slug": "salary-tax-table-estonia",
+      "title": "Salary Tax Table 2026",
+      "description": "Complete tax brackets and rates for 2026",
+      "content": "<table class='tax-table'>...</table>"
+    },
+    {
+      "slug": "dividend-tax-table-estonia",
+      "title": "Dividend Tax Table",
+      "description": "Tax rates for distributed profits",
+      "content": "<table class='tax-table'>...</table>"
+    }
+  ]
+}

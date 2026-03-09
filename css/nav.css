@@ -402,6 +402,26 @@
   }
 }
 
+/* Подсветка активного языка */
+.lang-switch a.active {
+  color: #7c6cff;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Подсветка активной страницы в меню */
+.desktop-nav a.active {
+  color: #7c6cff;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.mobile-nav a.active {
+  color: #7c6cff;
+  border-left: 3px solid #7c6cff;
+  padding-left: 12px;
+}
+
 /* ===== ПОДДЕРЖКА СТАРЫХ БРАУЗЕРОВ ===== */
 /* Для IE 10-11 */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

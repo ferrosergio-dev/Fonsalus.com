@@ -1,0 +1,39 @@
+{
+  "industries": [
+    {
+      "slug": "accounting-for-startups-estonia",
+      "title": "Accounting for Startups in Estonia",
+      "description": "Special accounting considerations for early-stage companies, including investor reporting, burn rate tracking, and cap table management.",
+      "icon": "🚀",
+      "category": "startups"
+    },
+    {
+      "slug": "accounting-for-saas-estonia",
+      "title": "Accounting for SaaS Companies in Estonia",
+      "description": "Revenue recognition (ASC 606/IFRS 15), subscription billing, MRR/ARR metrics, and deferred revenue for SaaS businesses.",
+      "icon": "💻",
+      "category": "saas"
+    },
+    {
+      "slug": "accounting-for-ecommerce-estonia",
+      "title": "E-commerce Accounting Guide for Estonia",
+      "description": "VAT on cross-border sales (OSS/IOSS), marketplace reporting, inventory accounting, and payment gateway reconciliation.",
+      "icon": "🛒",
+      "category": "ecommerce"
+    },
+    {
+      "slug": "accounting-for-freelancers-estonia",
+      "title": "Accounting for Freelancers in Estonia",
+      "description": "Tax obligations for self-employed, invoicing requirements, deductible expenses, and quarterly reporting for freelancers.",
+      "icon": "✍️",
+      "category": "freelancers"
+    },
+    {
+      "slug": "accounting-for-crypto-companies-estonia",
+      "title": "Crypto Company Accounting in Estonia",
+      "description": "Special accounting rules for cryptocurrency businesses, FIU reporting requirements, and valuation of digital assets.",
+      "icon": "₿",
+      "category": "crypto"
+    }
+  ]
+}

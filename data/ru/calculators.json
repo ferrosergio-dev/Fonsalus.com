@@ -1,0 +1,10 @@
+{
+  "calculators": [
+    {
+      "slug": "salary-calculator-estonia",
+      "title": "Калькулятор зарплаты Эстония 2026",
+      "description": "Рассчитайте чистую зарплату из брутто, включая все налоги и отчисления.",
+      "formula": "net = gross - (gross*0.22) - (gross*0.016) - (gross*0.02)"
+    }
+  ]
+}

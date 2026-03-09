@@ -1,4 +1,5 @@
 // calculators.js - Единый файл со всеми калькуляторами
+
 // Словарь переводов
 const translations = {
   tax: {
@@ -25,8 +26,46 @@ const translations = {
     en: 'VAT',
     et: 'Käibemaks',
     ru: 'НДС'
+  },
+  incomeTax: {
+    en: 'Income tax',
+    et: 'Tulumaks',
+    ru: 'Подоходный налог'
+  },
+  pension: {
+    en: 'Pension',
+    et: 'Pension',
+    ru: 'Пенсионные'
+  },
+  unemployment: {
+    en: 'Unemployment',
+    et: 'Töötuskindlustus',
+    ru: 'Безработица'
+  },
+  securityTax: {
+    en: 'Security tax',
+    et: 'Julgeolekumaks',
+    ru: 'Налог безопасности'
+  },
+  dividendTax: {
+    en: 'Dividend tax',
+    et: 'Dividendimaks',
+    ru: 'Налог на дивиденды'
+  },
+  grossAmount: {
+    en: 'Gross amount',
+    et: 'Brutosumma',
+    ru: 'Сумма брутто'
+  },
+  netAmount: {
+    en: 'Net amount',
+    et: 'Netosumma',
+    ru: 'Сумма нетто'
   }
 };
+
+// Кэш для налоговых ставок
+let taxRatesCache = null;
 
 function getCurrentLanguage() {
   const path = window.location.pathname;
@@ -37,81 +76,27 @@ function getCurrentLanguage() {
   const htmlLang = document.documentElement.lang;
   if (htmlLang && ['en', 'et', 'ru'].includes(htmlLang)) return htmlLang;
   
-  return 'ru';
+  return 'en';
 }
 
 function t(key) {
   const lang = getCurrentLanguage();
-  return translations[key]?.[lang] || translations[key]?.['ru'] || key;
+  return translations[key]?.[lang] || translations[key]?.['en'] || key;
 }
 
-// Ждем загрузки DOM
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Calculators.js loaded'); // Для отладки
+// Загрузка налоговых ставок
+async function loadTaxRates() {
+  if (taxRatesCache) return taxRatesCache;
   
-  // Назначаем обработчики для всех калькуляторов
-  setupCalculators();
-});
-
-function setupCalculators() {
-  // Калькулятор зарплаты в hero
-  const salaryHeroBtn = document.querySelector('.hero-right button[onclick="salaryCalcHero()"]');
-  if (salaryHeroBtn) {
-    salaryHeroBtn.onclick = function(e) {
-      e.preventDefault();
-      salaryCalcHero();
-      return false;
-    };
-  }
-  
-  // Калькулятор зарплаты в сетке
-  const salaryBtn = document.querySelector('.calculator-grid button[onclick="salaryCalc()"]');
-  if (salaryBtn) {
-    salaryBtn.onclick = function(e) {
-      e.preventDefault();
-      salaryCalc();
-      return false;
-    };
-  }
-  
-  // Калькулятор дивидендов
-  const dividendBtn = document.querySelector('.calculator-grid button[onclick="dividendCalc()"]');
-  if (dividendBtn) {
-    dividendBtn.onclick = function(e) {
-      e.preventDefault();
-      dividendCalc();
-      return false;
-    };
-  }
-  
-  // Калькулятор VAT
-  const vatBtn = document.querySelector('.calculator-grid button[onclick="vatCalc()"]');
-  if (vatBtn) {
-    vatBtn.onclick = function(e) {
-      e.preventDefault();
-      vatCalc();
-      return false;
-    };
-  }
-  
-  // Калькулятор income tax
-  const incomeBtn = document.querySelector('.calculator-grid button[onclick="incomeCalc()"]');
-  if (incomeBtn) {
-    incomeBtn.onclick = function(e) {
-      e.preventDefault();
-      incomeCalc();
-      return false;
-    };
-  }
-  
-  // Калькулятор фрилансера
-  const freelanceBtn = document.querySelector('.calculator-grid button[onclick="freelanceCalc()"]');
-  if (freelanceBtn) {
-    freelanceBtn.onclick = function(e) {
-      e.preventDefault();
-      freelanceCalc();
-      return false;
-    };
+  try {
+    const response = await fetch('/data/tax-rates.json');
+    const data = await response.json();
+    taxRatesCache = data.rates;
+    console.log('✅ Tax rates loaded');
+    return taxRatesCache;
+  } catch (error) {
+    console.error('❌ Failed to load tax rates:', error);
+    return null;
   }
 }
 
@@ -120,127 +105,236 @@ function getNumberFromInput(id) {
   const input = document.getElementById(id);
   if (!input) return 0;
   
-  let value = parseFloat(input.value);
+  let value = parseFloat(input.value.replace(',', '.'));
   if (isNaN(value) || value < 0) value = 0;
   return value;
 }
 
-// Калькулятор зарплаты в hero
-function salaryCalcHero() {
-  console.log('salaryCalcHero called'); // Для отладки
+// Форматирование чисел
+function formatMoney(amount) {
+  return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+// === КАЛЬКУЛЯТОР ЗАРПЛАТЫ ===
+window.salaryCalcHero = async function() {
+  console.log('salaryCalcHero called');
   const gross = getNumberFromInput('salaryHero');
   
-  const tax = gross * 0.2;
-  const pension = gross * 0.02;
-  const unemployment = gross * 0.016;
-  const net = gross - tax - pension - unemployment;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || gross === 0) {
+    document.getElementById('salaryHeroResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  // Получаем ставки
+  const personalIncomeTax = taxRatesCache.personalIncomeTax.rate / 100;
+  const unemploymentEmployee = taxRatesCache.unemploymentInsurance.employee / 100;
+  
+  const pensionRate = Array.isArray(taxRatesCache.pensionContribution.rate) 
+    ? taxRatesCache.pensionContribution.rate[0] / 100
+    : taxRatesCache.pensionContribution.rate / 100;
+  
+  const securityTax = taxRatesCache.securityTax.appliedToPersonalGrossIncome?.rate / 100 || 0;
+  const taxFreeAllowance = taxRatesCache.taxFreeAllowance.maxMonthly;
+  
+  // Расчет налогов
+  const taxableIncome = Math.max(0, gross - taxFreeAllowance);
+  const incomeTax = taxableIncome * personalIncomeTax;
+  const unemployment = gross * unemploymentEmployee;
+  const pension = gross * pensionRate;
+  const security = gross * securityTax;
+  
+  const totalDeductions = incomeTax + unemployment + pension + security;
+  const net = gross - totalDeductions;
   
   const resultEl = document.getElementById('salaryHeroResult');
   if (resultEl) {
-    resultEl.innerText = 'Net: ' + Math.round(net) + ' €';
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('net')}: €${formatMoney(net)}</strong><br>
+        <small>
+          ${t('incomeTax')}: €${formatMoney(incomeTax)}<br>
+          ${t('unemployment')}: €${formatMoney(unemployment)}<br>
+          ${t('pension')}: €${formatMoney(pension)}<br>
+          ${t('securityTax')}: €${formatMoney(security)}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-// Калькулятор зарплаты в сетке
-function salaryCalc() {
-  console.log('salaryCalc called'); // Для отладки
+window.salaryCalc = async function() {
+  console.log('salaryCalc called');
   const gross = getNumberFromInput('salary');
   
-  const tax = gross * 0.2;
-  const pension = gross * 0.02;
-  const unemployment = gross * 0.016;
-  const net = gross - tax - pension - unemployment;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || gross === 0) {
+    document.getElementById('salaryResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  const personalIncomeTax = taxRatesCache.personalIncomeTax.rate / 100;
+  const unemploymentEmployee = taxRatesCache.unemploymentInsurance.employee / 100;
+  
+  const pensionRate = Array.isArray(taxRatesCache.pensionContribution.rate) 
+    ? taxRatesCache.pensionContribution.rate[0] / 100
+    : taxRatesCache.pensionContribution.rate / 100;
+  
+  const securityTax = taxRatesCache.securityTax.appliedToPersonalGrossIncome?.rate / 100 || 0;
+  const taxFreeAllowance = taxRatesCache.taxFreeAllowance.maxMonthly;
+  
+  const taxableIncome = Math.max(0, gross - taxFreeAllowance);
+  const incomeTax = taxableIncome * personalIncomeTax;
+  const unemployment = gross * unemploymentEmployee;
+  const pension = gross * pensionRate;
+  const security = gross * securityTax;
+  
+  const totalDeductions = incomeTax + unemployment + pension + security;
+  const net = gross - totalDeductions;
   
   const resultEl = document.getElementById('salaryResult');
   if (resultEl) {
-    resultEl.innerText = 'Net: ' + Math.round(net) + ' €';
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('net')}: €${formatMoney(net)}</strong><br>
+        <small>
+          ${t('incomeTax')}: €${formatMoney(incomeTax)}<br>
+          ${t('unemployment')}: €${formatMoney(unemployment)}<br>
+          ${t('pension')}: €${formatMoney(pension)}<br>
+          ${t('securityTax')}: €${formatMoney(security)}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-// Калькулятор дивидендов
-function dividendCalc() {
+// === КАЛЬКУЛЯТОР ДИВИДЕНДОВ ===
+window.dividendCalc = async function() {
   console.log('dividendCalc called');
   const netAmount = getNumberFromInput('dividend');
   
-  const grossAmount = netAmount / 78 * 100;
-  const taxAmount = grossAmount * 0.22;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || netAmount === 0) {
+    document.getElementById('dividendResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  const taxRate = taxRatesCache.corporateIncomeTax.rate / 100;
+  const grossAmount = netAmount / (1 - taxRate);
+  const taxAmount = grossAmount * taxRate;
+  
+  let securityTax = 0;
+  if (taxRatesCache.securityTax.appliedToCorporateProfit?.rate) {
+    securityTax = grossAmount * (taxRatesCache.securityTax.appliedToCorporateProfit.rate / 100);
+  }
   
   const resultEl = document.getElementById('dividendResult');
   if (resultEl) {
-    resultEl.innerText = `${t('tax')}: ${Math.round(taxAmount)} € (${t('fromGross')} ${Math.round(grossAmount)} €)`;
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('dividendTax')}: €${formatMoney(taxAmount)}</strong><br>
+        <small>
+          ${t('grossAmount')}: €${formatMoney(grossAmount)}<br>
+          ${t('netAmount')}: €${formatMoney(netAmount)}<br>
+          ${securityTax > 0 ? `${t('securityTax')}: €${formatMoney(securityTax)}` : ''}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-
-// Калькулятор VAT
-function vatCalc() {
+// === КАЛЬКУЛЯТОР VAT ===
+window.vatCalc = async function() {
   console.log('vatCalc called');
   const amount = getNumberFromInput('vat');
   
-  const vat = amount * 0.24;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || amount === 0) {
+    document.getElementById('vatResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  const vatRate = taxRatesCache.vat.standard / 100;
+  const vat = amount * vatRate;
+  const withVat = amount + vat;
   
   const resultEl = document.getElementById('vatResult');
   if (resultEl) {
-    resultEl.innerText = `${t('vat')}: ${Math.round(vat)} €`;
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('vat')}: €${formatMoney(vat)}</strong><br>
+        <small>
+          Total with VAT: €${formatMoney(withVat)}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-// Калькулятор income tax
-function incomeCalc() {
-  console.log('incomeCalc called'); // Для отладки
+// === КАЛЬКУЛЯТОР INCOME TAX ===
+window.incomeCalc = async function() {
+  console.log('incomeCalc called');
   const income = getNumberFromInput('income');
   
-  const tax = income * 0.22;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || income === 0) {
+    document.getElementById('incomeResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  const taxRate = taxRatesCache.personalIncomeTax.rate / 100;
+  const taxFreeAllowance = taxRatesCache.taxFreeAllowance.maxMonthly;
+  
+  const taxableIncome = Math.max(0, income - taxFreeAllowance);
+  const tax = taxableIncome * taxRate;
   
   const resultEl = document.getElementById('incomeResult');
   if (resultEl) {
-    resultEl.innerText = 'Tax: ' + Math.round(tax) + ' €';
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('tax')}: €${formatMoney(tax)}</strong><br>
+        <small>
+          Taxable amount: €${formatMoney(taxableIncome)}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-// Калькулятор фрилансера
-function freelanceCalc() {
+// === КАЛЬКУЛЯТОР ФРИЛАНСЕРА ===
+window.freelanceCalc = async function() {
   console.log('freelanceCalc called');
-  const freelance = getNumberFromInput('freelance');
+  const income = getNumberFromInput('freelance');
   
-  const afterTax = freelance * 0.78;
+  if (!taxRatesCache) await loadTaxRates();
+  if (!taxRatesCache || income === 0) {
+    document.getElementById('freelanceResult').innerHTML = 'Enter amount';
+    return;
+  }
+  
+  const personalTaxRate = taxRatesCache.personalIncomeTax.rate / 100;
+  const socialTaxRate = taxRatesCache.socialTax.rate / 100;
+  const taxFreeAllowance = taxRatesCache.taxFreeAllowance.maxMonthly;
+  
+  const taxableIncome = Math.max(0, income - taxFreeAllowance);
+  const incomeTax = taxableIncome * personalTaxRate;
+  const socialTax = income * (socialTaxRate * 0.7);
+  
+  const afterTax = income - incomeTax - socialTax;
   
   const resultEl = document.getElementById('freelanceResult');
   if (resultEl) {
-    resultEl.innerText = `${t('afterTax')}: ${Math.round(afterTax)} €`;
-    resultEl.style.display = 'block';
+    resultEl.innerHTML = `
+      <div class="calc-result-detailed">
+        <strong>${t('afterTax')}: €${formatMoney(afterTax)}</strong><br>
+        <small>
+          ${t('incomeTax')}: €${formatMoney(incomeTax)}<br>
+          Social tax: €${formatMoney(socialTax)}
+        </small>
+      </div>
+    `;
   }
-}
+};
 
-// Добавляем обработчики для input, чтобы считать при нажатии Enter
-document.addEventListener('DOMContentLoaded', function() {
-  const inputs = document.querySelectorAll('.calculator-grid input, #salaryHero');
-  
-  inputs.forEach(input => {
-    input.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        
-        // Определяем, какую функцию вызвать
-        if (this.id === 'salaryHero') {
-          salaryCalcHero();
-        } else if (this.id === 'salary') {
-          salaryCalc();
-        } else if (this.id === 'dividend') {
-          dividendCalc();
-        } else if (this.id === 'vat') {
-          vatCalc();
-        } else if (this.id === 'income') {
-          incomeCalc();
-        } else if (this.id === 'freelance') {
-          freelanceCalc();
-        }
-      }
-    });
-  });
-});
+// Загружаем ставки при старте
+loadTaxRates();

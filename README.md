@@ -1,2 +1,2 @@
-# personality-compass-app
+# Fonsalus OÜ
 Fonsalus OÜ accounting company website

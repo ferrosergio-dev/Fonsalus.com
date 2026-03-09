@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>{{title}} | Fonsalus OÜ</title>
+  
+  <meta name="description" content="{{description}}">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  
+  <!-- Каноническая ссылка -->
+  <link rel="canonical" href="https://fonsalus.com/{{lang}}/calculators/{{slug}}.html">
+  
+  <!-- Альтернативные языковые версии -->
+  <link rel="alternate" hreflang="en" href="https://fonsalus.com/en/calculators/{{slug}}.html">
+  <link rel="alternate" hreflang="et" href="https://fonsalus.com/et/calculators/{{slug}}.html">
+  <link rel="alternate" hreflang="ru" href="https://fonsalus.com/ru/calculators/{{slug}}.html">
+  
+  <!-- Структурированные данные -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{title}}",
+    "description": "{{description}}",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fonsalus OÜ",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fonsalus.com/images/logo.webp"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ШАПКА -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="lang-switch">
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/et/" hreflang="et">ET</a>
+        <a href="/ru/" hreflang="ru">RU</a>
+      </div>
+
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="/{{lang}}/services/">{{t:services}}</a>
+        <a href="/{{lang}}/calculators/" class="active">{{t:calculators}}</a>
+        <a href="/{{lang}}/blog/">{{t:insights}}</a>
+        <a href="/{{lang}}/contact/">{{t:contact}}</a>
+      </nav>
+
+      <a class="btn btn-consult desktop-only" href="/{{lang}}/contact/">
+        {{t:freeConsultation}}
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav">
+      <a href="/{{lang}}/services/">{{t:services}}</a>
+      <a href="/{{lang}}/calculators/" class="active">{{t:calculators}}</a>
+      <a href="/{{lang}}/blog/">{{t:insights}}</a>
+      <a href="/{{lang}}/contact/">{{t:contact}}</a>
+      <a href="/{{lang}}/contact/" class="btn btn-consult">{{t:freeConsultation}}</a>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="calculator-page">
+    <div class="container">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <a href="/{{lang}}/">{{t:home}}</a> &gt; 
+        <a href="/{{lang}}/calculators/">{{t:calculators}}</a> &gt; 
+        <span>{{title}}</span>
+      </div>
+
+      <!-- Заголовок -->
+      <h1 class="calculator-title">{{title}}</h1>
+      
+      <!-- Мета-информация -->
+      <div class="calculator-meta">
+        <span class="calculator-date">{{t:lastUpdated}} {{date}}</span>
+      </div>
+
+      <!-- ТЕЛО КАЛЬКУЛЯТОРА -->
+      <div class="calculator-content glass-card">
+        <p class="calculator-description">{{description}}</p>
+        
+        <!-- Здесь будет вставлен конкретный калькулятор из data -->
+        {{calculatorContent}}
+        
+        <!-- Если калькулятор еще не готов или требует пояснений -->
+        <div class="info-box glass-card" style="margin-top: 30px;">
+          <h4>🇪🇪 {{t:needPersonalAssistance}}</h4>
+          <p>{{t:specialistText}} <a href="/{{lang}}/contact/">{{t:contactUs}}</a> {{t:forFreeConsultation}}.</p>
+        </div>
+        
+        <!-- Блок с текущими налоговыми ставками (будет заполняться через JS) -->
+        <div class="tax-rates-box">
+          <h3>{{t:currentTaxRates}}</h3>
+          <div id="taxRatesDisplay">
+            <p>{{t:vat}}: <span id="vatRate">22</span>%</p>
+            <p>{{t:incomeTax}}: <span id="incomeTaxRate">20</span>%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Дополнительная информация / Часто задаваемые вопросы -->
+      <div class="calculator-faq">
+        <h2>{{t:faq}}</h2>
+        
+        <div class="faq-item glass-card">
+          <h4>{{t:faqQuestion1}} {{title}}?</h4>
+          <p>{{t:faqAnswer1}}</p>
+        </div>
+        
+        <div class="faq-item glass-card">
+          <h4>{{t:faqQuestion2}}</h4>
+          <p>{{t:faqAnswer2}}</p>
+        </div>
+        
+        <div class="faq-item glass-card">
+          <h4>{{t:howToUseCalculator}}</h4>
+          <p>{{t:calculatorUsageText}}</p>
+        </div>
+      </div>
+
+      <!-- Похожие калькуляторы -->
+      <div class="related-calculators">
+        <h3>{{t:relatedCalculators}}</h3>
+        <div id="relatedCalculators" class="related-grid">
+          <!-- Здесь будут загружаться похожие калькуляторы через JS -->
+          <p>{{t:loading}}</p>
+        </div>
+      </div>
+
+      <!-- CTA блок -->
+      <div class="calculator-cta glass-card">
+        <h3>{{t:needHelpWith}} {{title}}?</h3>
+        <p>{{t:ctaText}}</p>
+        <a href="/{{lang}}/contact/" class="btn btn-primary">{{t:getFreeConsultation}}</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+<footer class="site-footer">
+  <div class="container">
+    <!-- Основная сетка футера -->
+    <div class="footer-grid">
+      <!-- Колонка 1: Лого и описание -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="dot">●</span>
+          <span class="text">FONSALUS OÜ</span>
+        </div>
+        <p class="footer-description">{{t:footerDescription}}</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/fonsalus" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.729C24 .774 23.204 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/fonsalus" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Колонка 2: Услуги -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:services}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/services/accounting.html">{{t:accounting}}</a></li>
+          <li><a href="/{{lang}}/services/payroll.html">{{t:payroll}}</a></li>
+          <li><a href="/{{lang}}/services/consulting.html">{{t:consulting}}</a></li>
+          <li><a href="/{{lang}}/services/company-formation.html">{{t:companyFormation}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Инструменты -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:calculators}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/calculators/salary-calculator-estonia.html">{{t:salaryCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/dividend-tax-estonia.html">{{t:dividendCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/vat-calculator-estonia.html">{{t:vatCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/business-profit-calculator.html">{{t:profitCalc}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 4: Ресурсы -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:resources}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/guides/">{{t:guides}}</a></li>
+          <li><a href="/{{lang}}/industries/">{{t:industries}}</a></li>
+          <li><a href="/{{lang}}/comparisons/">{{t:comparisons}}</a></li>
+          <li><a href="/{{lang}}/faq/">{{t:faq}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 5: Компания -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:company}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/about/">{{t:aboutUs}}</a></li>
+          <li><a href="/{{lang}}/blog/">{{t:blog}}</a></li>
+          <li><a href="/{{lang}}/contact/">{{t:contact}}</a></li>
+          <li><a href="/privacy.html">{{t:privacy}}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Нижняя часть футера с контактами -->
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:info@fonsalus.com">info@fonsalus.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+37212345678">+372 5591 1169</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Harju maakond, Tallinn, Estonia</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>Fonsalus OÜ | {{t:registryCode}}: 12119841 | VAT: EE</p>
+        <p class="copyright">
+          © 2026 Fonsalus OÜ. {{t:allRightsReserved}}.
+          <a href="/terms.html">{{t:termsOfUse}}</a> | 
+          <a href="/cookies.html">{{t:cookiePolicy}}</a>
+        </p>
+      </div>
+
+      <!-- Кнопка "Наверх" -->
+      <button class="back-to-top" aria-label="{{t:backToTop}}" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/translations.js"></script>
+  <script src="/js/tax-rates.js"></script>
+  <script>
+    // Загрузка похожих калькуляторов
+    document.addEventListener('DOMContentLoaded', function() {
+      const relatedDiv = document.getElementById('relatedCalculators');
+      if (relatedDiv) {
+        const lang = '{{lang}}';
+        const currentSlug = '{{slug}}';
+        
+        // Здесь можно добавить реальную загрузку из JSON
+        // Пока заглушка с переводами
+        const relatedCalculators = {
+          en: [
+            { title: 'Salary Calculator', slug: 'salary-calculator-estonia' },
+            { title: 'Dividend Tax Calculator', slug: 'dividend-tax-estonia' },
+            { title: 'VAT Calculator', slug: 'vat-calculator-estonia' }
+          ],
+          et: [
+            { title: 'Palgakalkulaator', slug: 'salary-calculator-estonia' },
+            { title: 'Dividendimaksu kalkulaator', slug: 'dividend-tax-estonia' },
+            { title: 'Käibemaksukalkulaator', slug: 'vat-calculator-estonia' }
+          ],
+          ru: [
+            { title: 'Калькулятор зарплаты', slug: 'salary-calculator-estonia' },
+            { title: 'Налог на дивиденды', slug: 'dividend-tax-estonia' },
+            { title: 'Калькулятор НДС', slug: 'vat-calculator-estonia' }
+          ]
+        };
+        
+        // Фильтруем текущий калькулятор
+        const calculators = (relatedCalculators[lang] || relatedCalculators.en)
+          .filter(calc => calc.slug !== currentSlug)
+          .slice(0, 2); // Показываем только 2
+        
+        const readMoreText = {
+          en: 'Use Calculator →',
+          et: 'Kasuta kalkulaatorit →',
+          ru: 'Использовать калькулятор →'
+        }[lang] || 'Use Calculator →';
+        
+        if (calculators.length > 0) {
+          relatedDiv.innerHTML = calculators.map(calc => `
+            <div class="related-card glass-card">
+              <h4>${calc.title}</h4>
+              <a href="/${lang}/calculators/${calc.slug}.html">${readMoreText}</a>
+            </div>
+          `).join('');
+        } else {
+          relatedDiv.innerHTML = '<p>{{t:noRelatedCalculators}}</p>';
+        }
+      }
+      
+      // Обновление налоговых ставок из tax-rates.js (если есть динамические данные)
+      if (window.taxRates) {
+        document.getElementById('vatRate').textContent = window.taxRates.vat || '22';
+        document.getElementById('incomeTaxRate').textContent = window.taxRates.incomeTax || '20';
+      }
+    });
+  </script>
+  
+  <!-- Специфический скрипт для этого калькулятора -->
+  {{calculatorScript}}
+</body>
+</html>

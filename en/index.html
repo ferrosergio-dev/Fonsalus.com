@@ -17,10 +17,12 @@
   <link rel="stylesheet" href="/css/hero.css">
   <link rel="stylesheet" href="/css/footer.css">
 
-  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
-  
- <!-- СКРИПТ ЯЗЫКОВОГО РЕДИРЕКТА - загружается первым и сразу выполняется -->
+  <link rel="preload" as="image" href="images/logo.webp" type="image/webp">
+
+  <!-- СКРИПТ ЯЗЫКОВОГО РЕДИРЕКТА -->
   <script src="/js/language-redirect.js"></script>
+
+  <link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
@@ -34,18 +36,18 @@
         <a href="/ru/" hreflang="ru">RU</a>
       </div>
 
-<!-- Логотип с мерцающим кружочком и переливающимся текстом -->
-<div class="logo">
-  <span class="dot">●</span>
-  <span class="text">FONSALUS OÜ</span>
-</div>
+      <!-- Логотип -->
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
 
-      <!-- Десктопная навигация (видна только на больших экранах) -->
+      <!-- Десктопная навигация -->
       <nav class="desktop-nav">
         <a href="/en/services/">Services</a>
         <a href="/en/calculators/">Tools</a>
         <a href="/en/blog/">Insights</a>
-        <a href="/en/faq/">Contact</a>
+        <a href="/en/contact/">Contact</a>
       </nav>
 
       <!-- Кнопка для десктопа -->
@@ -53,7 +55,7 @@
         Free consultation
       </a>
 
-      <!-- Бургер-кнопка для мобильных -->
+      <!-- Бургер-кнопка -->
       <button class="mobile-menu-toggle" aria-label="Menu">
         <span></span>
         <span></span>
@@ -61,7 +63,7 @@
       </button>
     </div>
 
-    <!-- Мобильное меню (появляется при клике на бургер) -->
+    <!-- Мобильное меню -->
     <div class="mobile-nav">
       <a href="/en/services/">Services</a>
       <a href="/en/calculators/">Tools</a>
@@ -93,13 +95,15 @@
         <!-- Карточка дивидендов -->
         <div class="glass-card floating">
           <p>Dividend tax</p>
-          <h2>22%</h2>
+          <h2><span class="dynamic-rate" data-tax-rate="corporateIncomeTax" data-tax-subkey="rate">22%</span></h2>
+          <small class="rate-note" data-tax-description="corporateIncomeTax"></small>
         </div>
 
         <!-- Карточка НДС -->
         <div class="glass-card floating delay1">
           <p>VAT</p>
-          <h2>24%</h2>
+          <h2><span class="dynamic-rate" data-tax-rate="vat" data-tax-subkey="standard">24%</span></h2>
+          <small class="rate-note" data-tax-description="vat"></small>
         </div>
 
         <!-- Карточка калькулятора зарплаты -->
@@ -122,6 +126,7 @@
         <!-- Калькулятор зарплаты -->
         <div class="glass-card">
           <h3>Salary calculator</h3>
+          <p class="rate-info">Personal income tax: <span data-tax-rate="personalIncomeTax" data-tax-subkey="rate">22%</span></p>
           <input type="number" id="salary" placeholder="Gross salary €" min="0" step="100">
           <button onclick="salaryCalc()">Calculate</button>
           <p id="salaryResult" class="calc-result"></p>
@@ -130,7 +135,8 @@
         <!-- Калькулятор дивидендов -->
         <div class="glass-card">
           <h3>Dividend tax</h3>
-          <input type="number" id="dividend" placeholder="Dividend amount €" min="0" step="100">
+          <p class="rate-info">Tax rate: <span data-tax-rate="corporateIncomeTax" data-tax-subkey="rate">22%</span></p>
+          <input type="number" id="dividend" placeholder="Net dividend €" min="0" step="100">
           <button onclick="dividendCalc()">Calculate</button>
           <p id="dividendResult" class="calc-result"></p>
         </div>
@@ -138,6 +144,7 @@
         <!-- Калькулятор НДС -->
         <div class="glass-card">
           <h3>VAT calculator</h3>
+          <p class="rate-info">VAT rate: <span data-tax-rate="vat" data-tax-subkey="standard">24%</span></p>
           <input type="number" id="vat" placeholder="Amount €" min="0" step="100">
           <button onclick="vatCalc()">Calculate</button>
           <p id="vatResult" class="calc-result"></p>
@@ -146,6 +153,7 @@
         <!-- Калькулятор подоходного налога -->
         <div class="glass-card">
           <h3>Income tax</h3>
+          <p class="rate-info">Tax rate: <span data-tax-rate="personalIncomeTax" data-tax-subkey="rate">22%</span></p>
           <input type="number" id="income" placeholder="Income €" min="0" step="100">
           <button onclick="incomeCalc()">Calculate</button>
           <p id="incomeResult" class="calc-result"></p>
@@ -154,12 +162,19 @@
         <!-- Калькулятор фрилансера -->
         <div class="glass-card">
           <h3>Freelancer income</h3>
+          <p class="rate-info">Estimate after tax</p>
           <input type="number" id="freelance" placeholder="Gross income €" min="0" step="100">
           <button onclick="freelanceCalc()">Calculate</button>
           <p id="freelanceResult" class="calc-result"></p>
         </div>
+      </div>  <!-- Закрываем calculator-grid ЗДЕСЬ, после всех карточек -->
+      
+      <!-- Информация о временном налоге на безопасность -->
+      <div class="tax-info-note glass-card">
+        <p><strong>Note:</strong> <span data-tax-description="securityTax">Temporary security tax (2%) applies to VAT, corporate profits, and personal income (2025-2028).</span></p>
+        <p class="tax-disclaimer">Last updated: <span data-tax-updated>March 2026</span></p>
       </div>
-    </div>
+    </div>  <!-- Закрываем container -->
   </section>
 
   <!-- ПРЕДПРОСМОТР БЛОГА -->
@@ -171,18 +186,119 @@
   </section>
 
   <!-- ПОДВАЛ -->
-  <footer>
-    <div class="container">
-      <p>Fonsalus OÜ | Registry code: 12119841 | Email: info@fonsalus.com</p>
-      <p class="copyright">© 2024 Fonsalus OÜ. All rights reserved.</p>
+<footer class="site-footer">
+  <div class="container">
+    <!-- Основная сетка футера -->
+    <div class="footer-grid">
+      <!-- Колонка 1: Лого и описание -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="dot">●</span>
+          <span class="text">FONSALUS OÜ</span>
+        </div>
+        <p class="footer-description">{{t:footerDescription}}</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/fonsalus" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.729C24 .774 23.204 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/fonsalus" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Колонка 2: Услуги -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:services}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/services/accounting.html">{{t:accounting}}</a></li>
+          <li><a href="/{{lang}}/services/payroll.html">{{t:payroll}}</a></li>
+          <li><a href="/{{lang}}/services/consulting.html">{{t:consulting}}</a></li>
+          <li><a href="/{{lang}}/services/company-formation.html">{{t:companyFormation}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Инструменты -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:calculators}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/calculators/salary-calculator-estonia.html">{{t:salaryCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/dividend-tax-estonia.html">{{t:dividendCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/vat-calculator-estonia.html">{{t:vatCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/business-profit-calculator.html">{{t:profitCalc}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 4: Ресурсы -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:resources}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/guides/">{{t:guides}}</a></li>
+          <li><a href="/{{lang}}/industries/">{{t:industries}}</a></li>
+          <li><a href="/{{lang}}/comparisons/">{{t:comparisons}}</a></li>
+          <li><a href="/{{lang}}/faq/">{{t:faq}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 5: Компания -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:company}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/about/">{{t:aboutUs}}</a></li>
+          <li><a href="/{{lang}}/blog/">{{t:blog}}</a></li>
+          <li><a href="/{{lang}}/contact/">{{t:contact}}</a></li>
+          <li><a href="/privacy.html">{{t:privacy}}</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <!-- Нижняя часть футера с контактами -->
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:info@fonsalus.com">info@fonsalus.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+37212345678">+372 5591 1169</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Harju maakond, Tallinn, Estonia</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>Fonsalus OÜ | {{t:registryCode}}: 12119841 | VAT: EE</p>
+        <p class="copyright">
+          © 2026 Fonsalus OÜ. {{t:allRightsReserved}}.
+          <a href="/terms.html">{{t:termsOfUse}}</a> | 
+          <a href="/cookies.html">{{t:cookiePolicy}}</a>
+        </p>
+      </div>
+
+      <!-- Кнопка "Наверх" -->
+      <button class="back-to-top" aria-label="{{t:backToTop}}" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
 
   <!-- СКРИПТЫ -->
+  <script src="/js/tax-rates.js"></script>
   <script src="/js/calculators.js"></script>
   <script src="/js/animations.js"></script>
   <script src="/js/seo-blog.js"></script>
   <script src="/js/mobile-menu.js"></script>
+  <script src="/js/translations.js"></script>
   
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "comparisons": [
+    {
+      "slug": "estonia-vs-lithuania-tax",
+      "title": "Eesti vs Leedu: Maksude Võrdlus",
+      "description": "Detailne võrdlus maksusüsteemidest, määradest ja eelistest ettevõtetele.",
+      "countries": ["Eesti", "Leedu"]
+    }
+  ]
+}

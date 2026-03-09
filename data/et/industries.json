@@ -1,0 +1,16 @@
+{
+  "industries": [
+    {
+      "slug": "accounting-for-startups-estonia",
+      "title": "Raamatupidamine idufirmadele Eestis",
+      "description": "Erireeglid idufirmade raamatupidamisel, investorite aruandlus ja kulude jälgimine.",
+      "icon": "🚀"
+    },
+    {
+      "slug": "accounting-for-freelancers-estonia",
+      "title": "Raamatupidamine vabakutselistele Eestis",
+      "description": "Maksukohustused, arveldusreeglid ja mahaarvatavad kulud vabakutselistele.",
+      "icon": "✍️"
+    }
+  ]
+}

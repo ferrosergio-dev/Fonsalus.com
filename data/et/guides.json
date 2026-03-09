@@ -1,0 +1,62 @@
+{
+  "guides": [
+    {
+      "slug": "accounting-in-estonia",
+      "title": "Raamatupidamine Eestis - Täielik Juhend",
+      "description": "Kõik, mida pead teadma raamatupidamise nõuetest, tähtaegadest ja parimatest praktikatest Eesti ettevõtetele.",
+      "category": "general",
+      "readTime": 12,
+      "icon": "📘"
+    },
+    {
+      "slug": "vat-guide-estonia",
+      "title": "Käibemaks Eestis: Täielik Juhend",
+      "description": "Käibemaksu registreerimise piirmäärad, määrad, deklareerimise tähtajad ja erireeglid e-kaubandusele.",
+      "category": "tax",
+      "readTime": 10,
+      "icon": "💰"
+    },
+    {
+      "slug": "freelance-tax-optimization-2026",
+      "title": "Vabakutselise maksuoptimeerimine 2026: FIE vs OÜ vs Töötaja",
+      "description": "Samm-sammult juhend, kuidas vabakutselisena maksude pealt kokku hoida ja millal tasub OÜ-le üle minna",
+      "icon": "💼",
+      "disclaimer": "<p><strong>Tähtis:</strong> Käesolev juhend on informatiivse iseloomuga. Miinimumpalga maksmine peab vastama tegelikule tööalasele tegevusele. Palga kunstlik alandamine ilma majandusliku põhjenduseta on lubamatu. Individuaalse arvutuse jaoks võtke ühendust meie spetsialistidega.</p>",
+      "intro": "<p><strong>Pange tähele:</strong> Eesti seadusandlus annab ettevõtjatele võimaluse valida erinevate tegevusvormide vahel. Kõik allpool kirjeldatud strateegiad on seadusega ette nähtud legaalsed optimeerimisviisid. Siiski on oluline, et teie tegelik tegevus vastaks valitud mudelile.</p>",
+      "steps": [
+        {
+          "title": "Algaja: FIE miinimumiga",
+          "description": "Sissetulek kuni €2,500/kuus. Registreeru FIE-na ja maksa sotsiaalmaksu ainult miinimumpalgalt (€820). Ülejäänud tulu on ettevõtlustulu madalama maksumääraga.",
+          "example": "€3000 sissetulekust jääb neto €2,213"
+        },
+        {
+          "title": "Edasijõudnud: OÜ asutamine",
+          "description": "Kui aastasissetulek ületab €25,000, ava OÜ. Maksa endale miinimumpalka (sotsiaalmaksu optimeerimiseks) ja ülejäänu võta dividendidena.",
+          "example": "€3000 kuus → €2,356 neto (vs töötaja €2,316)"
+        },
+        {
+          "title": "Profid: Segastrateegia",
+          "description": "Jäta osa kasumit firmasse investeeringuteks. Osta vajalikke vahendeid (sülearvuti, telefon, auto) ettevõtte kaudu. Plaani dividendiväljamaksed vastavalt vajadusele.",
+          "example": "Pikaajaline maksuefektiivsus ja varade kogumine"
+        }
+      ],
+      "taxRates": {
+        "socialTax": 33,
+        "incomeTax": 22,
+        "minimumWage": 820,
+        "dividendTax": "22/78 (28.2%)"
+      },
+      "prosCons": {
+        "fie": {
+          "pros": ["Lihtne alustada", "Väike bürokraatia", "Soodne kuni €25,000"],
+          "cons": ["Piiramatu vastutus", "Pension II sammas vabatahtlik"]
+        },
+        "ou": {
+          "pros": ["Piiratud vastutus", "Dividendide optimeerimine", "Kulude mahaarvamine"],
+          "cons": ["Suurem bürokraatia", "Raamatupidamiskulu"]
+        }
+      },
+      "footer": "<p class=\"disclaimer\"><strong>Pea meeles:</strong> Optimaalne strateegia sõltub paljudest teguritest: sissetuleku suurusest, kulude iseloomust, tulevikuplaanidest. Meie raamatupidajad aitavad arvutada individuaalse plaani just teie olukorra jaoks.</p>"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Contact Us | Fonsalus OÜ – Accounting in Estonia</title>
+  
+  <meta name="description" content="Get in touch with Fonsalus OÜ for accounting services in Estonia. Free consultation for startups and international companies.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="lang-switch">
+        <a href="/en/contact/" hreflang="en" class="active">EN</a>
+        <a href="/et/contact/" hreflang="et">ET</a>
+        <a href="/ru/contact/" hreflang="ru">RU</a>
+      </div>
+
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="/en/services/">Services</a>
+        <a href="/en/calculators/">Tools</a>
+        <a href="/en/blog/">Insights</a>
+        <a href="/en/contact/" class="active">Contact</a>
+      </nav>
+
+      <a class="btn btn-consult desktop-only" href="/en/contact/">
+        Free consultation
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/calculators/">Tools</a>
+      <a href="/en/blog/">Insights</a>
+      <a href="/en/contact/" class="active">Contact</a>
+      <a href="/en/contact/" class="btn btn-consult">Free consultation</a>
+    </div>
+  </header>
+
+  <!-- HERO СЕКЦИЯ -->
+  <section class="hero contact-hero">
+    <div class="hero-bg"></div>
+    
+    <div class="container hero-layout">
+      <div class="hero-left">
+        <h1>Get in touch</h1>
+        <p>Have questions? We're here to help with your Estonian accounting needs.</p>
+        
+        <div class="hero-buttons">
+          <a href="#contact-form" class="btn btn-primary">Send message</a>
+          <a href="mailto:info@fonsalus.com" class="btn btn-secondary">Email us</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Контактная информация -->
+        <div class="contact-info">
+          <div class="contact-info-item glass-card">
+            <div class="contact-icon">📧</div>
+            <div class="contact-detail">
+              <h3>Email</h3>
+              <a href="mailto:info@fonsalus.com">info@fonsalus.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-info-item glass-card">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail">
+              <h3>Phone</h3>
+              <a href="tel:+37255512345">+372 5591 1169</a>
+            </div>
+          </div>
+          
+          <div class="contact-info-item glass-card">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h3>Address</h3>
+              <p>Tallinn, Estonia</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Часы работы -->
+        <div class="hours-card glass-card">
+          <h3>Working hours</h3>
+          <div class="hours-row">
+            <span class="hours-day">Monday - Friday</span>
+            <span class="hours-time">8:30 - 18:30</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">Closed</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">Closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="contact-page">
+    <div class="container">
+      
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <a href="/en/">Home</a> &gt; 
+        <span>Contact</span>
+      </div>
+
+      <!-- Контактная форма и карта -->
+      <div class="contact-grid" id="contact-form">
+        
+        <!-- Форма обратной связи -->
+        <div class="contact-form-container glass-card">
+          <h2>Send us a message</h2>
+          
+          <div class="form-success">
+            Thank you! Your message has been sent. We'll get back to you within 24 hours.
+          </div>
+          
+          <form id="contactForm" action="/contact" method="POST">
+            <div class="form-group">
+              <label for="name">Full name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+              <div class="form-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+              <div class="form-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+372 555 12345">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="accounting">Accounting services</option>
+                <option value="payroll">Payroll services</option>
+                <option value="consulting">Consulting</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="form-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your needs..."></textarea>
+              <div class="form-error"></div>
+            </div>
+            
+            <!-- Cloudflare Turnstile -->
+            <div class="captcha-container">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAACoYf4_l5Wgm8Yvx"></div>
+            </div>
+            
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </form>
+          
+          <p class="form-note">
+            * Required fields. We'll respond within 24 hours.
+          </p>
+        </div>
+        
+        <!-- Карта и адрес -->
+        <div class="location-card glass-card">
+          <h2>Visit us</h2>
+          
+          <div class="location-detail">
+            <h3>Office address</h3>
+            <p>Harju maakond, Tallinn<br>
+               Tartu maantee 82<br>
+               10112, Estonia<br>
+            <span class="office-note">Workland Fahle, 3rd floor. Please contact us before visiting.</span></p>
+          </div>
+          
+          <div class="location-detail">
+            <h3>Getting here</h3>
+            <p>📍 4 min drive from Tallinn Airport<br>
+               🚌 Bus stops: "Sossimägi" (buses 2, 15, 45) and "Lubja" (trams 2, 4)<br>
+               🚗 Parking spots in the complex, 2 hours free of charge in zones F1 with parking clock</p>
+          </div>
+          
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2029.123456789!2d24.7545!3d59.4295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692937e6f8f8f8f%3A0x123456789abcdef!2sTartu%20maantee%2082%2C%2010112%20Tallinn%2C%20Estonia!5e0!3m2!1sen!2see!4v1234567890" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ секция -->
+      <div class="contact-faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="faq-grid">
+          <div class="faq-card glass-card">
+            <h3>How fast do you respond?</h3>
+            <p>We typically respond within 2-4 hours during working hours, and within 24 hours on weekends.</p>
+          </div>
+          
+          <div class="faq-card glass-card">
+            <h3>Do you work with e-residents?</h3>
+            <p>Yes! We specialize in e-resident companies. Everything can be handled remotely.</p>
+          </div>
+          
+          <div class="faq-card glass-card">
+            <h3>Can I get a free consultation?</h3>
+            <p>Absolutely. Contact us for a free 30-minute consultation about your needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ <!-- ПОДВАЛ -->
+<footer class="site-footer">
+  <div class="container">
+    <!-- Основная сетка футера -->
+    <div class="footer-grid">
+      <!-- Колонка 1: Лого и описание -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="dot">●</span>
+          <span class="text">FONSALUS OÜ</span>
+        </div>
+        <p class="footer-description">{{t:footerDescription}}</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/fonsalus" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.729C24 .774 23.204 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/fonsalus" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Колонка 2: Услуги -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:services}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/services/accounting.html">{{t:accounting}}</a></li>
+          <li><a href="/{{lang}}/services/payroll.html">{{t:payroll}}</a></li>
+          <li><a href="/{{lang}}/services/consulting.html">{{t:consulting}}</a></li>
+          <li><a href="/{{lang}}/services/company-formation.html">{{t:companyFormation}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Инструменты -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:calculators}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/calculators/salary-calculator-estonia.html">{{t:salaryCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/dividend-tax-estonia.html">{{t:dividendCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/vat-calculator-estonia.html">{{t:vatCalc}}</a></li>
+          <li><a href="/{{lang}}/calculators/business-profit-calculator.html">{{t:profitCalc}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 4: Ресурсы -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:resources}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/guides/">{{t:guides}}</a></li>
+          <li><a href="/{{lang}}/industries/">{{t:industries}}</a></li>
+          <li><a href="/{{lang}}/comparisons/">{{t:comparisons}}</a></li>
+          <li><a href="/{{lang}}/faq/">{{t:faq}}</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 5: Компания -->
+      <div class="footer-col">
+        <h4 class="footer-title">{{t:company}}</h4>
+        <ul class="footer-links">
+          <li><a href="/{{lang}}/about/">{{t:aboutUs}}</a></li>
+          <li><a href="/{{lang}}/blog/">{{t:blog}}</a></li>
+          <li><a href="/{{lang}}/contact/">{{t:contact}}</a></li>
+          <li><a href="/privacy.html">{{t:privacy}}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Нижняя часть футера с контактами -->
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:info@fonsalus.com">info@fonsalus.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+37212345678">+372 5591 1169</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Harju maakond, Tallinn, Estonia</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>Fonsalus OÜ | {{t:registryCode}}: 12119841 | VAT: EE</p>
+        <p class="copyright">
+          © 2026 Fonsalus OÜ. {{t:allRightsReserved}}.
+          <a href="/terms.html">{{t:termsOfUse}}</a> | 
+          <a href="/cookies.html">{{t:cookiePolicy}}</a>
+        </p>
+      </div>
+
+      <!-- Кнопка "Наверх" -->
+      <button class="back-to-top" aria-label="{{t:backToTop}}" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+  <!-- СКРИПТЫ -->
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/contact-form.js"></script>
+  <script src="/js/translations.js"></script>
+</body>
+</html>

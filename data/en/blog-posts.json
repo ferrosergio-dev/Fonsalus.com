@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "slug": "accounting-basics",
+      "title": "Accounting Basics in Estonia",
+      "description": "Everything you need to know about accounting for beginning entrepreneurs",
+      "category": "accounting",
+      "categoryName": "Accounting",
+      "date": "2026-03-15",
+      "content": "<p>Full article text...</p>"
+    },
+    {
+      "slug": "vat-rules",
+      "title": "VAT Rules for Small Businesses",
+      "description": "How to handle VAT correctly and avoid mistakes",
+      "category": "tax",
+      "categoryName": "Tax",
+      "date": "2026-03-10"
+    },
+    {
+      "slug": "payroll-2026",
+      "title": "Payroll Calculation in 2026",
+      "description": "Current rates and calculation formulas",
+      "category": "payroll",
+      "categoryName": "Payroll",
+      "date": "2026-03-05"
+    },
+    {
+      "slug": "aml-requirements",
+      "title": "AML Requirements for Estonian Companies",
+      "description": "How to comply with anti-money laundering regulations",
+      "category": "aml",
+      "categoryName": "AML",
+      "date": "2026-02-28"
+    },
+    {
+      "slug": "freelance-vs-employee-2026", "title": "Freelance vs Employment in Estonia: Which is More Profitable in 2026?", "description": "Detailed tax analysis, real calculations, and optimal strategies for freelancers and employees", "category": "tax", "categoryName": "Tax", "date": "2026-03-15", "content": "<div class=\"disclaimer\"><p><strong>Important:</strong> This article is for informational purposes and describes legal tax optimization methods provided by Estonian legislation. Minimum wage payments must correspond to actual work performed. Artificially lowering salary without economic justification is unacceptable. Every situation is unique — we recommend consulting with our specialists to calculate the optimal strategy for your specific case.</p></div>\n\n<h2>Short answer: It's more complicated than it seems</h2><p>Many think employment is better because \"employer pays your taxes\". Actually, <strong>employer pays taxes from their pocket, not from your salary</strong>. Let's break it down with real numbers.</p>\n\n<div class=\"note\"><p><strong>Please note:</strong> Estonian legislation provides entrepreneurs with the choice between different business forms and income distribution methods. For example, by registering as FIE, you can pay social tax only on minimum wage — this is directly provided by law. The remaining income is only subject to income tax. However, it's important that your actual activities correspond to the chosen model — our accountants can help you find the balance between optimization and compliance with all requirements.</p></div>\n\n<h3>Comparison: €3000 income</h3>\n\n<h4>Scenario 1: Employee</h4><ul><li><strong>Gross salary:</strong> €3000</li><li><strong>Taxes:</strong><ul><li>Income tax: €516.12</li><li>Unemployment: €48.00</li><li>Pension: €60.00</li><li>Security tax: €60.00</li></ul></li><li><strong>Net:</strong> €2,315.88</li><li><strong>Actual employer cost:</strong> €3,990 (€3000 + €990 social tax)</li></ul>\n\n<h4>Scenario 2: Freelancer (worst case)</h4><ul><li><strong>Income:</strong> €3000</li><li><strong>Taxes:</strong><ul><li>Income tax: €516.12</li><li>Social tax (33%): €990</li></ul></li><li><strong>Net:</strong> €1,493.88</li></ul><p class=\"warning\">⚠️ But nobody recommends paying taxes this way!</p>\n\n<h4>Scenario 3: Freelancer as FIE (optimal)</h4><p>Register as FIE (sole proprietor) and pay social tax only on minimum wage:</p><ul><li><strong>Income:</strong> €3000</li><li><strong>Social tax (on €820):</strong> €270.60</li><li><strong>Income tax:</strong> €516.12</li><li><strong>Net:</strong> €2,213.28</li></ul><p class=\"highlight\">✨ Close to employee, but with entrepreneur benefits!</p>\n\n<h4>Scenario 4: Freelancer through OÜ</h4><p>With income above €25,000/year, it's better to open a company:</p><ul><li><strong>Revenue:</strong> €3000</li><li><strong>Salary (min):</strong> €820<ul><li>Salary taxes: ~€275</li><li>Net from salary: €656</li></ul></li><li><strong>Remaining as dividends:</strong> €2180<ul><li>Dividend tax (22/78): €480</li><li>Net dividends: €1,700</li></ul></li><li><strong>Total net:</strong> €2,356</li></ul>\n\n<h3>Fair comparison with same client cost</h3><p>If client is ready to pay €3,990 (like employer):</p><table><tr><th>Freelance (OÜ)</th><th>Employee</th></tr><tr><td>Income: €3,990<br>After tax: €2,842</td><td>Income: €3,000<br>After tax: €2,316</td></tr></table><p><strong>Result:</strong> Freelance is €526 more profitable!</p>\n\n<h2>Step-by-step strategy for freelancers</h2>\n\n<h3>Step 1: Start with FIE</h3><p>With income up to €2,500/month:</p><ul><li>Register as FIE (sole proprietor)</li><li>Pay social tax on minimum wage</li><li>Rest is business income</li></ul><p>Expected result: ~€2,200 from €3,000 income</p>\n\n<h3>Step 2: Switch to OÜ</h3><p>When income is consistently above €25,000/year:</p><ul><li>Open an OÜ (limited company)</li><li>Pay yourself minimum wage</li><li>Rest as dividends</li></ul><p>Expected result: ~€2,350 from €3,000 income</p>\n\n<h3>Step 3: Mixed strategy (advanced)</h3><ul><li>Pay minimum wage + some dividends</li><li>Keep profit in company for investments</li><li>Buy assets through company</li></ul>\n\n<h2>Important nuances</h2><ul><li><strong>Sick leave:</strong> Freelancers don't have it (but can buy insurance)</li><li><strong>Vacation:</strong> You plan and save yourself</li><li><strong>Pension:</strong> Social tax on minimum gives pension record</li><li><strong>Expenses:</strong> Freelancers can deduct equipment, internet, training</li></ul>\n\n<h2>Conclusions</h2><p><strong>Freelance is better if:</strong></p><ul><li>Your income > €25,000/year</li><li>You're ready to optimize</li><li>You have deductible expenses</li></ul><p><strong>Employment is better if:</strong></p><ul><li>You value stability and benefits</li><li>Don't want to deal with paperwork</li><li>Income < €15,000/year</li></ul>\n\n<p class=\"summary\">🎯 Bottom line: With €36,000/year income, freelancer through OÜ gets ~€6,000 more per year than employee with same gross salary. But you need to know how to calculate!</p><p>Try our <a href=\"/en/calculators\">calculator</a> with your numbers!</p>" }
+  ]
+}

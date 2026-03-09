@@ -1,0 +1,10 @@
+{
+  "faq": [
+    {
+      "slug": "how-to-calculate-salary-tax-estonia",
+      "question": "Kuidas arvutada palgamaksu Eestis?",
+      "answer": "Palgamaks Eestis koosneb: tulumaks (22%), sotsiaalmaks (33%), töötuskindlustus (1.6% töötaja + 0.8% tööandja).",
+      "category": "salary"
+    }
+  ]
+}

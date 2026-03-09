@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "slug": "accounting-basics",
+      "title": "Raamatupidamise põhitõed Eestis",
+      "description": "Kõik, mida pead teadma raamatupidamisest alustavatele ettevõtjatele",
+      "category": "accounting",
+      "categoryName": "Raamatupidamine",
+      "date": "2026-03-15",
+      "content": "<p>Täielik artikli tekst...</p>"
+    },
+    {
+      "slug": "vat-rules",
+      "title": "Käibemaksureeglid väikeettevõtetele",
+      "description": "Kuidas käibemaksuga õigesti töötada ja vigu vältida",
+      "category": "tax",
+      "categoryName": "Maksud",
+      "date": "2026-03-10"
+    },
+    {
+      "slug": "payroll-2026",
+      "title": "Palgakalkulatsioon 2026. aastal",
+      "description": "Kehtivad määrad ja arvutusvalemid",
+      "category": "payroll",
+      "categoryName": "Palk",
+      "date": "2026-03-05"
+    },
+    {
+      "slug": "aml-requirements",
+      "title": "AML nõuded Eesti ettevõtetele",
+      "description": "Kuidas täita rahapesu tõkestamise nõudeid",
+      "category": "aml",
+      "categoryName": "AML",
+      "date": "2026-02-28"
+    },
+    {
+      "slug": "freelance-vs-employee-2026",
+      "title": "Vabakutseline vs palgatöö Eestis: kumb on 2026. aastal kasumlikum?",
+      "description": "Põhjalik maksuanalüüs, reaalsed arvutused ja parimad strateegiad vabakutselistele ja töötajatele",
+      "category": "tax",
+      "categoryName": "Maksud",
+      "date": "2026-03-15",
+      "content": "<div class=\"disclaimer\"><p><strong>Tähtis:</strong> See artikkel on informatiivne ning kirjeldab seaduslikke maksude optimeerimise võimalusi, mida Eesti seadusandlus lubab. Miinimumpalga maksmine peab vastama tegelikult tehtud tööle. Palga kunstlik vähendamine ilma majandusliku põhjenduseta ei ole lubatud. Iga olukord on erinev — soovitame konsulteerida meie spetsialistidega, et leida teie konkreetse juhtumi jaoks parim lahendus.</p></div>\n\n<h2>Lühike vastus: asi on keerulisem, kui esmapilgul tundub</h2><p>Paljud arvavad, et palgatöö on parem, sest „tööandja maksab sinu maksud“. Tegelikult <strong>maksab tööandja maksud oma kuludest, mitte sinu palgast</strong>. Vaatame seda päris numbritega.</p>\n\n<div class=\"note\"><p><strong>Pange tähele:</strong> Eesti seadus annab ettevõtjatele võimaluse valida erinevate ettevõtlusvormide ja tulude jaotamise viiside vahel. Näiteks FIE-na tegutsedes saab sotsiaalmaksu maksta ainult miinimumpalga pealt — see on seaduses selgelt ette nähtud. Ülejäänud tulu maksustatakse ainult tulumaksuga. Samas on oluline, et teie tegelik tegevus vastaks valitud mudelile — meie raamatupidajad aitavad leida tasakaalu optimeerimise ja seaduslike nõuete täitmise vahel.</p></div>\n\n<h3>Võrdlus: sissetulek €3000</h3>\n\n<h4>Stsenaarium 1: Palgatöötaja</h4><ul><li><strong>Brutopalk:</strong> €3000</li><li><strong>Maksud:</strong><ul><li>Tulumaks: €516.12</li><li>Töötuskindlustus: €48.00</li><li>Pension: €60.00</li><li>Julgeolekumaks: €60.00</li></ul></li><li><strong>Kätte:</strong> €2,315.88</li><li><strong>Tööandja tegelik kulu:</strong> €3,990 (€3000 + €990 sotsiaalmaks)</li></ul>\n\n<h4>Stsenaarium 2: Vabakutseline (kõige ebasoodsam variant)</h4><ul><li><strong>Tulu:</strong> €3000</li><li><strong>Maksud:</strong><ul><li>Tulumaks: €516.12</li><li>Sotsiaalmaks (33%): €990</li></ul></li><li><strong>Kätte:</strong> €1,493.88</li></ul><p class=\"warning\">⚠️ Tegelikkuses ei soovita keegi makse sellisel viisil maksta!</p>\n\n<h4>Stsenaarium 3: Vabakutseline FIE-na (optimaalne)</h4><p>Registreerige end FIE-ks ja makske sotsiaalmaksu ainult miinimumpalga pealt:</p><ul><li><strong>Tulu:</strong> €3000</li><li><strong>Sotsiaalmaks (€820 pealt):</strong> €270.60</li><li><strong>Tulumaks:</strong> €516.12</li><li><strong>Kätte:</strong> €2,213.28</li></ul><p class=\"highlight\">✨ Tulemus on peaaegu sama nagu palgatööl, kuid koos ettevõtja eelistega!</p>\n\n<h4>Stsenaarium 4: Vabakutseline läbi OÜ</h4><p>Kui tulu ületab €25,000 aastas, on mõistlik avada ettevõte:</p><ul><li><strong>Käive:</strong> €3000</li><li><strong>Palk (miinimum):</strong> €820<ul><li>Palgamaksud: ~€275</li><li>Palk kätte: €656</li></ul></li><li><strong>Ülejäänu dividendidena:</strong> €2180<ul><li>Dividendimaks (22/78): €480</li><li>Dividendid kätte: €1,700</li></ul></li><li><strong>Kokku kätte:</strong> €2,356</li></ul>\n\n<h3>Õiglane võrdlus sama kliendikuluga</h3><p>Kui klient on valmis maksma €3,990 (nagu tööandja):</p><table><tr><th>Vabakutseline (OÜ)</th><th>Palgatöötaja</th></tr><tr><td>Tulu: €3,990<br>Pärast makse: €2,842</td><td>Tulu: €3,000<br>Pärast makse: €2,316</td></tr></table><p><strong>Tulemus:</strong> vabakutseline teenib €526 rohkem!</p>\n\n<h2>Samm-sammuline strateegia vabakutselistele</h2>\n\n<h3>1. samm: alusta FIE-na</h3><p>Kui tulu on kuni €2,500 kuus:</p><ul><li>Registreeri end FIE-ks</li><li>Maksa sotsiaalmaksu miinimumpalga pealt</li><li>Ülejäänu on ettevõtlustulu</li></ul><p>Eeldatav tulemus: ~€2,200 €3,000 sissetulekust</p>\n\n<h3>2. samm: liigu OÜ peale</h3><p>Kui sissetulek ületab stabiilselt €25,000 aastas:</p><ul><li>Loo OÜ</li><li>Maksa endale miinimumpalka</li><li>Võta ülejäänu dividendidena</li></ul><p>Eeldatav tulemus: ~€2,350 €3,000 sissetulekust</p>\n\n<h3>3. samm: kombineeritud strateegia (edasijõudnutele)</h3><ul><li>Maksa miinimumpalka + osa dividendidena</li><li>Jäta osa kasumist ettevõttesse investeeringuteks</li><li>Osta varasid ettevõtte kaudu</li></ul>\n\n<h2>Olulised nüansid</h2><ul><li><strong>Haigusleht:</strong> vabakutselisel seda automaatselt ei ole (kuid saab osta kindlustuse)</li><li><strong>Puhkus:</strong> planeerid ja rahastad selle ise</li><li><strong>Pension:</strong> miinimumpalga pealt makstud sotsiaalmaks annab pensionistaaži</li><li><strong>Kulud:</strong> vabakutseline saab maha arvata seadmed, interneti, koolitused jne</li></ul>\n\n<h2>Järeldused</h2><p><strong>Vabakutseline töö on parem, kui:</strong></p><ul><li>Sinu tulu on üle €25,000 aastas</li><li>Oled valmis maksustrateegiat planeerima</li><li>Sul on ettevõtlusega seotud kulusid</li></ul><p><strong>Palgatöö on parem, kui:</strong></p><ul><li>Hindad stabiilsust ja sotsiaalseid garantiisid</li><li>Ei soovi tegeleda raamatupidamise ja dokumentidega</li><li>Sissetulek on alla €15,000 aastas</li></ul>\n\n<p class=\"summary\">🎯 Kokkuvõte: €36,000 aastase sissetuleku juures teenib OÜ kaudu tegutsev vabakutseline umbes €6,000 aastas rohkem kui sama brutopalgaga töötaja. Kuid selleks tuleb maksud õigesti läbi arvutada!</p><p>Proovi meie <a href=\"/en/calculators\">kalkulaatorit</a> oma numbritega.</p>"
+}
+  ]
+}

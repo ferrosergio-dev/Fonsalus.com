@@ -1,0 +1,32 @@
+{
+  "faq": [
+    {
+      "slug": "how-to-calculate-salary-tax-estonia",
+      "question": "How to calculate salary tax in Estonia?",
+      "answer": "Salary tax in Estonia consists of: 1) Income tax (22%), 2) Social tax (33% - paid by employer), 3) Unemployment insurance (1.6% employee + 0.8% employer). Use our salary calculator for exact figures.",
+      "category": "salary",
+      "popular": true
+    },
+    {
+      "slug": "how-to-pay-dividends-estonia",
+      "question": "How to pay dividends from an Estonian company?",
+      "answer": "Dividends in Estonia are taxed at 22/78 of the net amount (effectively 28,2%). To pay dividends: 1) Have sufficient retained earnings, 2) Prepare board resolution, 3) File dividend declaration with tax board, 4) Pay tax by the 10th of following month.",
+      "category": "dividends",
+      "popular": true
+    },
+    {
+      "slug": "how-to-register-vat-estonia",
+      "question": "How to register for VAT in Estonia?",
+      "answer": "Register for VAT if: 1) Your turnover exceeds €40,000 per year, or 2) You voluntarily register. Registration is done through the e-Tax portal. You'll receive your VAT number within 3-5 business days.",
+      "category": "vat",
+      "popular": true
+    },
+    {
+      "slug": "what-are-accounting-deadlines",
+      "question": "What are the accounting deadlines in Estonia?",
+      "answer": "Key deadlines: Monthly VAT returns - by 20th of following month. Monthly payroll reports - by 10th of following month. Annual report - within 6 months after financial year end. Annual tax declarations - by June 30th.",
+      "category": "deadlines",
+      "popular": false
+    }
+  ]
+}

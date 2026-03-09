@@ -1,0 +1,103 @@
+{
+  "rates": {
+    "vat": {
+      "standard": 24,
+      "reduced": 13,
+      "reduced2": 9,
+      "description": {
+        "en": "Standard VAT rate (incl. 2% security tax, valid until 31.12.2028)",
+        "et": "Tavaline käibemaksumäär (sisaldab 2% julgeolekumaksu, kehtib kuni 31.12.2028)",
+        "ru": "Стандартная ставка НДС (включает 2% налога на безопасность, действует до 31.12.2028)"
+      }
+    },
+    "corporateIncomeTax": {
+      "rate": 22,
+      "type": "proportional",
+      "description": {
+        "en": "Corporate income tax on distributed profits (22/78 on net payment)",
+        "et": "Tulumaks jaotatud kasumilt (22/78 netoväljamaksest)",
+        "ru": "Налог на прибыль при распределении (22/78 от суммы нетто)"
+      }
+    },
+    "personalIncomeTax": {
+      "rate": 22,
+      "type": "proportional",
+      "description": {
+        "en": "Personal income tax rate",
+        "et": "Füüsilise isiku tulumaksumäär",
+        "ru": "Ставка подоходного налога с физического лица"
+      }
+    },
+    "taxFreeAllowance": {
+      "maxMonthly": 654,
+      "maxAnnual": 7848,
+      "pensionerMaxMonthly": 776,
+      "pensionerMaxAnnual": 9312,
+      "type": "regressive",
+      "description": {
+        "en": "Monthly tax-free allowance depends on total income (max amount shown). Applies until new reform.",
+        "et": "Maksuvaba tulu kuus sõltub kogusissetulekust (toodud on maksimumsumma). Kehtib kuni uue reformini.",
+        "ru": "Необлагаемый доход в месяц зависит от общего дохода (указана максимальная сумма). Действует до новой реформы."
+      }
+    },
+    "socialTax": {
+      "rate": 33,
+      "paidBy": "employer",
+      "description": {
+        "en": "Social tax paid by employer",
+        "et": "Sotsiaalmaks, maksab tööandja",
+        "ru": "Социальный налог платит работодатель"
+      }
+    },
+    "unemploymentInsurance": {
+      "employee": 1.6,
+      "employer": 0.8,
+      "description": {
+        "en": "Unemployment insurance premiums (%)",
+        "et": "Töötuskindlustusmakse määrad (%)",
+        "ru": "Ставки страхования от безработицы (%)"
+      }
+    },
+    "pensionContribution": {
+      "rate": [2, 4, 6],
+      "paidBy": "employee",
+      "description": {
+        "en": "Mandatory pension contribution rate (employee can choose 2%, 4%, or 6%)",
+        "et": "Kohustusliku kogumispensioni määr (töötaja saab valida 2%, 4% või 6%)",
+        "ru": "Ставка обязательной пенсионной накопления (работник может выбрать 2%, 4% или 6%)"
+      }
+    },
+    "securityTax": {
+      "description": {
+        "en": "Temporary security tax (2025-2028) applied to VAT, corporate profits, and personal gross income.",
+        "et": "Ajutine julgeolekumaks (2025-2028), mida rakendatakse käibemaksule, ettevõtte kasumile ja füüsilise isiku brutotulule.",
+        "ru": "Временный налог на безопасность (2025-2028), применяемый к НДС, прибыли предприятий и валовому доходу физических лиц."
+      },
+      "appliedToVAT": true,
+      "appliedToCorporateProfit": {
+        "rate": 2,
+        "startDate": "2026-01-01",
+        "endDate": "2028-12-31",
+        "taxableBase": "accounting profit (incl. unrealized gains)"
+      },
+      "appliedToPersonalGrossIncome": {
+        "rate": 2,
+        "startDate": "2026-01-01",
+        "endDate": "2028-12-31",
+        "taxableBase": "gross income before deductions"
+      }
+    },
+    "vatRegistrationThreshold": {
+      "amount": 40000,
+      "currency": "EUR",
+      "period": "annual",
+      "includesNow": ["taxable supplies", "certain financial services", "real estate transactions"],
+      "description": {
+        "en": "Mandatory VAT registration threshold (includes taxable supplies and now also certain financial services and real estate transactions)",
+        "et": "Kohustuslik käibemaksukohustuse piirmäär (sisaldab maksustatavat käivet ning nüüd ka teatud finantsteenuseid ja kinnisvaratehinguid)",
+        "ru": "Порог обязательной регистрации НДС (включает облагаемые обороты, а теперь также определенные финансовые услуги и сделки с недвижимостью)"
+      }
+    },
+    "lastUpdated": "2026-03-09"
+  }
+}

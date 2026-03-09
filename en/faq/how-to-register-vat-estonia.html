@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title> | Fonsalus OÜ</title>
+  
+  <meta name="description" content="">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/faq.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  
+  <!-- Каноническая ссылка -->
+  <link rel="canonical" href="https://fonsalus.com/en/faq/how-to-register-vat-estonia.html">
+  
+  <!-- Альтернативные языковые версии -->
+  <link rel="alternate" hreflang="en" href="https://fonsalus.com/en/faq/how-to-register-vat-estonia.html">
+  <link rel="alternate" hreflang="et" href="https://fonsalus.com/et/faq/how-to-register-vat-estonia.html">
+  <link rel="alternate" hreflang="ru" href="https://fonsalus.com/ru/faq/how-to-register-vat-estonia.html">
+  
+  <!-- Структурированные данные для FAQ Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "",
+    "description": "",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fonsalus OÜ",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fonsalus.com/images/logo.webp"
+      }
+    },
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{faqQuestion1}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{faqAnswer1}}"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "{{faqQuestion2}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{faqAnswer2}}"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ШАПКА -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="lang-switch">
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/et/" hreflang="et">ET</a>
+        <a href="/ru/" hreflang="ru">RU</a>
+      </div>
+
+      <div class="logo">
+        <span class="dot">●</span>
+        <span class="text">FONSALUS OÜ</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="/en/services/">Services</a>
+        <a href="/en/calculators/">Tools</a>
+        <a href="/en/blog/">Insights</a>
+        <a href="/en/faq/" class="active">FAQ</a>
+      </nav>
+
+      <a class="btn btn-consult desktop-only" href="/en/contact/">
+        Free consultation
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/calculators/">Tools</a>
+      <a href="/en/blog/">Insights</a>
+      <a href="/en/faq/" class="active">FAQ</a>
+      <a href="/en/contact/" class="btn btn-consult">Free consultation</a>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="faq-page">
+    <div class="container">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <a href="/en/">Home</a> &gt; 
+        <a href="/en/faq/">FAQ</a> &gt; 
+        <span></span>
+      </div>
+
+      <!-- Заголовок -->
+      <h1 class="faq-title"></h1>
+      
+      <!-- Мета-информация -->
+      <div class="faq-meta">
+        <span class="faq-date">Last updated: 2026-03-01</span>
+        <span class="faq-category">Category: <strong></strong></span>
+      </div>
+
+      <!-- Категории FAQ (для навигации) -->
+      <div class="faq-categories-nav">
+        <a href="/en/faq/" class="category-link">All Questions</a>
+        <a href="/en/faq/accounting/" class="category-link">Accounting</a>
+        <a href="/en/faq/tax/" class="category-link">{{t:tax}}</a>
+        <a href="/en/faq/payroll/" class="category-link">Payroll</a>
+        <a href="/en/faq/company/" class="category-link">Company</a>
+      </div>
+
+      <!-- ТЕЛО FAQ СТРАНИЦЫ -->
+      <div class="faq-content">
+        
+        <!-- Краткое введение (если есть) -->
+        <div class="faq-intro glass-card">
+          <p>{{faqIntro}}</p>
+        </div>
+
+        <!-- Поиск по FAQ (будет работать через JS) -->
+        <div class="faq-search">
+          <input type="text" id="faqSearch" placeholder="Search in FAQ..." class="search-input">
+          <button class="search-btn">🔍</button>
+        </div>
+
+        <!-- Основные вопросы и ответы -->
+        <div class="faq-items" id="faqItems">
+          {{faqItems}}
+        </div>
+
+        <!-- Блок "Не нашли ответ?" -->
+        <div class="faq-no-answer glass-card">
+          <h3>Didn't find your answer?</h3>
+          <p>Contact us for personalized assistance with your specific situation.</p>
+          <a href="/en/contact/" class="btn btn-primary">Ask your question</a>
+        </div>
+
+        <!-- Популярные темы -->
+        <div class="faq-popular-topics">
+          <h3>Popular Topics</h3>
+          <div class="topics-grid">
+            <a href="/en/faq/vat-registration/" class="topic-tag">🇪🇪 VAT</a>
+            <a href="/en/faq/dividend-tax/" class="topic-tag">💰 Dividend Tax</a>
+            <a href="/en/faq/social-tax/" class="topic-tag">📊 Social tax</a>
+            <a href="/en/faq/company-formation/" class="topic-tag">🏢 Company Formation</a>
+            <a href="/en/faq/e-residency/" class="topic-tag">💳 e-Residency</a>
+            <a href="/en/faq/annual-report/" class="topic-tag">📋 Annual Report</a>
+          </div>
+        </div>
+
+        <!-- Дополнительная информация из JSON -->
+        <div class="faq-additional-info glass-card">
+          <h3>Additional Resources</h3>
+          <ul>
+            <li><a href="/en/guides/">Guides</a> - Step-by-step guides for common tasks</li>
+            <li><a href="/en/calculators/">Calculators</a> - Free financial calculators</li>
+            <li><a href="/en/blog/">Blog</a> - Latest articles and insights</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Похожие FAQ -->
+      <div class="related-faq">
+        <h3>Related Questions</h3>
+        <div id="relatedFaq" class="related-grid">
+          <!-- Здесь будут загружаться похожие вопросы через JS -->
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <!-- CTA блок -->
+      <div class="faq-cta glass-card">
+        <h3>Still have questions?</h3>
+        <p>Let Fonsalus OÜ handle the complexity while you focus on your business.</p>
+        <a href="/en/contact/" class="btn btn-primary">Get free consultation</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+<footer class="site-footer">
+  <div class="container">
+    <!-- Основная сетка футера -->
+    <div class="footer-grid">
+      <!-- Колонка 1: Лого и описание -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <span class="dot">●</span>
+          <span class="text">FONSALUS OÜ</span>
+        </div>
+        <p class="footer-description">Your trusted partner for Estonian business consulting, accounting, and tax optimization.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/fonsalus" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.729C24 .774 23.204 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/fonsalus" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Колонка 2: Услуги -->
+      <div class="footer-col">
+        <h4 class="footer-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="/en/services/accounting.html">Accounting</a></li>
+          <li><a href="/en/services/payroll.html">Payroll</a></li>
+          <li><a href="/en/services/consulting.html">Consulting</a></li>
+          <li><a href="/en/services/company-formation.html">Company Formation</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Инструменты -->
+      <div class="footer-col">
+        <h4 class="footer-title">Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="/en/calculators/salary-calculator-estonia.html">Salary Calculator</a></li>
+          <li><a href="/en/calculators/dividend-tax-estonia.html">Dividend Tax</a></li>
+          <li><a href="/en/calculators/vat-calculator-estonia.html">VAT Calculator</a></li>
+          <li><a href="/en/calculators/business-profit-calculator.html">Profit Calculator</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 4: Ресурсы -->
+      <div class="footer-col">
+        <h4 class="footer-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/en/guides/">Guides</a></li>
+          <li><a href="/en/industries/">Industries</a></li>
+          <li><a href="/en/comparisons/">Comparisons</a></li>
+          <li><a href="/en/faq/">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 5: Компания -->
+      <div class="footer-col">
+        <h4 class="footer-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="/en/about/">About Us</a></li>
+          <li><a href="/en/blog/">Blog</a></li>
+          <li><a href="/en/contact/">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Нижняя часть футера с контактами -->
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:info@fonsalus.com">info@fonsalus.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+37212345678">+372 5591 1169</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Harju maakond, Tallinn, Estonia</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>Fonsalus OÜ | Registry code: 12119841 | VAT: EE</p>
+        <p class="copyright">
+          © 2026 Fonsalus OÜ. All rights reserved.
+          <a href="/terms.html">Terms of Use</a> | 
+          <a href="/cookies.html">Cookie Policy</a>
+        </p>
+      </div>
+
+      <!-- Кнопка "Наверх" -->
+      <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/translations.js"></script>
+  <script src="/js/tax-rates.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lang = 'en';
+      const currentSlug = 'how-to-register-vat-estonia';
+      
+      // Поиск по FAQ
+      const searchInput = document.getElementById('faqSearch');
+      const faqItems = document.getElementById('faqItems');
+      
+      if (searchInput && faqItems) {
+        searchInput.addEventListener('keyup', function() {
+          const searchTerm = this.value.toLowerCase();
+          const items = faqItems.querySelectorAll('.faq-item');
+          
+          items.forEach(item => {
+            const question = item.querySelector('h3').textContent.toLowerCase();
+            const answer = item.querySelector('p').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+      
+      // Загрузка похожих FAQ
+      const relatedDiv = document.getElementById('relatedFaq');
+      if (relatedDiv) {
+        // Здесь можно загрузить реальные данные из JSON
+        // Пока заглушка с переводами
+        const relatedFaqs = {
+          en: [
+            { title: 'What is the VAT rate in Estonia?', slug: 'vat-rate-estonia' },
+            { title: 'How to register a company?', slug: 'company-registration' },
+            { title: 'What are the income tax rates?', slug: 'income-tax-rates' }
+          ],
+          et: [
+            { title: 'Milline on käibemaksumäär Eestis?', slug: 'vat-rate-estonia' },
+            { title: 'Kuidas registreerida ettevõtet?', slug: 'company-registration' },
+            { title: 'Millised on tulumaksumäärad?', slug: 'income-tax-rates' }
+          ],
+          ru: [
+            { title: 'Какая ставка НДС в Эстонии?', slug: 'vat-rate-estonia' },
+            { title: 'Как зарегистрировать компанию?', slug: 'company-registration' },
+            { title: 'Какие ставки подоходного налога?', slug: 'income-tax-rates' }
+          ]
+        };
+        
+        const faqs = (relatedFaqs[lang] || relatedFaqs.en)
+          .filter(faq => faq.slug !== currentSlug)
+          .slice(0, 3);
+        
+        const readMoreText = {
+          en: 'Read Answer →',
+          et: 'Loe vastust →',
+          ru: 'Читать ответ →'
+        }[lang] || 'Read Answer →';
+        
+        if (faqs.length > 0) {
+          relatedDiv.innerHTML = faqs.map(faq => `
+            <div class="related-card glass-card">
+              <h4>${faq.title}</h4>
+              <a href="/${lang}/faq/${faq.slug}.html">${readMoreText}</a>
+            </div>
+          `).join('');
+        } else {
+          relatedDiv.innerHTML = '<p>No related questions found.</p>';
+        }
+      }
+      
+      // Аккордеон для FAQ (раскрытие ответов)
+      const faqItems_accordion = document.querySelectorAll('.faq-item');
+      faqItems_accordion.forEach(item => {
+        const question = item.querySelector('h3');
+        const answer = item.querySelector('p');
+        
+        if (question && answer) {
+          // Скрываем ответы по умолчанию, кроме первого
+          if (item !== faqItems_accordion[0]) {
+            answer.style.display = 'none';
+          }
+          
+          question.addEventListener('click', function() {
+            // Переключаем текущий ответ
+            if (answer.style.display === 'none') {
+              answer.style.display = 'block';
+            } else {
+              answer.style.display = 'none';
+            }
+          });
+          
+          // Добавляем стиль для указания кликабельности
+          question.style.cursor = 'pointer';
+          question.style.position = 'relative';
+          question.style.paddingRight = '30px';
+          
+          // Добавляем иконку
+          const icon = document.createElement('span');
+          icon.innerHTML = '▼';
+          icon.style.position = 'absolute';
+          icon.style.right = '10px';
+          icon.style.top = '0';
+          icon.style.fontSize = '14px';
+          icon.style.transition = 'transform 0.3s';
+          question.appendChild(icon);
+        }
+      });
+    });
+  </script>
+  
+  <!-- Специфический скрипт для этой FAQ страницы -->
+  {{faqScript}}
+</body>
+</html>

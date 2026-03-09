@@ -1,0 +1,122 @@
+{
+  "guides": [
+    {
+      "slug": "accounting-in-estonia",
+      "title": "Complete Guide to Accounting in Estonia",
+      "description": "Everything you need to know about accounting requirements, deadlines, and best practices for Estonian companies.",
+      "category": "general",
+      "readTime": 12,
+      "icon": "📘",
+      "content": {
+        "intro": "Estonia has one of the most modern and digital-friendly accounting systems in the world. This guide will help you understand all requirements.",
+        "sections": [
+          {
+            "title": "Legal Requirements",
+            "content": "All Estonian companies must maintain accounting records in accordance with the Estonian Accounting Act. Records must be kept for 7 years."
+          },
+          {
+            "title": "Reporting Deadlines",
+            "content": "Monthly reports: by the 10th of following month. Annual reports: within 6 months after financial year end."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "vat-guide-estonia",
+      "title": "VAT in Estonia: Complete Guide for Businesses",
+      "description": "VAT registration thresholds, rates, filing deadlines, and special rules for e-commerce and cross-border trade.",
+      "category": "tax",
+      "readTime": 10,
+      "icon": "💰",
+      "content": {
+        "intro": "Value Added Tax (VAT) is a consumption tax applied to most goods and services in Estonia.",
+        "sections": [
+          {
+            "title": "VAT Rates",
+            "content": "Standard rate: 22% (as of 2024). Reduced rate: 9% for books, medicines, and accommodation. 5% for newspapers."
+          },
+          {
+            "title": "Registration Threshold",
+            "content": "Domestic companies must register for VAT if their taxable turnover exceeds €40,000 per year."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "e-resident-accounting",
+      "title": "Accounting for e-Residents: A Complete Guide",
+      "description": "Special accounting considerations for e-residents running Estonian companies from abroad. Remote management, tax treaties, and banking.",
+      "category": "special",
+      "readTime": 15,
+      "icon": "🌍",
+      "content": {
+        "intro": "Estonia's e-Residency program allows non-residents to establish and manage EU-based companies remotely.",
+        "sections": [
+          {
+            "title": "Remote Accounting",
+            "content": "As an e-resident, you can handle all accounting digitally. Most service providers offer cloud-based platforms."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "tax-system-estonia",
+      "title": "Estonian Tax System Explained",
+      "description": "Complete overview of Estonian tax system. Corporate income tax, payroll taxes, VAT, and how distributed profits are taxed.",
+      "category": "tax",
+      "readTime": 14,
+      "icon": "📊",
+      "content": {
+        "intro": "Estonia has a unique tax system with 0% corporate income tax on retained profits.",
+        "sections": [
+          {
+            "title": "Corporate Income Tax",
+            "content": "Tax is only paid on distributed profits (dividends) at a rate of 20/80 of the net amount (effectively 20%)."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "freelance-tax-optimization-2026",
+      "title": "Freelance Tax Optimization 2026: FIE vs OÜ vs Employee",
+      "description": "Step-by-step guide on how freelancers can save on taxes and when to switch to OÜ",
+      "icon": "💼",
+      "disclaimer": "<p><strong>Important:</strong> This guide is for informational purposes. Minimum wage payments must correspond to actual work performed. Artificially lowering salary without economic justification is unacceptable. For individual calculation, please consult our specialists.</p>",
+      "intro": "<p><strong>Please note:</strong> Estonian legislation provides entrepreneurs with the choice between different business forms. All strategies described below are legal optimization methods provided by law. However, it's important that your actual activities correspond to the chosen model.</p>",
+      "steps": [
+        {
+          "title": "Beginner: FIE with minimum wage",
+          "description": "Income up to €2,500/month. Register as FIE (sole proprietor) and pay social tax only on minimum wage (€820). Rest is business income with lower tax rate.",
+          "example": "From €3000 income, net €2,213"
+        },
+        {
+          "title": "Intermediate: Open an OÜ",
+          "description": "When annual income exceeds €25,000, open an OÜ. Pay yourself minimum wage (to optimize social tax), take the rest as dividends.",
+          "example": "€3000/month → €2,356 net (vs employee €2,316)"
+        },
+        {
+          "title": "Advanced: Mixed strategy",
+          "description": "Keep some profit in the company for investments. Buy necessary equipment (laptop, phone, car) through the company. Plan dividend payments as needed.",
+          "example": "Long-term tax efficiency and asset accumulation"
+        }
+      ],
+      "taxRates": {
+        "socialTax": 33,
+        "incomeTax": 22,
+        "minimumWage": 820,
+        "dividendTax": "22/78 (28.2%)"
+      },
+      "prosCons": {
+        "fie": {
+          "pros": ["Easy to start", "Low bureaucracy", "Good up to €25,000"],
+          "cons": ["Unlimited liability", "Pension II pillar voluntary"]
+        },
+        "ou": {
+          "pros": ["Limited liability", "Dividend optimization", "Expense deduction"],
+          "cons": ["More bureaucracy", "Accounting costs"]
+        }
+      },
+      "footer": "<p class=\"disclaimer\"><strong>Remember:</strong> The optimal strategy depends on many factors: income volume, expense nature, future plans. Our accountants can help calculate an individual plan for your specific situation.</p>"
+    }
+  ]
+}

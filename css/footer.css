@@ -1,51 +1,353 @@
-/* ===== ПОДВАЛ ===== */
-footer {
+/* ===== СОВРЕМЕННЫЙ ПОДВАЛ ===== */
+.site-footer {
+  position: relative;
   margin-top: 80px;
-  padding: 40px 0 30px;
-  background: rgba(2, 6, 23, 0.8);
+  padding: 60px 0 30px;
+  background: linear-gradient(145deg, rgba(2, 6, 23, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+  color: #fff;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-footer p {
-  margin: 10px 0;
-  opacity: 0.9;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Сетка футера */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* Колонки */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Бренд-колонка */
+.footer-brand {
+  grid-column: 1;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-logo .dot {
+  color: #3b82f6;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.footer-logo .text {
+  background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-description {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 5px 0 15px;
+  max-width: 280px;
+}
+
+/* Социальные сети */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #3b82f6;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Заголовки колонок */
+.footer-title {
+  color: #fff;
   font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+/* Списки ссылок */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links li {
+  line-height: 1.4;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.footer-links a::before {
+  content: '›';
+  position: absolute;
+  left: -10px;
+  color: #3b82f6;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  left: -5px;
+}
+
+/* Нижняя часть футера */
+.footer-bottom {
+  position: relative;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Контактная информация */
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.contact-item a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: #3b82f6;
+}
+
+/* Юридическая информация */
+.footer-legal {
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
   line-height: 1.6;
 }
 
-footer .copyright {
-  opacity: 0.6;
-  font-size: 14px;
-  margin-top: 20px;
+.footer-legal p {
+  margin: 5px 0;
 }
 
-/* Адаптация для мобильных */
+.footer-legal a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: #3b82f6;
+}
+
+.copyright {
+  opacity: 0.7;
+}
+
+/* Кнопка "Наверх" */
+.back-to-top {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.back-to-top:hover {
+  background: #3b82f6;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  
+  .footer-description {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-links {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+  }
+  
+  .footer-links a::before {
+    display: none;
+  }
+}
+
+/* Мобильные */
 @media (max-width: 768px) {
-  footer {
+  .site-footer {
     margin-top: 60px;
-    padding: 30px 0 20px;
+    padding: 40px 0 20px;
   }
   
-  footer p {
-    font-size: 14px;
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
   
-  footer .copyright {
-    font-size: 12px;
+  .footer-contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .contact-item {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .back-to-top {
+    position: static;
+    margin: 20px auto 0;
   }
 }
 
+/* Маленькие мобильные */
 @media (max-width: 480px) {
-  footer {
-    margin-top: 40px;
-    padding: 25px 0 15px;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   
-  footer p {
-    font-size: 13px;
-    padding: 0 15px;
+  .footer-col {
+    text-align: center;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .footer-legal {
+    font-size: 12px;
   }
 }

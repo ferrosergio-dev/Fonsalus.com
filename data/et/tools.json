@@ -1,0 +1,30 @@
+{
+  "tools": [
+    {
+      "slug": "invoice-generator",
+      "title": "Arvegeneraator",
+      "description": "Looge professionaalseid arveid oma Eesti ettevõttele",
+      "content": "<div class='invoice-generator'>Arvegeneraatori liides</div>",
+      "script": "<script src='/js/invoice-generator.js'></script>"
+    },
+    {
+      "slug": "vat-invoice-template",
+      "title": "Käibemaksuarve mall",
+      "description": "EL-i nõuetele vastav arvemall käibemaksuga",
+      "content": "<div class='template-download'><a href='/downloads/vat-invoice-template-et.xlsx' class='btn btn-secondary'>Laadi Exceli mall alla</a><br><a href='/downloads/vat-invoice-template-et.pdf' class='btn btn-secondary'>Laadi PDF näidis alla</a></div>"
+    },
+    {
+      "slug": "salary-tax-table-estonia",
+      "title": "Palgamaksu tabel 2026",
+      "description": "Täielikud maksumäärad ja astmed 2026. aastaks",
+      "content": "<table class='tax-table'><thead><tr><th>Brutopalk (kuus)</th><th>Tulumaks</th><th>Sotsiaalmaks</th><th>Töötuskindlustus</th><th>Netopalk</th></tr></thead><tbody><tr><td>€1,000</td><td>€200</td><td>€330</td><td>€16</td><td>€784</td></tr><tr><td>€1,500</td><td>€300</td><td>€495</td><td>€24</td><td>€1,176</td></tr><tr><td>€2,000</td><td>€400</td><td>€660</td><td>€32</td><td>€1,568</td></tr><tr><td>€3,000</td><td>€600</td><td>€990</td><td>€48</td><td>€2,352</td></tr><tr><td>€4,000</td><td>€800</td><td>€1,320</td><td>€64</td><td>€3,136</td></tr><tr><td>€5,000</td><td>€1,000</td><td>€1,650</td><td>€80</td><td>€3,920</td></tr></tbody></table><p class='table-note'>* Arvutused on ligikaudsed. Täpseks arvutamiseks kasutage <a href='/et/calculators/salary-calculator-estonia.html'>palgakalkulaatorit</a>.</p>",
+      "script": ""
+    },
+    {
+      "slug": "dividend-tax-table-estonia",
+      "title": "Dividendimaksu tabel",
+      "description": "Maksumäärad jaotatud kasumile",
+      "content": "<table class='tax-table'><thead><tr><th>Dividendi summa</th><th>Maks (20/80)</th><th>Väljamakstav summa</th></tr></thead><tbody><tr><td>€1,000</td><td>€200</td><td>€800</td></tr><tr><td>€5,000</td><td>€1,000</td><td>€4,000</td></tr><tr><td>€10,000</td><td>€2,000</td><td>€8,000</td></tr><tr><td>€25,000</td><td>€5,000</td><td>€20,000</td></tr><tr><td>€50,000</td><td>€10,000</td><td>€40,000</td></tr><tr><td>€100,000</td><td>€20,000</td><td>€80,000</td></tr></tbody></table><p class='table-note'>Eestis on dividendide tulumaksumäär 20/80 netosummast (efektiivne määr 20%).</p>"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "calculators": [
+    {
+      "slug": "salary-calculator-estonia",
+      "title": "Estonian Salary Calculator 2026",
+      "description": "Calculate net salary from gross, including all taxes and contributions. Updated with current rates.",
+      "formula": "net = gross - (gross*0.22) - (gross*0.016) - (gross*0.02)",
+      "taxRates": {
+        "incomeTax": "22%",
+        "unemploymentInsurance": "1.6% (employee)",
+        "pensionContribution": "2%"
+      }
+    },
+    {
+      "slug": "dividend-tax-estonia",
+      "title": "Dividend Tax Calculator Estonia",
+      "description": "Calculate tax on distributed profits for Estonian companies. Regular vs regular rate.",
+      "formula": "tax = dividend * 0.282",
+      "note": "Effective rate is 22/78 of the net dividend (20%)"
+    },
+    {
+      "slug": "vat-calculator-estonia",
+      "title": "VAT Calculator Estonia (24%)",
+      "description": "Add or remove VAT from amounts. Calculate VAT inclusive and exclusive prices.",
+      "rates": {
+        "standard": "24%",
+        "reduced1": "9%",
+        "reduced2": "5%"
+      }
+    },
+    {
+      "slug": "income-tax-estonia",
+      "title": "Income Tax Calculator Estonia",
+      "description": "Calculate income tax on various types of income (employment, business, dividends, etc.)",
+      "note": "Basic income tax rate is 22%"
+    },
+    {
+      "slug": "freelancer-income-estonia",
+      "title": "Freelancer Income Calculator",
+      "description": "Calculate after-tax income for freelancers, including social tax obligations.",
+      "note": "Includes income tax (22%) and social contributions"
+    }
+  ]
+}

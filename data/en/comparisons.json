@@ -1,0 +1,30 @@
+{
+  "comparisons": [
+    {
+      "slug": "estonia-vs-lithuania-tax",
+      "title": "Estonia vs Lithuania: Corporate Tax Comparison",
+      "description": "Detailed comparison of tax systems, rates, and benefits for businesses considering Baltic countries.",
+      "countries": ["Estonia", "Lithuania"],
+      "featured": true,
+      "comparisonPoints": {
+        "corporateTax": "Estonia: 0% on retained profits, 20% on dividends | Lithuania: 15% standard rate",
+        "vat": "Both: 22% (Lithuania has 21% standard rate)",
+        "laborCosts": "Similar social tax rates around 33-34%"
+      }
+    },
+    {
+      "slug": "estonia-vs-latvia-tax",
+      "title": "Estonia vs Latvia: Which is Better for Your Business?",
+      "description": "Compare tax rates, reporting requirements, and business environment between Estonia and Latvia.",
+      "countries": ["Estonia", "Latvia"],
+      "featured": false
+    },
+    {
+      "slug": "best-country-for-e-residents",
+      "title": "Best Country for e-Residents: Estonia vs Alternatives",
+      "description": "Compare e-Residency programs across Europe. Why Estonia leads and what alternatives exist.",
+      "countries": ["Estonia", "Lithuania", "Portugal"],
+      "featured": true
+    }
+  ]
+}

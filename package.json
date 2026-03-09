@@ -1,0 +1,7 @@
+{
+  "name": "fonsalus-website",
+  "version": "1.0.0",
+  "scripts": {
+    "generate-seo": "node js/seo-generator.js"
+  }
+}
