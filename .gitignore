@@ -1,0 +1,17 @@
+# Sensitive files
+*.pem
+*.key
+*.crt
+*.csr
+*_key.txt
+*_base64.txt
+private*
+secret*
+dkim*
+.DS_Store
+.env
+.env.local
+.env.*.local
+.wrangler
+dist
+node_modules

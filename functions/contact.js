@@ -38,6 +38,8 @@ export async function onRequest(context) {
     const subject = formData.get('subject');
     const message = formData.get('message');
     
+    console.log('Form data received:', { name, email, subject });
+    
     // Валидация
     if (!name || !email || !subject || !message) {
       return new Response(JSON.stringify({ 
@@ -66,6 +68,7 @@ export async function onRequest(context) {
       });
     }
     
+    console.log('Verifying Turnstile token...');
     const verifyData = new FormData();
     verifyData.append('secret', env.TURNSTILE_SECRET_KEY);
     verifyData.append('response', token);
@@ -76,6 +79,7 @@ export async function onRequest(context) {
     });
     
     const verifyResult = await verifyResponse.json();
+    console.log('Turnstile verification result:', verifyResult);
     
     if (!verifyResult.success) {
       return new Response(JSON.stringify({ 
@@ -90,65 +94,93 @@ export async function onRequest(context) {
       });
     }
     
-    // ОТПРАВКА EMAIL через Email Routing на info@fonsalus.com
-    const sendRequest = new Request('https://api.mailchannels.net/tx/v1/send', {
+    // Формируем personalization с поддержкой DKIM
+    const personalization = {
+      to: [{ email: 'info@fonsalus.com', name: 'Fonsalus Team' }],
+    };
+    
+    // Добавляем DKIM если есть приватный ключ
+    if (env.DKIM_PRIVATE_KEY) {
+      console.log('Adding DKIM signature...');
+      personalization.dkim_domain = 'fonsalus.com';
+      personalization.dkim_selector = 'mailchannels';
+      personalization.dkim_private_key = env.DKIM_PRIVATE_KEY;
+    }
+    
+    // ОТПРАВКА EMAIL через Mailchannels
+    console.log('Sending email via Mailchannels...');
+    
+    const emailData = {
+      personalizations: [personalization],
+      from: {
+        email: 'info@fonsalus.com',
+        name: 'Fonsalus Contact Form',
+      },
+      reply_to: {
+        email: email,
+        name: name,
+      },
+      subject: `Contact Form: ${subject} from ${name}`,
+      content: [
+        {
+          type: 'text/plain',
+          value: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
+        },
+        {
+          type: 'text/html',
+          value: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    h2 { color: #7c6cff; border-bottom: 2px solid #7c6cff; padding-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    td { padding: 10px; border: 1px solid #ddd; }
+    td:first-child { font-weight: bold; background: #f5f5f5; width: 30%; }
+    .message { background: #f9f9f9; padding: 15px; border-radius: 5px; border-left: 4px solid #7c6cff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📬 New Contact Form Submission</h2>
+    <table>
+      <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
+      <tr><td><strong>Email:</strong></td><td><a href="mailto:${email}">${email}</a></td></tr>
+      <tr><td><strong>Phone:</strong></td><td>${phone}</td></tr>
+      <tr><td><strong>Subject:</strong></td><td>${subject}</td></tr>
+    </table>
+    <h3>💬 Message:</h3>
+    <div class="message">${message.replace(/\n/g, '<br>')}</div>
+    <p style="margin-top: 20px; font-size: 12px; color: #999;">Sent via fonsalus.com contact form</p>
+  </div>
+</body>
+</html>`
+        },
+      ],
+    };
+    
+    console.log('Email payload prepared');
+    
+    const sendResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: 'info@fonsalus.com', name: 'Fonsalus Team' }],
-          },
-        ],
-        from: {
-          email: 'info@fonsalus.com', // Отправляем с info@
-          name: 'Fonsalus Contact Form',
-        },
-        reply_to: {
-          email: email,
-          name: name,
-        },
-        subject: `Contact Form: ${subject} from ${name}`,
-        content: [
-          {
-            type: 'text/plain',
-            value: `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Subject: ${subject}
-
-Message:
-${message}
-            `,
-          },
-          {
-            type: 'text/html',
-            value: `
-<h2>New Contact Form Submission</h2>
-<table style="border-collapse: collapse; width: 100%;">
-  <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${name}</td></tr>
-  <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${email}</td></tr>
-  <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Phone:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${phone}</td></tr>
-  <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Subject:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${subject}</td></tr>
-</table>
-<h3>Message:</h3>
-<p style="padding: 12px; background: #f5f5f5; border-radius: 4px;">${message.replace(/\n/g, '<br>')}</p>
-            `,
-          },
-        ],
-      }),
+      body: JSON.stringify(emailData),
     });
     
-    const sendResponse = await fetch(sendRequest);
+    const responseText = await sendResponse.text();
+    console.log('Mailchannels response status:', sendResponse.status);
+    console.log('Mailchannels response body:', responseText);
     
     if (!sendResponse.ok) {
-      const errorText = await sendResponse.text();
-      console.error('Email send failed:', errorText);
-      throw new Error('Failed to send email');
+      throw new Error(`Mailchannels error: ${sendResponse.status} - ${responseText}`);
     }
+    
+    console.log('Email sent successfully!');
     
     return new Response(JSON.stringify({ 
       success: true,
@@ -162,6 +194,7 @@ ${message}
     
   } catch (error) {
     console.error('Contact form error:', error);
+    
     return new Response(JSON.stringify({ 
       success: false, 
       error: 'Something went wrong. Please try again later.' 
