@@ -65,34 +65,44 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     
-    // Собираем данные формы
+    // Используем FormData напрямую (не JSON)
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
     
     try {
-      // Здесь будет ваш backend endpoint
-      const response = await fetch('/api/contact', {
+      // Отправляем на /contact (ваш Cloudflare Worker)
+      const response = await fetch('/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
+        body: formData  // Отправляем как form-data, не JSON!
       });
       
-      if (response.ok) {
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
         form.reset();
+        
+        // Сбрасываем Turnstile
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+        
         if (successMessage) {
+          successMessage.textContent = result.message || 'Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
           successMessage.classList.add('visible');
+          
+          // Прокручиваем к сообщению об успехе
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
           setTimeout(() => {
             successMessage.classList.remove('visible');
           }, 5000);
         }
       } else {
-        alert('Something went wrong. Please try again later.');
+        // Показываем ошибку от сервера
+        alert(result.error || 'Something went wrong. Please try again later.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Network error. Please try again.');
+      alert('Network error. Please check your connection and try again.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send message';
