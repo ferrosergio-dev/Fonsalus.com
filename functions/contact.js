@@ -1,4 +1,4 @@
-// functions/contact.js - ПОЛНАЯ РАБОЧАЯ ВЕРСИЯ
+// functions/contact.js - ФИНАЛЬНАЯ ИСПРАВЛЕННАЯ ВЕРСИЯ
 export async function onRequest(context) {
   const { request, env } = context;
   
@@ -134,10 +134,13 @@ Subject: ${subject}
 Message:
 ${message}`;
     
-    console.log('Sending email via Service binding to email-sender-worker...');
-    
-    // 🔥 ВЫЗЫВАЕМ EMAIL WORKER ЧЕРЕЗ SERVICE BINDING
-    const emailResponse = await env['email-sender-worker'].fetch('https://email-sender-worker/send', {
+    console.log('Sending email to worker...');
+
+    // ✅ ИСПОЛЬЗУЕМ ТОЛЬКО ЭТОТ ВАРИАНТ (через URL)
+    const workerUrl = 'https://contact-form-email-worker.fonsalus.workers.dev';
+    console.log('Calling worker at:', workerUrl);
+
+    const emailResponse = await fetch(workerUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -149,12 +152,12 @@ ${message}`;
         text: textContent
       })
     });
-    
+
     const emailResult = await emailResponse.json();
     console.log('Email worker response:', emailResult);
-    
+
     if (!emailResult.success) {
-      throw new Error('Failed to send email');
+      throw new Error('Failed to send email: ' + (emailResult.error || 'Unknown error'));
     }
     
     console.log('Email sent successfully!');
