@@ -103,7 +103,7 @@ export async function onRequest(context) {
     if (env.DKIM_PRIVATE_KEY) {
       console.log('Adding DKIM signature...');
       personalization.dkim_domain = 'fonsalus.com';
-      personalization.dkim_selector = 'mailchannels';
+      personalization.dkim_selector = 'cf2024-1';
       personalization.dkim_private_key = env.DKIM_PRIVATE_KEY;
     }
     
