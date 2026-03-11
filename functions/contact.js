@@ -1,4 +1,4 @@
-// functions/contact.js
+// functions/contact.js - ПОЛНАЯ РАБОЧАЯ ВЕРСИЯ
 export async function onRequest(context) {
   const { request, env } = context;
   
@@ -94,41 +94,8 @@ export async function onRequest(context) {
       });
     }
     
-    // Формируем personalization с поддержкой DKIM
-    const personalization = {
-      to: [{ email: 'info@fonsalus.com', name: 'Fonsalus Team' }],
-    };
-    
-    // Добавляем DKIM если есть приватный ключ
-    if (env.DKIM_PRIVATE_KEY) {
-      console.log('Adding DKIM signature...');
-      personalization.dkim_domain = 'fonsalus.com';
-      personalization.dkim_selector = 'cf2024-1';
-      personalization.dkim_private_key = env.DKIM_PRIVATE_KEY;
-    }
-    
-    // ОТПРАВКА EMAIL через Mailchannels
-    console.log('Sending email via Mailchannels...');
-    
-    const emailData = {
-      personalizations: [personalization],
-      from: {
-        email: 'info@fonsalus.com',
-        name: 'Fonsalus Contact Form',
-      },
-      reply_to: {
-        email: email,
-        name: name,
-      },
-      subject: `Contact Form: ${subject} from ${name}`,
-      content: [
-        {
-          type: 'text/plain',
-          value: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
-        },
-        {
-          type: 'text/html',
-          value: `
+    // Формируем HTML письма
+    const htmlContent = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,27 +124,37 @@ export async function onRequest(context) {
     <p style="margin-top: 20px; font-size: 12px; color: #999;">Sent via fonsalus.com contact form</p>
   </div>
 </body>
-</html>`
-        },
-      ],
-    };
+</html>`;
     
-    console.log('Email payload prepared');
+    const textContent = `Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
+
+Message:
+${message}`;
     
-    const sendResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+    console.log('Sending email via Service binding to email-sender-worker...');
+    
+    // 🔥 ВЫЗЫВАЕМ EMAIL WORKER ЧЕРЕЗ SERVICE BINDING
+    const emailResponse = await env['email-sender-worker'].fetch('https://email-sender-worker/send', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(emailData),
+      body: JSON.stringify({
+        to: 'info@fonsalus.com',
+        subject: `Contact Form: ${subject} from ${name}`,
+        html: htmlContent,
+        text: textContent
+      })
     });
     
-    const responseText = await sendResponse.text();
-    console.log('Mailchannels response status:', sendResponse.status);
-    console.log('Mailchannels response body:', responseText);
+    const emailResult = await emailResponse.json();
+    console.log('Email worker response:', emailResult);
     
-    if (!sendResponse.ok) {
-      throw new Error(`Mailchannels error: ${sendResponse.status} - ${responseText}`);
+    if (!emailResult.success) {
+      throw new Error('Failed to send email');
     }
     
     console.log('Email sent successfully!');
