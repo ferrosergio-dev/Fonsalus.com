@@ -1,0 +1,238 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ-ГАЙДА (COMPANY FORMATION GUIDE) ===== */
+
+/* Уведомление (зелёное/информационное) - теперь с правильной шириной */
+.guide-notice {
+  background: rgba(16, 185, 129, 0.15);
+  border-left: 4px solid #10b981;
+  padding: 1.5rem;
+  margin: 0 auto 2rem auto;  /* центрирование */
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  max-width: 800px;  /* sama mis .service-content max-width */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.guide-notice p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+.guide-notice strong {
+  color: #10b981;
+}
+
+/* Предупреждение (жёлтое) */
+.guide-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin: 1.5rem 0 2rem;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.guide-warning p {
+  margin: 0;
+  color: #fcd34d;
+}
+
+.guide-warning strong {
+  color: #fbbf24;
+}
+
+/* Таблица сравнения */
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.guide-table th {
+  background: rgba(124, 108, 255, 0.2);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #cbd5e1;
+  border-bottom: 2px solid rgba(124, 108, 255, 0.3);
+}
+
+.guide-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.guide-table tr:last-child td {
+  border-bottom: none;
+}
+
+.guide-table td:first-child {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Выделенный блок */
+.guide-highlight {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid rgba(124, 108, 255, 0.2);
+}
+
+.guide-highlight h3 {
+  margin-top: 0;
+  color: #cbd5e1;
+}
+
+.guide-highlight ul {
+  margin-bottom: 0;
+}
+
+/* Ссылки в контенте */
+.service-content a {
+  color: #9d8cff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(157, 140, 255, 0.4);
+  transition: all 0.2s;
+}
+
+.service-content a:hover {
+  color: #b4a7ff;
+  border-bottom-color: #b4a7ff;
+}
+
+/* Заголовки шагов (h2 с номерами) */
+.service-content h2 {
+  font-size: 28px;
+  margin: 30px 0 20px;
+  color: #7c6cff;
+  position: relative;
+  padding-left: 0;
+}
+
+.service-content h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Подзаголовки (h3) */
+.service-content h3 {
+  font-size: 22px;
+  margin: 25px 0 15px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Списки */
+.service-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.service-content li {
+  padding: 10px 0 10px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  color: #e2e8f0;
+}
+
+.service-content li:before {
+  content: "✓";
+  color: #7c6cff;
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+}
+
+.service-content li strong {
+  color: #f1f5f9;
+}
+
+/* Абзацы */
+.service-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.service-content p em {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .guide-notice {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    max-width: 100%;  /* мобильная версия - полная ширина */
+  }
+  
+  .guide-notice p {
+    font-size: 1rem;
+  }
+  
+  .guide-table {
+    font-size: 14px;
+  }
+  
+  .guide-table th,
+  .guide-table td {
+    padding: 0.5rem;
+  }
+  
+  .service-content h2 {
+    font-size: 24px;
+  }
+  
+  .service-content h3 {
+    font-size: 20px;
+  }
+  
+  .service-content p {
+    font-size: 16px;
+  }
+  
+  .service-content li {
+    font-size: 15px;
+    padding: 8px 0 8px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-notice {
+    padding: 1rem;
+  }
+  
+  .guide-table {
+    font-size: 13px;
+  }
+  
+  .guide-table th,
+  .guide-table td {
+    padding: 0.4rem;
+  }
+  
+  .service-content h2 {
+    font-size: 22px;
+  }
+  
+  .service-content h3 {
+    font-size: 18px;
+  }
+  
+  .service-content li {
+    font-size: 14px;
+  }
+}
