@@ -3,8 +3,103 @@
     {
       "slug": "salary-calculator-estonia",
       "title": "Palgakalkulaator Eesti 2026",
-      "description": "Arvuta netopalk brutopalgast, kõik maksud ja mahaarvamised.",
-      "formula": "net = gross - (gross*0.22) - (gross*0.016) - (gross*0.02)"
+      "description": "Arvuta netopalk brutopalgast, kõik maksud ja mahaarvamised. Uuendatud 2026. aasta määradega, sealhulgas 2% julgeolekumaks.",
+      "formula": "net = brutopalk - tulumaks(22%) - töötuskindlustus(1.6%) - pension(2/4/6%) - julgeolekumaks(2%)",
+      "taxRates": {
+        "incomeTax": "22%",
+        "unemploymentInsurance": "1.6% (töötaja)",
+        "pensionContribution": "2%, 4% või 6%",
+        "securityTax": "2% (brutopalgalt)",
+        "socialTax": "33% (tööandja)",
+        "unemploymentEmployer": "0.8% (tööandja)"
+      },
+      "features": [
+        "Fikseeritud maksuvaba tulu (700 €/kuus, pensionäridele 776 €/kuus)",
+        "2% julgeolekumaks brutopalgalt (2026-2028)",
+        "Valitav pensionimäär",
+        "Sisaldab tööandja kulude arvestust"
+      ],
+      "note": "Julgeolekumaksu arvestatakse brutopalgalt enne mahaarvamisi."
+    },
+    {
+      "slug": "dividend-tax-estonia",
+      "title": "Dividendimaksu kalkulaator Eesti 2026",
+      "description": "Arvuta jaotatud kasumilt makstav tulumaks Eesti ettevõtetele. Sisaldab ettevõtte julgeolekumaksu teavet.",
+      "formula": "maks = dividend * 22/78 (≈28.2%)",
+      "taxRates": {
+        "dividendTax": "22/78 netodividendist (≈28.2%)",
+        "corporateSecurityTax": "2% kogukasumilt"
+      },
+      "features": [
+        "Tavaline 22/78 dividendimaksumäär",
+        "2% julgeolekumaks ettevõtte kogukasumilt (2026-2028)",
+        "Sisaldab brutosumma arvutust"
+      ],
+      "note": "Julgeolekumaksu rakendatakse ettevõtte kogukasumile, mitte ainult jaotatud dividendidele."
+    },
+    {
+      "slug": "vat-calculator-estonia",
+      "title": "Käibemaksu kalkulaator Eesti (24%) 2026",
+      "description": "Lisa või eemalda käibemaks summadest. Arvuta käibemaksuga ja käibemaksuta hinnad standardse 24% määraga.",
+      "rates": {
+        "standard": "24% (sisaldab 2% julgeolekumaksu)",
+        "reduced1": "13%",
+        "reduced2": "9%"
+      },
+      "features": [
+        "Lisa käibemaks netosummale",
+        "Eemalda käibemaks brutosummalt",
+        "24% standardmäär (sisaldab julgeolekumaksu komponenti)"
+      ],
+      "note": "Standardne 24% käibemaksumäär sisaldab 2% julgeolekumaksu komponenti (kehtib 2025-2028)."
+    },
+    {
+      "slug": "income-tax-estonia",
+      "title": "Tulumaksu kalkulaator Eesti 2026",
+      "description": "Arvuta tulumaks erinevatelt tululiikidelt, sealhulgas uus 2% julgeolekumaks brutotulult.",
+      "taxRates": {
+        "incomeTax": "22%",
+        "securityTax": "2% brutotulult",
+        "taxFreeAllowance": "700 €/kuus (pensionäridele 776 €/kuus)"
+      },
+      "features": [
+        "Eraldi arvutus pensionäridele",
+        "Sisaldab 2% julgeolekumaksu",
+        "Näitab maksustatavat tulu pärast vabastust"
+      ],
+      "note": "Julgeolekumaksu arvestatakse brutotulult enne maksuvaba tulu mahaarvamist."
+    },
+    {
+      "slug": "freelancer-income-estonia",
+      "title": "FIE tulu kalkulaator 2026",
+      "description": "Arvuta FIE maksujärgne tulu, sealhulgas tulumaks, sotsiaalmaks, julgeolekumaks ja vabatahtlikud pensionimaksed.",
+      "taxRates": {
+        "incomeTax": "22%",
+        "socialTax": "33%",
+        "securityTax": "2%",
+        "pensionContribution": "2%, 4% või 6% (vabatahtlik)",
+        "taxFreeAllowance": "700 €/kuus"
+      },
+      "features": [
+        "Täielik maksuarvestus FIE-dele",
+        "Sotsiaalmaks aastasest tulust koos miinimumbaasiga",
+        "Vabatahtlik pensionimakse",
+        "2% julgeolekumaks sisaldub"
+      ],
+      "note": "Sotsiaalmaksu arvestatakse kogu tulult aastase miinimumbaasiga (umbes 6000 €/aastas)."
+    },
+    {
+      "slug": "corporate-profit-tax-estonia",
+      "title": "Ettevõtte kasumi maksu kalkulaator 2026",
+      "description": "Arvuta 2% julgeolekumaks ettevõtte kasumilt enne jaotamist.",
+      "taxRates": {
+        "securityTax": "2% kogukasumilt"
+      },
+      "features": [
+        "Arvuta kasum pärast julgeolekumaksu",
+        "Näitab maksusummat eraldi"
+      ],
+      "note": "2% julgeolekumaksu rakendatakse ettevõtte kogukasumile, sõltumata selle jaotamisest."
     }
   ]
 }

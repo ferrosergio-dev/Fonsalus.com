@@ -5,9 +5,9 @@
       "reduced": 13,
       "reduced2": 9,
       "description": {
-        "en": "Standard VAT rate (incl. 2% security tax, valid until 31.12.2028)",
-        "et": "Tavaline käibemaksumäär (sisaldab 2% julgeolekumaksu, kehtib kuni 31.12.2028)",
-        "ru": "Стандартная ставка НДС (включает 2% налога на безопасность, действует до 31.12.2028)"
+        "en": "Standard VAT rate 24% (includes 2% security tax, valid 2025-2028)",
+        "et": "Tavaline käibemaksumäär 24% (sisaldab 2% julgeolekumaksu, kehtib 2025-2028)",
+        "ru": "Стандартная ставка НДС 24% (включает 2% налога на безопасность, действует 2025-2028)"
       }
     },
     "corporateIncomeTax": {
@@ -23,68 +23,79 @@
       "rate": 22,
       "type": "proportional",
       "description": {
-        "en": "Personal income tax rate",
-        "et": "Füüsilise isiku tulumaksumäär",
-        "ru": "Ставка подоходного налога с физического лица"
+        "en": "Personal income tax rate (flat rate)",
+        "et": "Füüsilise isiku tulumaksumäär (ühtne määr)",
+        "ru": "Ставка подоходного налога с физического лица (единая ставка)"
       }
     },
     "taxFreeAllowance": {
-      "maxMonthly": 654,
-      "maxAnnual": 7848,
+      "maxMonthly": 700,
+      "maxAnnual": 8400,
       "pensionerMaxMonthly": 776,
       "pensionerMaxAnnual": 9312,
-      "type": "regressive",
+      "type": "fixed",
       "description": {
-        "en": "Monthly tax-free allowance depends on total income (max amount shown). Applies until new reform.",
-        "et": "Maksuvaba tulu kuus sõltub kogusissetulekust (toodud on maksimumsumma). Kehtib kuni uue reformini.",
-        "ru": "Необлагаемый доход в месяц зависит от общего дохода (указана максимальная сумма). Действует до новой реформы."
+        "en": "Monthly tax-free allowance (fixed amounts from 2026)",
+        "et": "Maksuvaba tulu kuus (fikseeritud summad alates 2026)",
+        "ru": "Необлагаемый доход в месяц (фиксированные суммы с 2026)"
       }
     },
     "socialTax": {
       "rate": 33,
       "paidBy": "employer",
+      "annualMinimum": 6000,
       "description": {
-        "en": "Social tax paid by employer",
-        "et": "Sotsiaalmaks, maksab tööandja",
-        "ru": "Социальный налог платит работодатель"
+        "en": "Social tax paid by employer (33%). For self-employed, calculated on annual income with minimum base.",
+        "et": "Sotsiaalmaksu maksab tööandja (33%). FIE-del arvutatakse aastasest tulust miinimumbaasiga.",
+        "ru": "Социальный налог платит работодатель (33%). Для самозанятых рассчитывается от годового дохода с минимальной базой."
       }
     },
     "unemploymentInsurance": {
       "employee": 1.6,
       "employer": 0.8,
       "description": {
-        "en": "Unemployment insurance premiums (%)",
-        "et": "Töötuskindlustusmakse määrad (%)",
-        "ru": "Ставки страхования от безработицы (%)"
+        "en": "Unemployment insurance premiums (%) - rates for 2026",
+        "et": "Töötuskindlustusmakse määrad (%) - 2026. aasta määrad",
+        "ru": "Ставки страхования от безработицы (%) - ставки на 2026 год"
       }
     },
     "pensionContribution": {
       "rate": [2, 4, 6],
+      "default": 2,
       "paidBy": "employee",
+      "exemptFor": ["pensioners", "disabled"],
       "description": {
-        "en": "Mandatory pension contribution rate (employee can choose 2%, 4%, or 6%)",
-        "et": "Kohustusliku kogumispensioni määr (töötaja saab valida 2%, 4% või 6%)",
-        "ru": "Ставка обязательной пенсионной накопления (работник может выбрать 2%, 4% или 6%)"
+        "en": "Mandatory pension contribution rate (employee can choose 2%, 4%, or 6%). Pensioners and disabled persons are exempt.",
+        "et": "Kohustusliku kogumispensioni määr (töötaja saab valida 2%, 4% või 6%). Pensionärid ja puudega isikud on vabastatud.",
+        "ru": "Ставка обязательной пенсионной накопления (работник может выбрать 2%, 4% или 6%). Пенсионеры и инвалиды освобождены."
       }
     },
     "securityTax": {
       "description": {
-        "en": "Temporary security tax (2025-2028) applied to VAT, corporate profits, and personal gross income.",
-        "et": "Ajutine julgeolekumaks (2025-2028), mida rakendatakse käibemaksule, ettevõtte kasumile ja füüsilise isiku brutotulule.",
-        "ru": "Временный налог на безопасность (2025-2028), применяемый к НДС, прибыли предприятий и валовому доходу физических лиц."
+        "en": "Temporary security tax (2026-2028) applied to VAT, corporate profits, and personal gross income.",
+        "et": "Ajutine julgeolekumaks (2026-2028), mida rakendatakse käibemaksule, ettevõtte kasumile ja füüsilise isiku brutotulule.",
+        "ru": "Временный налог на безопасность (2026-2028), применяемый к НДС, прибыли предприятий и валовому доходу физических лиц."
       },
       "appliedToVAT": true,
       "appliedToCorporateProfit": {
         "rate": 2,
         "startDate": "2026-01-01",
         "endDate": "2028-12-31",
-        "taxableBase": "accounting profit (incl. unrealized gains)"
+        "description": {
+          "en": "2% tax on corporate profit (applies to total profit, not just distributed)",
+          "et": "2% maks ettevõtte kasumilt (kehtib kogu kasumile, mitte ainult jaotatud osale)",
+          "ru": "2% налог на прибыль предприятий (применяется ко всей прибыли, а не только к распределяемой)"
+        }
       },
       "appliedToPersonalGrossIncome": {
         "rate": 2,
         "startDate": "2026-01-01",
         "endDate": "2028-12-31",
-        "taxableBase": "gross income before deductions"
+        "description": {
+          "en": "2% tax on gross income (applies before any deductions, including tax-free allowance)",
+          "et": "2% maks brutotulult (kehtib enne mahaarvamisi, sealhulgas maksuvaba tulu)",
+          "ru": "2% налог на валовой доход (применяется до любых вычетов, включая необлагаемый минимум)"
+        }
       }
     },
     "vatRegistrationThreshold": {
@@ -93,11 +104,11 @@
       "period": "annual",
       "includesNow": ["taxable supplies", "certain financial services", "real estate transactions"],
       "description": {
-        "en": "Mandatory VAT registration threshold (includes taxable supplies and now also certain financial services and real estate transactions)",
-        "et": "Kohustuslik käibemaksukohustuse piirmäär (sisaldab maksustatavat käivet ning nüüd ka teatud finantsteenuseid ja kinnisvaratehinguid)",
-        "ru": "Порог обязательной регистрации НДС (включает облагаемые обороты, а теперь также определенные финансовые услуги и сделки с недвижимостью)"
+        "en": "Mandatory VAT registration threshold (€40,000 annual turnover)",
+        "et": "Kohustuslik käibemaksukohustuse piirmäär (40 000 € aastakäive)",
+        "ru": "Порог обязательной регистрации НДС (40 000 € годового оборота)"
       }
     },
-    "lastUpdated": "2026-03-09"
+    "lastUpdated": "2026-03-12"
   }
 }

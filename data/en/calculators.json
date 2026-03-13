@@ -3,42 +3,103 @@
     {
       "slug": "salary-calculator-estonia",
       "title": "Estonian Salary Calculator 2026",
-      "description": "Calculate net salary from gross, including all taxes and contributions. Updated with current rates.",
-      "formula": "net = gross - (gross*0.22) - (gross*0.016) - (gross*0.02)",
+      "description": "Calculate net salary from gross, including all taxes and contributions. Updated with current rates including the 2% security tax.",
+      "formula": "net = gross - income_tax(22%) - unemployment(1.6%) - pension(2/4/6%) - security_tax(2%)",
       "taxRates": {
         "incomeTax": "22%",
         "unemploymentInsurance": "1.6% (employee)",
-        "pensionContribution": "2%"
-      }
+        "pensionContribution": "2%, 4%, or 6%",
+        "securityTax": "2% (on gross income)",
+        "socialTax": "33% (employer)",
+        "unemploymentEmployer": "0.8% (employer)"
+      },
+      "features": [
+        "Fixed tax-free allowance (€700/month, €776 for pensioners)",
+        "2% security tax on gross income (2026-2028)",
+        "Optional pension rate selection",
+        "Employer cost calculation included"
+      ],
+      "note": "Security tax applies to gross income before any deductions."
     },
     {
       "slug": "dividend-tax-estonia",
-      "title": "Dividend Tax Calculator Estonia",
-      "description": "Calculate tax on distributed profits for Estonian companies. Regular vs regular rate.",
-      "formula": "tax = dividend * 0.282",
-      "note": "Effective rate is 22/78 of the net dividend (20%)"
+      "title": "Dividend Tax Calculator Estonia 2026",
+      "description": "Calculate tax on distributed profits for Estonian companies. Includes corporate security tax information.",
+      "formula": "tax = dividend * 22/78 (≈28.2%)",
+      "taxRates": {
+        "dividendTax": "22/78 of net dividend (≈28.2%)",
+        "corporateSecurityTax": "2% on total profit"
+      },
+      "features": [
+        "Standard 22/78 dividend tax rate",
+        "2% security tax on total company profit (2026-2028)",
+        "Gross-up calculation included"
+      ],
+      "note": "Security tax applies to total company profit, not just distributed dividends."
     },
     {
       "slug": "vat-calculator-estonia",
-      "title": "VAT Calculator Estonia (24%)",
-      "description": "Add or remove VAT from amounts. Calculate VAT inclusive and exclusive prices.",
+      "title": "VAT Calculator Estonia (24%) 2026",
+      "description": "Add or remove VAT from amounts. Calculate VAT inclusive and exclusive prices with the standard 24% rate.",
       "rates": {
-        "standard": "24%",
-        "reduced1": "9%",
-        "reduced2": "5%"
-      }
+        "standard": "24% (includes 2% security tax)",
+        "reduced1": "13%",
+        "reduced2": "9%"
+      },
+      "features": [
+        "Add VAT to net amount",
+        "Remove VAT from gross amount",
+        "24% standard rate (includes security tax component)"
+      ],
+      "note": "Standard VAT rate of 24% includes a 2% security tax component (valid 2025-2028)."
     },
     {
       "slug": "income-tax-estonia",
-      "title": "Income Tax Calculator Estonia",
-      "description": "Calculate income tax on various types of income (employment, business, dividends, etc.)",
-      "note": "Basic income tax rate is 22%"
+      "title": "Income Tax Calculator Estonia 2026",
+      "description": "Calculate income tax on various types of income, including the new 2% security tax on gross income.",
+      "taxRates": {
+        "incomeTax": "22%",
+        "securityTax": "2% on gross income",
+        "taxFreeAllowance": "€700/month (€776 for pensioners)"
+      },
+      "features": [
+        "Separate calculation for pensioners",
+        "Includes 2% security tax",
+        "Shows taxable income after allowance"
+      ],
+      "note": "Security tax applies to gross income before tax-free allowance."
     },
     {
       "slug": "freelancer-income-estonia",
-      "title": "Freelancer Income Calculator",
-      "description": "Calculate after-tax income for freelancers, including social tax obligations.",
-      "note": "Includes income tax (22%) and social contributions"
+      "title": "Freelancer Income Calculator 2026",
+      "description": "Calculate after-tax income for freelancers (FIE), including income tax, social tax, security tax, and optional pension contributions.",
+      "taxRates": {
+        "incomeTax": "22%",
+        "socialTax": "33%",
+        "securityTax": "2%",
+        "pensionContribution": "2%, 4%, or 6% (optional)",
+        "taxFreeAllowance": "€700/month"
+      },
+      "features": [
+        "Full tax calculation for self-employed",
+        "Social tax on annual income with minimum base",
+        "Optional pension contribution",
+        "2% security tax included"
+      ],
+      "note": "Social tax is calculated on the full income with an annual minimum base (approx. €6,000/year)."
+    },
+    {
+      "slug": "corporate-profit-tax-estonia",
+      "title": "Corporate Profit Tax Calculator 2026",
+      "description": "Calculate the 2% security tax on corporate profit before distribution.",
+      "taxRates": {
+        "securityTax": "2% on total profit"
+      },
+      "features": [
+        "Calculate profit after security tax",
+        "Shows tax amount separately"
+      ],
+      "note": "The 2% security tax applies to total company profit, regardless of whether it's distributed."
     }
   ]
 }
